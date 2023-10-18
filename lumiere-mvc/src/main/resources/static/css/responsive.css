@@ -1,0 +1,17 @@
+/* Mobile */
+@media (max-width: 480px) {}
+
+/* Pequenos dispositivos */
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/* Tablets pequenos */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Tablets Grandes / Laptops */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Desktops */
+@media (min-width: 1200px) and (max-width: 1919px) {}
+
+/* Telas extremamente grandes */
+@media (max-width: 1920px) {}
