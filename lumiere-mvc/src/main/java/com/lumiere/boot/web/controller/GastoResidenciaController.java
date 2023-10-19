@@ -10,6 +10,6 @@ public class GastoResidenciaController {
 
 	@GetMapping("/cadastrar")
 	public String registrar() {
-		return "gasto/gastoresidencia";
+		return "/gasto/gastoresidencia";
 	}
 }
