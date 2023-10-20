@@ -288,9 +288,9 @@
         position: absolute;
         width: 13%;
         height: 129.359px;
-        transform: rotate(-66.706deg);
+        transform: rotate(-60deg);
         flex-shrink: 0;
-        filter: blur(6.5px);
+        filter: blur(2px);
         top: 360px;
         left: 660px;
     }
@@ -299,7 +299,7 @@
         position: absolute;
         width: 5%;
         height: 66.396px;
-        transform: rotate(-41.464deg);
+        transform: rotate(-15deg);
         filter: blur(2px);
         flex-shrink: 0;
         top: 440px;
@@ -310,7 +310,7 @@
         position: absolute;
         width: 10%;
         height: 47.233px;
-        transform: rotate(3.464deg);
+        transform: rotate(-690deg);
         flex-shrink: 0;
 
         top: 500px;
@@ -438,7 +438,7 @@
         height: 129.359px;
         transform: rotate(-66.706deg);
         flex-shrink: 0;
-        filter: blur(6.5px);
+        filter: blur(2px);
         top: 380px;
         left: 130px;
     }
@@ -541,7 +541,7 @@
         transform: rotate(-14.01deg);
         flex-shrink: 0;
         top: 30px;
-        left: 150px;
+        left: 200px;
     }
 
     .estrela {
@@ -561,7 +561,7 @@
         height: 96px;
         flex-shrink: 0;
         top: 220px;
-        left: 490px;
+        left: 460px;
     }
     
     .intro {
@@ -570,7 +570,7 @@
         height: 90px;
         flex-shrink: 0;
         top: 330px;
-        left: 410px;
+        left: 390px;
     
         color: #FFF;
         text-align: center;
@@ -587,7 +587,156 @@
         height: 129.359px;
         transform: rotate(-66.706deg);
         flex-shrink: 0;
+        filter: blur(2px);
+        top: 380px;
+        left: 200px;
+    }
+
+    .estrela-2 {
+        position: absolute;
+        width: 6%;
+        height: 80.396px;
+        transform: rotate(-41.464deg);
+        filter: blur(2px);
+        flex-shrink: 0;
+        top: 450px;
+        left: 130px;
+    }
+
+    .estrela-3 {
+        position: absolute;
+        width: 5%;
+        height: 60.233px;
+        transform: rotate(-41.464deg);
+        filter: blur(2px);
+        flex-shrink: 0;
+
+        top: 520px;
+        left: 200px;
+    }
+
+    .nos {
+        position: absolute;
+        width: 50%;
+        height: 37px;
+        top: 500px;
+        left: 300px;
+        flex-shrink: 0;
+    
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .arrow {
+        position: absolute;
+        width: 160px;
+        height: 119px;
+        flex-shrink: 0;
+    
+        top: 470px;
+        left: 325px;
+    }
+    
+    .fa-chevron-down {
+        position: absolute;
+        width: 116px;
+        height: 119.222px;
+        top: 20px;
+        left: 80px;
+    
+        flex-shrink: 0;
+        color: #FFF;
+    }  
+}
+
+/* Tela relativamente maior*/ 
+@media (min-width: 1441px) and (max-width: 1919px){
+    #header {
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .botao {
+        position: relative;
+        display:block;
+        width: 8%;
+        height: 56.36px;
+        top: 50px;
+        left: 1350px;
+        border-radius: 5px;
+    }
+
+    .btn-entrar {
+        color: #ffffff;
+        width: 100%;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .lamp {
+        position: absolute;
+        width: 15%;
+        height: 220.829px;
+        transform: rotate(-14.01deg);
+        flex-shrink: 0;
+        top: 40px;
+        left: 250px;
+    }
+
+    .estrela {
+        position: absolute;
+        width: 20%;
+        height: 350px;
+        flex-shrink: 0;
+        top: 100px;
+        left: 1150px;
+
         filter: blur(6.5px);
+    }
+    
+    .logo-horizontal {
+        position: absolute;
+        width: 30%;
+        height: 96px;
+        flex-shrink: 0;
+        top: 220px;
+        left: 540px;
+    }
+    
+    .intro {
+        position: absolute;
+        width: 40%;
+        height: 90px;
+        flex-shrink: 0;
+        top: 330px;
+        left: 455px;
+    
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .estrela-1 {
+        position: absolute;
+        width: 8%;
+        height: 129.359px;
+        transform: rotate(-66.706deg);
+        flex-shrink: 0;
+        filter: blur(2px);
         top: 380px;
         left: 250px;
     }
