@@ -52,6 +52,7 @@ nav {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    cursor: pointer;
 }
 
 .lamp {
@@ -103,18 +104,18 @@ nav {
 
 .estrela-1 {
     position: absolute;
-    width: 113px;
+    width: 9%;
     height: 129.359px;
     transform: rotate(-66.706deg);
     flex-shrink: 0;
     filter: blur(6.5px);
-    top: 642px;
+    top: 570px;
     left: 174.75px;
 }
 
 .estrela-2 {
     position: absolute;
-    width: 58px;
+    width: 4%;
     height: 66.396px;
     transform: rotate(-41.464deg);
     filter: blur(2px);
@@ -125,9 +126,10 @@ nav {
 
 .estrela-3 {
     position: absolute;
-    width: 45.004px;
+    width: 3%;
     height: 47.233px;
     transform: rotate(-41.464deg);
+    filter: blur(2px);
     flex-shrink: 0;
 
     top: 709.41px;
