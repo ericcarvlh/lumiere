@@ -92,6 +92,45 @@
         font-weight: 400;
         line-height: normal;
     }
+
+    h1 {
+        position: absolute;
+        top: 900px;
+        left: 70px;
+
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        width: 80%;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .texto-1 {
+        position: absolute;
+        top: 940px;
+        width: 70%;
+        height: 263px;
+        left: 60px;
+        flex-shrink: 0;
+    
+        color: #D2D2D2;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .mao-celular {
+        position: absolute;
+        width: 80%;
+        height: 300.724px;
+
+        top: 580px;
+        left: 0px;
+    }
 }
 
 /* Pequenos dispositivos */
@@ -205,6 +244,45 @@
         flex-shrink: 0;
         color: #FFF;
     }  
+
+    h1 {
+        position: absolute;
+        top: 940px;
+        left: 145px;
+
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        width: 70%;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .texto-1 {
+        position: absolute;
+        top: 980px;
+        width: 80%;
+        height: 263px;
+        left: 60px;
+        flex-shrink: 0;
+    
+        color: #D2D2D2;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .mao-celular {
+        position: absolute;
+        width: 70%;
+        height: 300.724px;
+
+        top: 600px;
+        left: 50px;
+    }
 }
 
 /* Tablets pequenos */
@@ -354,6 +432,45 @@
         flex-shrink: 0;
         color: #FFF;
     } 
+
+    h1 {
+        position: absolute;
+        top: 680px;
+        left: 110px;
+
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        width: 70%;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .texto-1 {
+        position: absolute;
+        top: 720px;
+        width: 60%;
+        height: 263px;
+        left: 20px;
+        flex-shrink: 0;
+    
+        color: #D2D2D2;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .mao-celular {
+        position: absolute;
+        width: 35%;
+        height: 250.724px;
+
+        top: 690px;
+        left: 520px;
+    }
 }
 
 /* Tablets Grandes / Laptops */
@@ -503,6 +620,46 @@
         flex-shrink: 0;
         color: #FFF;
     } 
+
+    h1 {
+        position: absolute;
+        top: 680px;
+        left: 75px;
+
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        width: 70%;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .texto-1 {
+        position: absolute;
+        top: 740px;
+        width: 50%;
+        height: 263px;
+        left: 80px;
+        flex-shrink: 0;
+    
+        color: #D2D2D2;
+        text-align:left;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .mao-celular {
+        position: absolute;
+        width: 40%;
+        height: 400.724px;
+
+        top: 590px;
+        left: 580px;
+    }
 }
 
 /* Desktops */
@@ -652,6 +809,46 @@
         flex-shrink: 0;
         color: #FFF;
     }  
+
+    h1 {
+        position: absolute;
+        top: 800px;
+        left: 75px;
+
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        width: 70%;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .texto-1 {
+        position: absolute;
+        top: 860px;
+        width: 40%;
+        height: 263px;
+        left: 80px;
+        flex-shrink: 0;
+    
+        color: #D2D2D2;
+        text-align:left;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .mao-celular {
+        position: absolute;
+        width: 45%;
+        height: 500.724px;
+
+        top: 640px;
+        left: 640px;
+    }
 }
 
 /* Tela relativamente maior*/ 
