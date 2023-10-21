@@ -998,4 +998,44 @@
         flex-shrink: 0;
         color: #FFF;
     }  
+
+    h1 {
+        position: absolute;
+        top: 800px;
+        left: 120px;
+
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        width: 70%;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .texto-1 {
+        position: absolute;
+        top: 860px;
+        width: 40%;
+        height: 263px;
+        left: 120px;
+        flex-shrink: 0;
+    
+        color: #D2D2D2;
+        text-align:left;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .mao-celular {
+        position: absolute;
+        width: 40%;
+        height: 400.724px;
+
+        top: 680px;
+        left: 750px;
+    }
 }
