@@ -38,8 +38,4 @@ public class Residencia extends AbstractEntity<Long> {
 	public void setEnderecoResidencia(String enderecoResidencia) {
 		this.enderecoResidencia = enderecoResidencia;
 	}
-	
-	
-	
-	
 }
