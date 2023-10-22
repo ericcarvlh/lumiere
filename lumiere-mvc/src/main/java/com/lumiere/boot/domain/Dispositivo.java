@@ -6,7 +6,8 @@ import jakarta.persistence.*;
 @Entity()
 @Table(name = "DISPOSITIVO")
 public class Dispositivo extends AbstractEntity<Long> {
-	@Column(name = "KWh_dispositivo")
+	
+	@Column(name = "KWh_dispositivo", nullable = false)
 	private double KWhDispositivo; 
 	
 	public double getKWhDispositivo() {
@@ -17,7 +18,7 @@ public class Dispositivo extends AbstractEntity<Long> {
 		KWhDispositivo = kWhDispositivo;
 	}
 
-	@Column(name = "nome_dispositivo")
+	@Column(name = "nome_dispositivo", nullable = false)
 	private String nomeDispositivo;
 	
 	public String getNomeDispositivo() {
