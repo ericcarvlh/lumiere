@@ -287,20 +287,75 @@ h3 {
     filter: blur(4px);
 }
 
+h4 {
+    color: #FFF;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
 
+h5 {
+    color: #FFF;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
 
+.dados {
+    color: #F2BF27;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%;
+}
 
+.info {
+    color: #F2BF27;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%;
+}
 
+.texto-5 {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
 
+.grafico {
+    width: 444.318px;
+    height: 391px;
+    flex-shrink: 0;
+}
 
+.texto-6 {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%;
+}
 
-
-
-
-
-
-
-
+.fone {
+    width: 256.859px;
+    height: 240.805px;
+    transform: rotate(-24.875deg);
+    flex-shrink: 0;
+    filter: blur(4px);
+}
 
 /*
 fontes:

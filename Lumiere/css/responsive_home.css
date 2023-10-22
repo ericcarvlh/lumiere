@@ -236,6 +236,90 @@
         flex-shrink: 0;
         filter: blur(4px);
     }
+
+    h4 {
+        position: absolute;
+        top: 2350px;
+        width: 90%;
+        left: 23px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    h5 {
+        position: absolute;
+        top: 2400px;
+        width: 90%;
+        left: 23px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .dados {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .info {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .texto-5 {
+        position: absolute;
+        top: 2480px;
+        width: 90%;
+        left: 18px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .grafico {
+        position: absolute;
+        top: 2700px;
+        width: 100%;
+        height: 300px;
+        flex-shrink: 0;
+    }
+    
+    .texto-6 {
+        position: absolute;
+        top: 3000px;
+        width: 90%;
+        left: 18px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .fone {
+        display: none;
+    }
 }
 
 /* Pequenos dispositivos */
@@ -479,9 +563,9 @@
     .porco-direito {
         position: absolute;
         top: 1950px;
-        width: 40%;
+        width: 20%;
         height: 340px;
-        left: 60%;
+        left: 79%;
         flex-shrink: 0;
         filter: blur(4px);
     }
@@ -489,11 +573,96 @@
     .porco-esquerdo {
         position: absolute;
         top: 1950px;
-        width: 40%;
+        width: 25%;
         height: 330px;
         
         flex-shrink: 0;
         filter: blur(4px);
+    }
+
+    h4 {
+        position: absolute;
+        top: 2350px;
+        width: 50%;
+        left: 110px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    h5 {
+        position: absolute;
+        top: 2400px;
+        width: 50%;
+        left: 230px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .dados {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .info {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .texto-5 {
+        position: absolute;
+        top: 2490px;
+        width: 80%;
+        left: 60px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .grafico {
+        position: absolute;
+        left: 30px;
+        top: 2680px;
+        width: 90%;
+        height: 400px;
+        flex-shrink: 0;
+    }
+    
+    .texto-6 {
+        position: absolute;
+        top: 3060px;
+        width: 80%;
+        left: 60px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .fone {
+        display: none;
     }
 }
 
@@ -787,9 +956,9 @@
     .porco-direito {
         position: absolute;
         top: 1950px;
-        width: 30%;
+        width: 20%;
         height: 340px;
-        left: 73%;
+        left: 83%;
         flex-shrink: 0;
         filter: blur(4px);
     }
@@ -797,9 +966,101 @@
     .porco-esquerdo {
         position: absolute;
         top: 1950px;
-        width: 30%;
+        width: 20%;
         height: 340px;
         
+        flex-shrink: 0;
+        filter: blur(4px);
+    }
+
+    h4 {
+        position: absolute;
+        top: 2500px;
+        width: 80%;
+        left: 70px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    h5 {
+        position: absolute;
+        top: 2530px;
+        width: 49%;
+        left: 400px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .dados {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .info {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .texto-5 {
+        position: absolute;
+        top: 2600px;
+        width: 40%;
+        left: 20px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .grafico {
+        position: absolute;
+        left: 180px;
+        top: 2670px;
+        width: 60%;
+        height: 400px;
+        flex-shrink: 0;
+    }
+    
+    .texto-6 {
+        position: absolute;
+        top: 3000px;
+        width: 40%;
+        left: 460px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .fone {
+        position: absolute;
+        top: 3070px;
+        left: 20px;
+        width: 30%;
+        height: 200px;
+        transform: rotate(-24.875deg);
         flex-shrink: 0;
         filter: blur(4px);
     }
@@ -1112,6 +1373,98 @@
         flex-shrink: 0;
         filter: blur(4px);
     }
+
+    h4 {
+        position: absolute;
+        top: 2500px;
+        width: 80%;
+        left: 90px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    h5 {
+        position: absolute;
+        top: 2530px;
+        width: 49%;
+        left: 495px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .dados {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .info {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .texto-5 {
+        position: absolute;
+        top: 2670px;
+        width: 35%;
+        left: 50px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .grafico {
+        position: absolute;
+        left: 240px;
+        top: 2670px;
+        width: 60%;
+        height: 450px;
+        flex-shrink: 0;
+    }
+    
+    .texto-6 {
+        position: absolute;
+        top: 3000px;
+        width: 35%;
+        left: 650px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .fone {
+        position: absolute;
+        top: 3000px;
+        left: 70px;
+        width: 20%;
+        height: 150px;
+        transform: rotate(-24.875deg);
+        flex-shrink: 0;
+        filter: blur(4px);
+    }
 }
 
 /* Desktops */
@@ -1421,6 +1774,98 @@
         flex-shrink: 0;
         filter: blur(4px);
     }
+
+    h4 {
+        position: absolute;
+        top: 2650px;
+        width: 80%;
+        left: 100px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    h5 {
+        position: absolute;
+        top: 2700px;
+        width: 49%;
+        left: 640px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .dados {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .info {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .texto-5 {
+        position: absolute;
+        top: 2850px;
+        width: 30%;
+        left: 100px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .grafico {
+        position: absolute;
+        left: 330px;
+        top: 2850px;
+        width: 50%;
+        height: 500px;
+        flex-shrink: 0;
+    }
+    
+    .texto-6 {
+        position: absolute;
+        top: 3200px;
+        width: 30%;
+        left: 850px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .fone {
+        position: absolute;
+        top: 3200px;
+        left: 100px;
+        width: 15%;
+        height: 150px;
+        transform: rotate(-24.875deg);
+        flex-shrink: 0;
+        filter: blur(4px);
+    }
 }
 
 /* Tela relativamente maior*/ 
@@ -1727,6 +2172,98 @@
         width: 15%;
         height: 340px;
         
+        flex-shrink: 0;
+        filter: blur(4px);
+    }
+
+    h4 {
+        position: absolute;
+        top: 2650px;
+        width: 80%;
+        left: 100px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    h5 {
+        position: absolute;
+        top: 2700px;
+        width: 49%;
+        left: 640px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .dados {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .info {
+        color: #F2BF27;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .texto-5 {
+        position: absolute;
+        top: 2850px;
+        width: 30%;
+        left: 100px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .grafico {
+        position: absolute;
+        left: 330px;
+        top: 2850px;
+        width: 50%;
+        height: 500px;
+        flex-shrink: 0;
+    }
+    
+    .texto-6 {
+        position: absolute;
+        top: 3200px;
+        width: 30%;
+        left: 850px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%;
+    }
+    
+    .fone {
+        position: absolute;
+        top: 3200px;
+        left: 100px;
+        width: 15%;
+        height: 150px;
+        transform: rotate(-24.875deg);
         flex-shrink: 0;
         filter: blur(4px);
     }
