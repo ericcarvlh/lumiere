@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "ESTADO")
 public class Estado extends AbstractEntity<Long> {
@@ -29,9 +30,4 @@ public class Estado extends AbstractEntity<Long> {
 	public void setUfEstado(String ufEstado) {
 		UfEstado = ufEstado;
 	}
-	
-	
-	
-	
-	
 }

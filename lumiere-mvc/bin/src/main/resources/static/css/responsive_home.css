@@ -1,0 +1,127 @@
+/* Mobile */
+@media (max-width: 480px) {
+    #header {
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .botao {
+        position: relative;
+        display:block;
+        width: 155px;
+        height: 56.36px;
+        top: 50px;
+        left: 157px;
+        border-radius: 5px;
+    }
+
+    .btn-entrar {
+        color: #ffffff;
+        font-family: Lexend Exa;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .lamp {
+        display: none;
+    }
+
+    .estrela {
+        display: none;
+    }
+    
+    .logo-horizontal {
+        position: absolute;
+        width: 300px;
+        height: 96px;
+        flex-shrink: 0;
+        top: 210px;
+        left: 42px;
+    }
+    
+    .intro {
+        position: absolute;
+        width: 300px;
+        height: 90px;
+        flex-shrink: 0;
+        top: 320px;
+        left: 40px;
+    
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .estrela-1 {
+        display: none;
+    }
+
+    .estrela-2 {
+        display: none;
+    }
+
+    .estrela-3 {
+        display: none;
+    }
+
+    .nos {
+        position: absolute;
+        width: 188px;
+        height: 37px;
+        top: 440px;
+        left: 95px;
+        flex-shrink: 0;
+    
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .arrow {
+        position: absolute;
+        width: 160px;
+        height: 119px;
+        flex-shrink: 0;
+    
+        top: 450px;
+        left: 105px;
+    }
+    
+    .fa-chevron-down {
+        position: absolute;
+        width: 116px;
+        height: 119.222px;
+        top: 20px;
+        left: 80px;
+    
+        flex-shrink: 0;
+        color: #FFF;
+    }
+}
+
+/* Pequenos dispositivos */
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/* Tablets pequenos */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Tablets Grandes / Laptops */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Desktops */
+@media (min-width: 1200px) and (max-width: 1919px) {}
+
+/* Telas extremamente grandes */
+@media (max-width: 1920px) {}

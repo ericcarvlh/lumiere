@@ -2,6 +2,7 @@ package com.lumiere.boot.domain;
 
 import jakarta.persistence.*;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "RESIDENCIA")
 public class Residencia extends AbstractEntity<Long> {
