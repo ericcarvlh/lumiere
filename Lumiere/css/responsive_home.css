@@ -320,6 +320,74 @@
     .fone {
         display: none;
     }
+
+    .sino {
+        position: absolute;
+        width: 70%;
+        height: 230px;
+        top: 3250px;
+        left: 60px;
+        flex-shrink: 0;
+    }
+
+    .joia {
+        display: none;
+    }
+
+    h6 {
+        position: absolute;
+        top: 3450px;
+        width: 85%;
+        left: 13%;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .h7 {
+        position: absolute;
+        width: 80%;
+        height: 152px;
+        top: 3500px;
+        left: 40px;
+        flex-shrink: 0;
+
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .cadastro {
+        position: absolute;
+        top: 3600px;
+        width: 50%;
+        height: 70px;
+        left: 100px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: #FFF;
+        cursor: pointer;
+        border-color: #FFF;
+
+        color: #3C09B8;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .saco-dinheiro {
+        display: none;
+    }
+
 }
 
 /* Pequenos dispositivos */
@@ -662,6 +730,73 @@
     }
     
     .fone {
+        display: none;
+    }
+
+    .sino {
+        position: absolute;
+        width: 50%;
+        height: 270px;
+        top: 3200px;
+        left: 145px;
+        flex-shrink: 0;
+    }
+
+    .joia {
+        display: none;
+    }
+
+    h6 {
+        position: absolute;
+        top: 3450px;
+        width: 70%;
+        left: 135px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .h7 {
+        position: absolute;
+        width: 80%;
+        height: 152px;
+        top: 3500px;
+        left: 50px;
+        flex-shrink: 0;
+
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .cadastro {
+        position: absolute;
+        top: 3600px;
+        width: 30%;
+        height: 60px;
+        left: 210px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: #FFF;
+        cursor: pointer;
+        border-color: #FFF;
+
+        color: #3C09B8;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .saco-dinheiro {
         display: none;
     }
 }
@@ -1063,6 +1198,73 @@
         transform: rotate(-24.875deg);
         flex-shrink: 0;
         filter: blur(4px);
+    }
+
+    .sino {
+        position: absolute;
+        width: 50%;
+        height: 270px;
+        top: 3200px;
+        left: 145px;
+        flex-shrink: 0;
+    }
+
+    .joia {
+        display: none;
+    }
+
+    h6 {
+        position: absolute;
+        top: 3450px;
+        width: 70%;
+        left: 135px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .h7 {
+        position: absolute;
+        width: 80%;
+        height: 152px;
+        top: 3500px;
+        left: 50px;
+        flex-shrink: 0;
+
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .cadastro {
+        position: absolute;
+        top: 3600px;
+        width: 30%;
+        height: 60px;
+        left: 210px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: #FFF;
+        cursor: pointer;
+        border-color: #FFF;
+
+        color: #3C09B8;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .saco-dinheiro {
+        display: none;
     }
 }
 

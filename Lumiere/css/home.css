@@ -357,6 +357,64 @@ h5 {
     filter: blur(4px);
 }
 
+.sino {
+    width: 198px;
+    height: 150.247px;
+    flex-shrink: 0;
+}
+
+.joia {
+    width: 250px;
+    height: 211px;
+    flex-shrink: 0;
+}
+
+h6 {
+    color: #FFF;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.h7 {
+    width: 828px;
+    height: 152px;
+    flex-shrink: 0;
+
+    color: #FFF;
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.cadastro {
+    width: 240px;
+    height: 75px;
+    flex-shrink: 0;
+    border-radius: 28px;
+    background: #FFF;
+    cursor: pointer;
+
+    color: #3C09B8;
+    font-family: Lexend Exa;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.saco-dinheiro {
+    width: 201.079px;
+    height: 244.063px;
+    transform: rotate(23.693deg);
+    flex-shrink: 0;
+}
+
 /*
 fontes:
 
