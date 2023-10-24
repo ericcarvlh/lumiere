@@ -2183,7 +2183,7 @@
         left: 100px;
         color: #FFF;
         font-family: 'Lexend Exa', sans-serif;
-        font-size: 40px;
+        font-size: 50px;
         font-style: normal;
         font-weight: 400;
         line-height: 125.5%; 
@@ -2193,10 +2193,10 @@
         position: absolute;
         top: 2700px;
         width: 49%;
-        left: 640px;
+        left: 750px;
         color: #FFF;
         font-family: 'Lexend Exa', sans-serif;
-        font-size: 40px;
+        font-size: 50px;
         font-style: normal;
         font-weight: 400;
         line-height: 125.5%; 
@@ -2205,7 +2205,7 @@
     .dados {
         color: #F2BF27;
         font-family: 'Lexend Exa', sans-serif;
-        font-size: 40px;
+        font-size: 50px;
         font-style: normal;
         font-weight: 400;
         line-height: 125.5%;
@@ -2214,7 +2214,7 @@
     .info {
         color: #F2BF27;
         font-family: 'Lexend Exa', sans-serif;
-        font-size: 40px;
+        font-size: 50px;
         font-style: normal;
         font-weight: 400;
         line-height: 125.5%;
@@ -2222,7 +2222,7 @@
     
     .texto-5 {
         position: absolute;
-        top: 2850px;
+        top: 2900px;
         width: 30%;
         left: 100px;
         color: #FFF;
@@ -2236,18 +2236,18 @@
     
     .grafico {
         position: absolute;
-        left: 330px;
-        top: 2850px;
+        left: 400px;
+        top: 2840px;
         width: 50%;
-        height: 500px;
+        height: 600px;
         flex-shrink: 0;
     }
     
     .texto-6 {
         position: absolute;
-        top: 3200px;
+        top: 3290px;
         width: 30%;
-        left: 850px;
+        left: 1000px;
         color: #FFF;
         text-align: center;
         font-family: 'Urbanist', sans-serif;
@@ -2259,9 +2259,9 @@
     
     .fone {
         position: absolute;
-        top: 3200px;
+        top: 3300px;
         left: 100px;
-        width: 15%;
+        width: 10%;
         height: 150px;
         transform: rotate(-24.875deg);
         flex-shrink: 0;
