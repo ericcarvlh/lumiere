@@ -7,6 +7,11 @@ import jakarta.persistence.*;
 @Table(name = "DISPOSITIVO")
 public class Dispositivo extends AbstractEntity<Long> {
 	
+	/*
+	 * hello it's 'f' world
+	 * 
+	*/
+
 	@Column(name = "KWh_dispositivo", nullable = false)
 	private double KWhDispositivo; 
 	

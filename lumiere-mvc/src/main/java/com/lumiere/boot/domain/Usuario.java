@@ -8,6 +8,11 @@ import jakarta.persistence.*;
 @Table(name = "USUARIO")
 public class Usuario extends AbstractEntity<Long> {
 	
+	/*
+	 * oh cheirei as cinzas da tua vo
+	 * 
+	*/
+
 	@Column(name = "nome_usuario", nullable = false)
     private String nomeUsuario;
    
