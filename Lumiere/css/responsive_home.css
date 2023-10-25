@@ -1202,22 +1202,27 @@
 
     .sino {
         position: absolute;
-        width: 50%;
+        width: 40%;
         height: 270px;
-        top: 3200px;
-        left: 145px;
+        top: 3350px;
+        left: 260px;
         flex-shrink: 0;
     }
 
     .joia {
-        display: none;
+        position: absolute;
+        top: 3500px;
+        width: 20%;
+        left: 0%;
+        height: 111px;
+        flex-shrink: 0;
     }
 
     h6 {
         position: absolute;
-        top: 3450px;
-        width: 70%;
-        left: 135px;
+        top: 3570px;
+        width: 50%;
+        left: 250px;
         color: #FFF;
         font-family: 'Lexend Exa', sans-serif;
         font-size: 23px;
@@ -1228,10 +1233,10 @@
 
     .h7 {
         position: absolute;
-        width: 80%;
+        width: 50%;
         height: 152px;
-        top: 3500px;
-        left: 50px;
+        top: 3620px;
+        left: 220px;
         flex-shrink: 0;
 
         color: #FFF;
@@ -1245,10 +1250,10 @@
 
     .cadastro {
         position: absolute;
-        top: 3600px;
-        width: 30%;
-        height: 60px;
-        left: 210px;
+        top: 3700px;
+        width: 25%;
+        height: 50px;
+        left: 315px;
         flex-shrink: 0;
         border-radius: 30px;
         background: #FFF;
@@ -1261,10 +1266,6 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-    }
-
-    .saco-dinheiro {
-        display: none;
     }
 }
 
@@ -1667,6 +1668,75 @@
         flex-shrink: 0;
         filter: blur(4px);
     }
+
+    .sino {
+        position: absolute;
+        width: 30%;
+        height: 300px;
+        top: 3250px;
+        left: 365px;
+        flex-shrink: 0;
+    }
+
+    .joia {
+        position: absolute;
+        top: 3400px;
+        width: 20%;
+        left: 0%;
+        height: 150px;
+        flex-shrink: 0;
+    }
+
+    h6 {
+        position: absolute;
+        top: 3520px;
+        width: 50%;
+        left: 335px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 27px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .h7 {
+        position: absolute;
+        width: 50%;
+        height: 152px;
+        top: 3570px;
+        left: 275px;
+        flex-shrink: 0;
+
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .cadastro {
+        position: absolute;
+        text-decoration: none;
+        top: 3660px;
+        width: 20%;
+        height: 50px;
+        left: 420px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: #FFF;
+        cursor: pointer;
+        border-color: #FFF;
+
+        color: #3C09B8;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
 }
 
 /* Desktops */
@@ -2068,6 +2138,75 @@
         flex-shrink: 0;
         filter: blur(4px);
     }
+
+    .sino {
+        position: absolute;
+        width: 30%;
+        height: 400px;
+        top: 3400px;
+        left: 500px;
+        flex-shrink: 0;
+    }
+
+    .joia {
+        position: absolute;
+        top: 3560px;
+        width: 20%;
+        left: 0%;
+        height: 200px;
+        flex-shrink: 0;
+    }
+
+    h6 {
+        position: absolute;
+        top: 3730px;
+        width: 50%;
+        left: 490px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 27px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .h7 {
+        position: absolute;
+        width: 40%;
+        height: 152px;
+        top: 3790px;
+        left: 420px;
+        flex-shrink: 0;
+
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .cadastro {
+        position: absolute;
+        text-decoration: none;
+        top: 3880px;
+        width: 15%;
+        height: 60px;
+        left: 595px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: #FFF;
+        cursor: pointer;
+        border-color: #FFF;
+
+        color: #3C09B8;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
 }
 
 /* Tela relativamente maior*/ 
@@ -2468,5 +2607,74 @@
         transform: rotate(-24.875deg);
         flex-shrink: 0;
         filter: blur(4px);
+    }
+
+    .sino {
+        position: absolute;
+        width: 25%;
+        height: 400px;
+        top: 3470px;
+        left: 580px;
+        flex-shrink: 0;
+    }
+
+    .joia {
+        position: absolute;
+        top: 3600px;
+        width: 20%;
+        left: 0%;
+        height: 220px;
+        flex-shrink: 0;
+    }
+
+    h6 {
+        position: absolute;
+        top: 3800px;
+        width: 50%;
+        left: 550px;
+        color: #FFF;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .h7 {
+        position: absolute;
+        width: 30%;
+        height: 152px;
+        top: 3860px;
+        left: 530px;
+        flex-shrink: 0;
+
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .cadastro {
+        position: absolute;
+        text-decoration: none;
+        top: 3960px;
+        width: 15%;
+        height: 60px;
+        left: 650px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: #FFF;
+        cursor: pointer;
+        border-color: #FFF;
+
+        color: #3C09B8;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
     }
 }
