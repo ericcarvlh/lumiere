@@ -399,21 +399,20 @@ h6 {
     border-radius: 28px;
     background: #FFF;
     cursor: pointer;
+    text-decoration: none;
 
     color: #3C09B8;
-    font-family: Lexend Exa;
+    font-family: 'Lexend Exa', sans-serif;
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-.saco-dinheiro {
-    width: 201.079px;
-    height: 244.063px;
-    transform: rotate(23.693deg);
-    flex-shrink: 0;
+.cad {
+    text-decoration: none;
 }
+
 
 /*
 fontes:
