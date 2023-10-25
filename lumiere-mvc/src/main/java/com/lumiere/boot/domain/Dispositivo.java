@@ -34,4 +34,20 @@ public class Dispositivo extends AbstractEntity<Long> {
 		this.nomeDispositivo = nomeDispositivo;
 	}
 
+	@ManyToOne
+	@JoinColumn(name = "fk_Residencia_cd_residencia")
+	private Residencia residencia;
+
+	public Residencia getResidencia() {
+		return residencia;
+	}
+
+	public void setResidencia(Residencia residencia) {
+		this.residencia = residencia;
+	}
+	
+	
+	
+	
+	
 }

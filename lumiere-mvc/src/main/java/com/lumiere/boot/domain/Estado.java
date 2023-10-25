@@ -1,8 +1,8 @@
 package com.lumiere.boot.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import java.util.List;
+
+import jakarta.persistence.*;
 
 @SuppressWarnings("serial")
 @Entity
@@ -30,4 +30,16 @@ public class Estado extends AbstractEntity<Long> {
 	public void setUfEstado(String ufEstado) {
 		UfEstado = ufEstado;
 	}
+	
+	@OneToMany(mappedBy = "estado")
+	private List<Residencia> residencias;
+
+	public List<Residencia> getResidencias() {
+		return residencias;
+	}
+
+	public void setResidencias(List<Residencia> residencias) {
+		this.residencias = residencias;
+	}
+	
 }
