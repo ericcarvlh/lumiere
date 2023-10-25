@@ -413,6 +413,92 @@ h6 {
     text-decoration: none;
 }
 
+footer {
+    width: 1440px;
+    height: 336px;
+    flex-shrink: 0;
+    background: #00153F;
+    box-shadow: -14px 14px 10px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.texto-7 {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
+
+.github {
+    width: 86px;
+    height: 87px;
+    flex-shrink: 0;
+}
+
+.linkedin {
+    width: 73px;
+    height: 73px;
+    flex-shrink: 0;
+}
+
+.texto-8 {
+    width: 248px;
+    height: 25px;
+    flex-shrink: 0;
+
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+    text-decoration-line: underline;
+}
+
+circle {
+    width: 225px;
+    height: 225px;
+    flex-shrink: 0;
+}
+
+.logo-footer {
+    width: 175px;
+    height: 174px;
+    flex-shrink: 0;
+}
+
+.texto-9 {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
+
+.texto-10 {
+    color: #FFA318;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
+
+.texto-11 {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
 
 /*
 fontes:
