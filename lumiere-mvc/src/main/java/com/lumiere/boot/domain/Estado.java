@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 @Table(name = "ESTADO")
 public class Estado extends AbstractEntity<Long> {
 
-	@Column(name = "nome_estado", nullable = false, unique = true, length = 60)
+	@Column(name = "nome_estado", nullable = false, unique = true, length = 40)
 	private String nomeEstado;
 
 	public String getNomeEstado() {
@@ -20,7 +20,7 @@ public class Estado extends AbstractEntity<Long> {
 		this.nomeEstado = nomeEstado;
 	}
 	
-	@Column(name = "UF_estado", nullable = false, unique = true, length = 60)
+	@Column(name = "UF_estado", nullable = false, unique = true, length = 2)
 	private String UfEstado;
 
 	public String getUfEstado() {
@@ -31,6 +31,17 @@ public class Estado extends AbstractEntity<Long> {
 		UfEstado = ufEstado;
 	}
 	
+	@Column(name = "preco_KWH", nullable = false, unique = true)
+	private double precoKwh;
+	
+	public double getPrecoKwh() {
+		return precoKwh;
+	}
+
+	public void setPrecoKwh(double precoKwh) {
+		this.precoKwh = precoKwh;
+	}
+
 	@OneToMany(mappedBy = "estado")
 	private List<Residencia> residencias;
 
