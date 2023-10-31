@@ -40,4 +40,19 @@ public class Consumo extends AbstractEntity<Long> {
 	public void setTempoDeConsumo(int tempoDeConsumo) {
 		this.tempoDeConsumo = tempoDeConsumo;
 	}
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_Dispositivo_cd_dispositivo")
+	private Dispositivo dispositivo;
+
+	public Dispositivo getDispositivo() {
+		return dispositivo;
+	}
+
+	public void setDispositivo(Dispositivo dispositivo) {
+		this.dispositivo = dispositivo;
+	}
+	
+	
+	
 }

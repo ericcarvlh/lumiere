@@ -1,5 +1,7 @@
 package com.lumiere.boot.domain;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @SuppressWarnings("serial")
@@ -34,4 +36,27 @@ public class Dispositivo extends AbstractEntity<Long> {
 		this.nomeDispositivo = nomeDispositivo;
 	}
 
+	@ManyToOne
+	@JoinColumn(name = "fk_Residencia_cd_residencia")
+	private Residencia residencia;
+
+	public Residencia getResidencia() {
+		return residencia;
+	}
+
+	public void setResidencia(Residencia residencia) {
+		this.residencia = residencia;
+	}
+	
+	@OneToMany(mappedBy = "dispositivo")
+	private List<Consumo> consumo;
+
+	public List<Consumo> getConsumo() {
+		return consumo;
+	}
+
+	public void setConsumo(List<Consumo> consumo) {
+		this.consumo = consumo;
+	}
+	
 }

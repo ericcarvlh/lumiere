@@ -1,15 +1,15 @@
 package com.lumiere.boot.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import java.util.List;
+
+import jakarta.persistence.*;
 
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "ESTADO")
 public class Estado extends AbstractEntity<Long> {
 
-	@Column(name = "nome_estado", nullable = false, unique = true, length = 60)
+	@Column(name = "nome_estado", nullable = false, unique = true, length = 40)
 	private String nomeEstado;
 
 	public String getNomeEstado() {
@@ -20,7 +20,7 @@ public class Estado extends AbstractEntity<Long> {
 		this.nomeEstado = nomeEstado;
 	}
 	
-	@Column(name = "UF_estado", nullable = false, unique = true, length = 60)
+	@Column(name = "UF_estado", nullable = false, unique = true, length = 2)
 	private String UfEstado;
 
 	public String getUfEstado() {
@@ -30,4 +30,27 @@ public class Estado extends AbstractEntity<Long> {
 	public void setUfEstado(String ufEstado) {
 		UfEstado = ufEstado;
 	}
+	
+	@Column(name = "preco_KWH", nullable = false, unique = true)
+	private double precoKwh;
+	
+	public double getPrecoKwh() {
+		return precoKwh;
+	}
+
+	public void setPrecoKwh(double precoKwh) {
+		this.precoKwh = precoKwh;
+	}
+
+	@OneToMany(mappedBy = "estado")
+	private List<Residencia> residencias;
+
+	public List<Residencia> getResidencias() {
+		return residencias;
+	}
+
+	public void setResidencias(List<Residencia> residencias) {
+		this.residencias = residencias;
+	}
+	
 }
