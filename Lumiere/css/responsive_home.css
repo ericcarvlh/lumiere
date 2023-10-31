@@ -1524,9 +1524,9 @@
 
     footer {
         position: absolute;
-        top: 3800px;
+        top: 4000px;
         width: 100%;
-        height: 70%;
+        height: 65%;
         flex-shrink: 0;
         background: #00153F;
         box-shadow: -14px 14px 10px 0px rgba(0, 0, 0, 0.25) inset;
@@ -1534,9 +1534,9 @@
     
     .texto-7 {
         position: absolute;
-        top: 20px;
-        left: -50px;
-        width: 60%;
+        top: 60px;
+        left: 50px;
+        width: 30%;
         color: #FFF;
         text-align: center;
         font-family: 'Lexend Exa', sans-serif;
@@ -1548,26 +1548,26 @@
     
     .github {
         position: absolute;
-        left: 60px;
-        top: 50px;
-        width: 14%;
+        left: 90px;
+        top: 90px;
+        width: 10%;
         height: 80px;
         flex-shrink: 0;
     }
     
     .linkedin {
         position: absolute;
-        top: 50px;
-        left: 150px;
-        width: 13%;
-        height: 77px;
+        top: 95px;
+        left: 180px;
+        width: 9%;
+        height: 70px;
         flex-shrink: 0;
     }
     
     .texto-8 {
         position: absolute;
-        top: 140px;
-        left: 25px;
+        top: 185px;
+        left: 50px;
         width: 248px;
         height: 25px;
         flex-shrink: 0;
@@ -1584,30 +1584,30 @@
     
     svg {
         position: absolute;
-        top: -10px;
-        left: 440px;
-        width: 25%;
+        top: 20px;
+        left: 350px;
+        width: 20%;
         height: 225px;
         flex-shrink: 0;
     }
     
     .logo-footer {
         position: absolute;
-        top: 30px;
-        left: 440px;
-        width: 150px;
-        height: 150px;
+        top: 75px;
+        left: 365px;
+        width: 130px;
+        height: 130px;
         flex-shrink: 0;
     }
     
     .texto-9 {
         position: absolute;
-        top: 170px;
-        left: 200px;
+        top: 60px;
+        left: 530px;
         color: #FFF;
         text-align: center;
         font-family: 'Lexend Exa', sans-serif;
-        font-size: 13px;
+        font-size: 15px;
         font-style: normal;
         font-weight: 400;
         line-height: 125.5%; 
@@ -1615,12 +1615,12 @@
     
     .texto-10 {
         position: absolute;
-        top: 190px;
-        left: 220px;
+        top: 110px;
+        left: 550px;
         color: #FFA318;
         text-align: center;
         font-family: 'Lexend Exa', sans-serif;
-        font-size: 13px;
+        font-size: 15px;
         font-style: normal;
         font-weight: 400;
         line-height: 125.5%; 
@@ -1628,12 +1628,12 @@
     
     .texto-11 {
         position: absolute;
-        top: 210px;
-        left: 246px;
+        top: 170px;
+        left: 580px;
         color: #FFF;
         text-align: center;
         font-family: 'Urbanist', sans-serif;
-        font-size: 13px;
+        font-size: 15px;
         font-style: normal;
         font-weight: 400;
         line-height: 125.5%; 
@@ -1642,6 +1642,13 @@
 
 /* Tablets Grandes / Laptops */
 @media (min-width: 992px) and (max-width: 1199px) {
+    body {
+        width: 100%;
+        height: 4000px;
+        flex-shrink: 0;
+        background: linear-gradient(180deg, #052769 26.12%, #092C73 31.15%, #18409D 41.04%, #2A45BB 51.02%, #5652BA 60.51%, #5652BA 60.52%, #8760B9 70.51%, #8760B9 72.26%, #8760B9 74.28%, #7F47DD 80.36%, #4E00CE 84.52%, #24189A 87.25%, #002C6D 90.53%);
+    }
+
     #header {
         width: 100%;
         height: 100vh;
@@ -2108,10 +2115,134 @@
         font-weight: 400;
         line-height: normal;
     }
+
+    footer {
+        position: absolute;
+        top: 4000px;
+        width: 100%;
+        height: 65%;
+        flex-shrink: 0;
+        background: #00153F;
+        box-shadow: -14px 14px 10px 0px rgba(0, 0, 0, 0.25) inset;
+    }
+    
+    .texto-7 {
+        position: absolute;
+        top: 60px;
+        left: 50px;
+        width: 30%;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .github {
+        position: absolute;
+        left: 100px;
+        top: 95px;
+        width: 10%;
+        height: 90px;
+        flex-shrink: 0;
+    }
+    
+    .linkedin {
+        position: absolute;
+        top: 100px;
+        left: 220px;
+        width: 9%;
+        height: 80px;
+        flex-shrink: 0;
+    }
+    
+    .texto-8 {
+        position: absolute;
+        top: 195px;
+        left: 85px;
+        width: 248px;
+        height: 25px;
+        flex-shrink: 0;
+    
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+        text-decoration-line: underline;
+    }
+    
+    svg {
+        position: absolute;
+        top: 45px;
+        left: 400px;
+        width: 20%;
+        height: 200px;
+        flex-shrink: 0;
+    }
+    
+    .logo-footer {
+        position: absolute;
+        top: 60px;
+        left: 410px;
+        width: 180px;
+        height: 180px;
+        flex-shrink: 0;
+    }
+    
+    .texto-9 {
+        position: absolute;
+        top: 60px;
+        left: 630px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .texto-10 {
+        position: absolute;
+        top: 110px;
+        left: 655px;
+        color: #FFA318;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .texto-11 {
+        position: absolute;
+        top: 175px;
+        left: 695px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
 }
 
 /* Desktops */
 @media (min-width: 1200px) and (max-width: 1440px) {
+    body {
+        width: 100%;
+        height: 4000px;
+        flex-shrink: 0;
+        background: linear-gradient(180deg, #052769 26.12%, #092C73 31.15%, #18409D 41.04%, #2A45BB 51.02%, #5652BA 60.51%, #5652BA 60.52%, #8760B9 70.51%, #8760B9 72.26%, #8760B9 74.28%, #7F47DD 80.36%, #4E00CE 84.52%, #24189A 87.25%, #002C6D 90.53%);
+    }
+
     #header {
         width: 100%;
         height: 100vh;
@@ -2577,6 +2708,123 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+
+    footer {
+        position: absolute;
+        top: 4000px;
+        width: 100%;
+        height: 50%;
+        flex-shrink: 0;
+        background: #00153F;
+        box-shadow: -14px 14px 10px 0px rgba(0, 0, 0, 0.25) inset;
+    }
+    
+    .texto-7 {
+        position: absolute;
+        top: 60px;
+        left: 80px;
+        width: 30%;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .github {
+        position: absolute;
+        left: 170px;
+        top: 95px;
+        width: 7%;
+        height: 80px;
+        flex-shrink: 0;
+    }
+    
+    .linkedin {
+        position: absolute;
+        top: 100px;
+        left: 290px;
+        width: 6%;
+        height: 70px;
+        flex-shrink: 0;
+    }
+    
+    .texto-8 {
+        position: absolute;
+        top: 195px;
+        left: 150px;
+        width: 248px;
+        height: 25px;
+        flex-shrink: 0;
+    
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+        text-decoration-line: underline;
+    }
+    
+    svg {
+        position: absolute;
+        top: 45px;
+        left: 550px;
+        width: 15%;
+        height: 200px;
+        flex-shrink: 0;
+    }
+    
+    .logo-footer {
+        position: absolute;
+        top: 70px;
+        left: 560px;
+        width: 170px;
+        height: 170px;
+        flex-shrink: 0;
+    }
+    
+    .texto-9 {
+        position: absolute;
+        top: 60px;
+        left: 840px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .texto-10 {
+        position: absolute;
+        top: 110px;
+        left: 870px;
+        color: #FFA318;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .texto-11 {
+        position: absolute;
+        top: 175px;
+        left: 910px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
     }
 }
 
