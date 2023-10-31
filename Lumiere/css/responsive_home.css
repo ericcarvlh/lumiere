@@ -2,7 +2,7 @@
 @media (max-width: 480px) {
     body {
         width: 100%;
-        height: 4120px;
+        height: 4000px;
         flex-shrink: 0;
         background: linear-gradient(180deg, #052769 26.12%, #092C73 31.15%, #18409D 41.04%, #2A45BB 51.02%, #5652BA 60.51%, #5652BA 60.52%, #8760B9 70.51%, #8760B9 72.26%, #8760B9 74.28%, #7F47DD 80.36%, #4E00CE 84.52%, #24189A 87.25%, #002C6D 90.53%);
     }
@@ -399,7 +399,7 @@
         position: absolute;
         top: 3800px;
         width: 100%;
-        height: 250px;
+        height: 50%;
         flex-shrink: 0;
         background: #00153F;
         box-shadow: -14px 14px 10px 0px rgba(0, 0, 0, 0.25) inset;
@@ -515,6 +515,13 @@
 
 /* Pequenos dispositivos */
 @media (min-width: 481px) and (max-width: 767px) {
+    body {
+        width: 100%;
+        height: 4000px;
+        flex-shrink: 0;
+        background: linear-gradient(180deg, #052769 26.12%, #092C73 31.15%, #18409D 41.04%, #2A45BB 51.02%, #5652BA 60.51%, #5652BA 60.52%, #8760B9 70.51%, #8760B9 72.26%, #8760B9 74.28%, #7F47DD 80.36%, #4E00CE 84.52%, #24189A 87.25%, #002C6D 90.53%);
+    }
+
     #header {
         width: 100%;
         height: 100vh;
@@ -922,10 +929,134 @@
     .saco-dinheiro {
         display: none;
     }
+
+    footer {
+        position: absolute;
+        top: 3800px;
+        width: 100%;
+        height: 70%;
+        flex-shrink: 0;
+        background: #00153F;
+        box-shadow: -14px 14px 10px 0px rgba(0, 0, 0, 0.25) inset;
+    }
+    
+    .texto-7 {
+        position: absolute;
+        top: 20px;
+        left: -50px;
+        width: 60%;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .github {
+        position: absolute;
+        left: 60px;
+        top: 50px;
+        width: 14%;
+        height: 80px;
+        flex-shrink: 0;
+    }
+    
+    .linkedin {
+        position: absolute;
+        top: 50px;
+        left: 150px;
+        width: 13%;
+        height: 77px;
+        flex-shrink: 0;
+    }
+    
+    .texto-8 {
+        position: absolute;
+        top: 140px;
+        left: 25px;
+        width: 248px;
+        height: 25px;
+        flex-shrink: 0;
+    
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+        text-decoration-line: underline;
+    }
+    
+    svg {
+        position: absolute;
+        top: -10px;
+        left: 440px;
+        width: 25%;
+        height: 225px;
+        flex-shrink: 0;
+    }
+    
+    .logo-footer {
+        position: absolute;
+        top: 30px;
+        left: 440px;
+        width: 150px;
+        height: 150px;
+        flex-shrink: 0;
+    }
+    
+    .texto-9 {
+        position: absolute;
+        top: 170px;
+        left: 200px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .texto-10 {
+        position: absolute;
+        top: 190px;
+        left: 220px;
+        color: #FFA318;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .texto-11 {
+        position: absolute;
+        top: 210px;
+        left: 246px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
 }
 
 /* Tablets pequenos */
 @media (min-width: 768px) and (max-width: 991px) {
+    body {
+        width: 100%;
+        height: 4000px;
+        flex-shrink: 0;
+        background: linear-gradient(180deg, #052769 26.12%, #092C73 31.15%, #18409D 41.04%, #2A45BB 51.02%, #5652BA 60.51%, #5652BA 60.52%, #8760B9 70.51%, #8760B9 72.26%, #8760B9 74.28%, #7F47DD 80.36%, #4E00CE 84.52%, #24189A 87.25%, #002C6D 90.53%);
+    }
+
     #header {
         width: 100%;
         height: 100vh;
@@ -1216,7 +1347,7 @@
         top: 1950px;
         width: 20%;
         height: 340px;
-        left: 83%;
+        left: 80%;
         flex-shrink: 0;
         filter: blur(4px);
     }
@@ -1389,6 +1520,123 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+
+    footer {
+        position: absolute;
+        top: 3800px;
+        width: 100%;
+        height: 70%;
+        flex-shrink: 0;
+        background: #00153F;
+        box-shadow: -14px 14px 10px 0px rgba(0, 0, 0, 0.25) inset;
+    }
+    
+    .texto-7 {
+        position: absolute;
+        top: 20px;
+        left: -50px;
+        width: 60%;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .github {
+        position: absolute;
+        left: 60px;
+        top: 50px;
+        width: 14%;
+        height: 80px;
+        flex-shrink: 0;
+    }
+    
+    .linkedin {
+        position: absolute;
+        top: 50px;
+        left: 150px;
+        width: 13%;
+        height: 77px;
+        flex-shrink: 0;
+    }
+    
+    .texto-8 {
+        position: absolute;
+        top: 140px;
+        left: 25px;
+        width: 248px;
+        height: 25px;
+        flex-shrink: 0;
+    
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+        text-decoration-line: underline;
+    }
+    
+    svg {
+        position: absolute;
+        top: -10px;
+        left: 440px;
+        width: 25%;
+        height: 225px;
+        flex-shrink: 0;
+    }
+    
+    .logo-footer {
+        position: absolute;
+        top: 30px;
+        left: 440px;
+        width: 150px;
+        height: 150px;
+        flex-shrink: 0;
+    }
+    
+    .texto-9 {
+        position: absolute;
+        top: 170px;
+        left: 200px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .texto-10 {
+        position: absolute;
+        top: 190px;
+        left: 220px;
+        color: #FFA318;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .texto-11 {
+        position: absolute;
+        top: 210px;
+        left: 246px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
     }
 }
 
