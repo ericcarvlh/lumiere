@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+	    <section class="layout-content" layout:fragment="corpo">
+	
+	        <nav class="navbar navbar-expand-md bg-light">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                        <i class="oi oi-caret-right"></i>
+	                        <span>Cadastrar Cargos</span>
+	                    </li>
+	                </ul>
+	            </div>
+	        </nav>
+	
+	        <div class="container" id="cadastro">	           
+	            <form th:action="@{/usuario/salvar}" th:object="${usuario}" method="POST">
+	                <div class="form-row">
+	                    <div class="form-group col-md-6">
+	                        <label for="nome">Nome do Usuario</label>
+	                        <input type="text" class="form-control" id="nomeUsuario" placeholder="Nome Usuario" 
+	                        autofocus="autofocus" th:field="*{nomeUsuario}"/>
+	                    </div>
+	                </div>
+	                
+	                <div class="form-row">
+	                    <div class="form-group col-md-6">
+	                        <label for="nome">Seu email</label>
+	                        <input type="text" class="form-control" id="emailUsuario" placeholder="ex@gmail.com" 
+	                        autofocus="autofocus" th:field="*{emailUsuario}"/>
+	                    </div>
+	                </div>
+	                
+	                <div class="form-row">
+	                    <div class="form-group col-md-6">
+	                        <label for="nome">Senha</label>
+	                        <input type="text" class="form-control" id="senhaUsuario" placeholder="sla" 
+	                        autofocus="autofocus" th:field="*{senhaUsuario}"/>
+	                    </div>
+	                </div>
+	                  
+	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+	            	<input type="hidden" id="id" th:field="*{id}"/>
+	            </form>
+	        </div>
+	    </section>
+</body>
+</html>		
