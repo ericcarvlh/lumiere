@@ -2646,7 +2646,7 @@
         width: 30%;
         height: 400px;
         top: 3400px;
-        left: 500px;
+        left: 430px;
         flex-shrink: 0;
     }
 
@@ -2654,7 +2654,7 @@
         position: absolute;
         top: 3560px;
         width: 20%;
-        left: 0%;
+        left: -2%;
         height: 200px;
         flex-shrink: 0;
     }
@@ -2663,7 +2663,7 @@
         position: absolute;
         top: 3730px;
         width: 50%;
-        left: 490px;
+        left: 435px;
         color: #FFF;
         font-family: 'Lexend Exa', sans-serif;
         font-size: 27px;
@@ -2677,7 +2677,7 @@
         width: 40%;
         height: 152px;
         top: 3790px;
-        left: 420px;
+        left: 370px;
         flex-shrink: 0;
 
         color: #FFF;
@@ -2695,7 +2695,7 @@
         top: 3880px;
         width: 15%;
         height: 60px;
-        left: 595px;
+        left: 540px;
         flex-shrink: 0;
         border-radius: 30px;
         background: #FFF;
@@ -2817,11 +2817,11 @@
     .texto-11 {
         position: absolute;
         top: 175px;
-        left: 910px;
+        left: 890px;
         color: #FFF;
         text-align: center;
         font-family: 'Urbanist', sans-serif;
-        font-size: 20px;
+        font-size: 25px;
         font-style: normal;
         font-weight: 400;
         line-height: 125.5%; 
@@ -2830,6 +2830,13 @@
 
 /* Tela relativamente maior*/ 
 @media (min-width: 1441px) and (max-width: 1919px){
+    body {
+        width: 100%;
+        height: 4200px;
+        flex-shrink: 0;
+        background: linear-gradient(180deg, #052769 26.12%, #092C73 31.15%, #18409D 41.04%, #2A45BB 51.02%, #5652BA 60.51%, #5652BA 60.52%, #8760B9 70.51%, #8760B9 72.26%, #8760B9 74.28%, #7F47DD 80.36%, #4E00CE 84.52%, #24189A 87.25%, #002C6D 90.53%);
+    }
+
     #header {
         width: 100%;
         height: 100vh;
@@ -3295,5 +3302,122 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+
+    footer {
+        position: absolute;
+        top: 4200px;
+        width: 100%;
+        height: 50%;
+        flex-shrink: 0;
+        background: #00153F;
+        box-shadow: -14px 14px 10px 0px rgba(0, 0, 0, 0.25) inset;
+    }
+    
+    .texto-7 {
+        position: absolute;
+        top: 90px;
+        left: 80px;
+        width: 30%;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .github {
+        position: absolute;
+        left: 200px;
+        top: 135px;
+        width: 7%;
+        height: 90px;
+        flex-shrink: 0;
+    }
+    
+    .linkedin {
+        position: absolute;
+        top: 140px;
+        left: 330px;
+        width: 6%;
+        height: 80px;
+        flex-shrink: 0;
+    }
+    
+    .texto-8 {
+        position: absolute;
+        top: 250px;
+        left: 190px;
+        width: 248px;
+        height: 25px;
+        flex-shrink: 0;
+    
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+        text-decoration-line: underline;
+    }
+    
+    svg {
+        position: absolute;
+        top: 80px;
+        left: 650px;
+        width: 15%;
+        height: 200px;
+        flex-shrink: 0;
+    }
+    
+    .logo-footer {
+        position: absolute;
+        top: 100px;
+        left: 680px;
+        width: 170px;
+        height: 170px;
+        flex-shrink: 0;
+    }
+    
+    .texto-9 {
+        position: absolute;
+        top: 90px;
+        left: 1000px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .texto-10 {
+        position: absolute;
+        top: 150px;
+        left: 1060px;
+        color: #FFA318;
+        text-align: center;
+        font-family: 'Lexend Exa', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
+    }
+    
+    .texto-11 {
+        position: absolute;
+        top: 210px;
+        left: 1070px;
+        color: #FFF;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.5%; 
     }
 }
