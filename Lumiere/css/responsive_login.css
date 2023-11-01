@@ -789,7 +789,7 @@
 
     .h1 {
         position: absolute;
-        top: 40px;
+        top: 60px;
         color: #FFF;
         text-align:center;
         font-family: 'Lexend Exa', sans-serif;
@@ -940,7 +940,7 @@
     .direita {
         position: absolute;
         top: 0px;
-        left: 80%;
+        left: 79.9%;
         width: 290px;
         height: 700px;
         flex-shrink: 0;
