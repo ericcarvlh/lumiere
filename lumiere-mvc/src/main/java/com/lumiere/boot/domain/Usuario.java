@@ -59,27 +59,6 @@ public class Usuario extends AbstractEntity<Long> {
 		this.dataDeCadastro = dataDeCadastro;
 	}
 	
-	@OneToMany(mappedBy = "usuario")
-	private List<Residencia> residencias;
-
-	public List<Residencia> getResidencias() {
-		return residencias;
-	}
-
-	public void setResidencias(List<Residencia> residencias) {
-		this.residencias = residencias;
-	}
 	
-	@ManyToOne
-	@JoinColumn(name = "fk_Residencia_cd_residencia")
-	private Residencia residencia;
-
-	public Residencia getResidencia() {
-		return residencia;
-	}
-
-	public void setResidencia(Residencia residencia) {
-		this.residencia = residencia;
-	}
 	
 }
