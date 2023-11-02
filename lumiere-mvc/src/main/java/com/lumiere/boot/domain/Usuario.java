@@ -59,6 +59,16 @@ public class Usuario extends AbstractEntity<Long> {
 		this.dataDeCadastro = dataDeCadastro;
 	}
 	
+	@OneToMany(mappedBy = "usuario")
+	private List<Residencia> residencias;
+
+	public List<Residencia> getResidencias() {
+		return residencias;
+	}
+
+	public void setResidencias(List<Residencia> residencias) {
+		this.residencias = residencias;
+	}
 	
 	
 }
