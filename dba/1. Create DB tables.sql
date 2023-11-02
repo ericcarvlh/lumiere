@@ -73,3 +73,5 @@ ALTER TABLE Consumo ADD CONSTRAINT FK_Consumo_2
     FOREIGN KEY (fk_Dispositivo_cd_dispositivo)
     REFERENCES Dispositivo (cd_dispositivo)
     ON DELETE CASCADE;
+
+select * from Usuario

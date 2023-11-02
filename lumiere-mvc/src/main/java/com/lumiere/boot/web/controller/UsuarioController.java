@@ -29,7 +29,7 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/login")
-	public String logarUsuario() {
+	public String logarUsuario(Usuario usuario) {
 		return "/Login/login";
 	}
 	
@@ -39,6 +39,19 @@ public class UsuarioController {
 		usuario.setDataDeCadastro(Calendar.getInstance().getTime());
 		
 		usuarioService.salvar(usuario);
-		return "redirect:/cadastro/cadastro";
+		return "redirect:/usuario/login";
+	}
+	
+	@GetMapping("/entrar")
+	public String entrar(Usuario usuario) {
+		if (usuario.getEmailUsuario().length() > 0) 
+		{
+			if (usuario.getSenhaUsuario().length() > 0) 
+			{
+				
+			}
+		}
+		
+		return "redirect:/usuario/login";
 	}
 }
