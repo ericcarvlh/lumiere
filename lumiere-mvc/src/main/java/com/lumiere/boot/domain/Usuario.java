@@ -15,6 +15,16 @@ public class Usuario extends AbstractEntity<Long> {
 	 * 
 	*/
 
+    public Usuario(String nomeUsuario, String emailUsuario, String senhaUsuario) {
+        this.nomeUsuario = nomeUsuario;
+        this.emailUsuario = emailUsuario;
+        this.senhaUsuario = senhaUsuario;
+    }
+    
+    public Usuario() {
+    	
+    }
+	
 	@Column(name = "nome_usuario", nullable = false)
     private String nomeUsuario;
    

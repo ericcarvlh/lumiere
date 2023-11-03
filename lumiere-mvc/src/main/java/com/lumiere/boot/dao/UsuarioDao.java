@@ -7,13 +7,15 @@ import com.lumiere.boot.domain.Usuario;
 
 public interface UsuarioDao {
 
-void save(Usuario usuario);
+	void save(Usuario usuario);
 	
 	void update(Usuario usuario);
 	
 	void delete(Long id);
-	
+		
 	Usuario findById(Long id);
+	
+	Usuario buscarUsuarioPorEmail(String email);
 	
 	List<Usuario> findAll();
 }

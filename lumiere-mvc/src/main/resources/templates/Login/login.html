@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/login.css">
-        <link rel="stylesheet" href="../css/responsive_login.css">
+        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/responsive_login.css">
         <script src="https://kit.fontawesome.com/90438f02e0.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,13 @@
 
     <body>
         <div>
-            <img src="../img/PNG logo e logotipo/logo l esquerda.png" class="esquerda">
+            <img src="/img/PNG logo e logotipo/logo l esquerda.png" class="esquerda">
         </div>
 
         <div class="container">
             <div>
                 <h1 class="h1">Entre na sua conta para começar <span class="economizar">economizar!</span> </h1>
-				<form th:action="@{/usuario/entrar}" th:object="${usuario}" method="GET">
+				<form th:action="@{/usuario/login}" th:object="${usuario}" method="post">
                     <input type="text" name="email" id="email" placeholder="E-mail" th:field="*{emailUsuario}">
                     <label for="email"></label>
 
@@ -35,12 +35,12 @@
                 </form>
 
                 <h2 class="h2">Ainda não faz parte do Lumiere?</h2>
-                <h3 class="h3"><a href="../views/cadastro.html">Cadastre-se</a></h3>
+                <h3 class="h3"><a href="/usuario/cadastrar">Cadastre-se</a></h3>
             </div>
         </div>
 
         <div>
-            <img src="../img/PNG logo e logotipo/logo l direita.png" class="direita">
+            <img src="/img/PNG logo e logotipo/logo l direita.png" class="direita">
         </div>
     </body>
 </html>

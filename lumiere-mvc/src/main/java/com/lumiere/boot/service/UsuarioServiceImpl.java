@@ -13,7 +13,15 @@ import jakarta.transaction.Transactional;
 public class UsuarioServiceImpl implements UsuarioService {
 	@Autowired
 	private UsuarioDao usuarioDao;
+    /*private PasswordEncoder passwordEncoder;*/
 
+    public UsuarioServiceImpl() {}
+    /*
+    public UsuarioServiceImpl(UsuarioDaoImpl userRepository, PasswordEncoder passwordEncoder) {
+        this.usuarioRepositorio = userRepository; // repositorio do usuario
+        this.passwordEncoder = passwordEncoder;
+    }*/
+    
 	@Override
 	public void salvar(Usuario usuario) {
 		usuarioDao.save(usuario);
