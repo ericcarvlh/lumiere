@@ -18,16 +18,7 @@
         <h1>Cadastrar residência</h1>
         
 		<tr th:each="i : ${iconesResidencia}">
-			<img th:src="${i.urlIcone}" id="i.id" height="70px" width="70px">
+			<img th:src="${i.urlIcone}" th:id="${i.id}" height="70px" width="70px">
 		</tr>
-		
-		<br>
-		
-		<br>
-		
-        <select th:name="id" aria-label="Search">
-            <option value="">Estado</option>
-            <option th:each="e : ${estados}" th:value="${e.id}" th:text="${e.UFEstado}"></option>
-        </select>
     </body>
 </html>

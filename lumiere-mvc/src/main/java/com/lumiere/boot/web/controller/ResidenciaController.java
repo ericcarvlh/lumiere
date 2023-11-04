@@ -43,7 +43,6 @@ public class ResidenciaController {
 	@GetMapping("/Cadastrar")
 	public String registrar(Model model, @AuthenticationPrincipal UserDetails currentUser) {
 		model.addAttribute("iconesResidencia", iconeResidenciaService.buscarTodos());
-		model.addAttribute("estados", estadoService.buscarUFeIdEstado());
 		
 		return "/Residencia/Cadastrar";
 	}
