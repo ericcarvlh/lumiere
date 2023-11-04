@@ -7,11 +7,30 @@ import jakarta.persistence.*;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "ESTADO")
-public class Estado extends AbstractEntity<Long> {
+public class Estado extends AbstractEntity<Integer> {
+
+	@Column(name = "cd_estado")
+	private int cdEstado; 
+	
+	@Column(name = "UF_estado", nullable = false, unique = true, length = 2)
+	private String UFEstado;
 
 	@Column(name = "nome_estado", nullable = false, unique = true, length = 40)
 	private String nomeEstado;
+	
+	@OneToMany(mappedBy = "estado")
+	private List<Residencia> residencias;
+	
+	@Column(name = "preco_KWH", nullable = false, unique = true)
+	private double precoKwh;
 
+	public Estado () {}
+	
+	public Estado (int cdEstado, String UFEstado) {
+		setId(cdEstado);
+		this.UFEstado = UFEstado;
+	}
+	
 	public String getNomeEstado() {
 		return nomeEstado;
 	}
@@ -19,20 +38,14 @@ public class Estado extends AbstractEntity<Long> {
 	public void setNomeEstado(String nomeEstado) {
 		this.nomeEstado = nomeEstado;
 	}
-	
-	@Column(name = "UF_estado", nullable = false, unique = true, length = 2)
-	private String UfEstado;
 
-	public String getUfEstado() {
-		return UfEstado;
+	public String getUFEstado() {
+		return UFEstado;
 	}
 
-	public void setUfEstado(String ufEstado) {
-		UfEstado = ufEstado;
+	public void setUFEstado(String UFEstado) {
+		this.UFEstado = UFEstado;
 	}
-	
-	@Column(name = "preco_KWH", nullable = false, unique = true)
-	private double precoKwh;
 	
 	public double getPrecoKwh() {
 		return precoKwh;
@@ -41,9 +54,6 @@ public class Estado extends AbstractEntity<Long> {
 	public void setPrecoKwh(double precoKwh) {
 		this.precoKwh = precoKwh;
 	}
-
-	@OneToMany(mappedBy = "estado")
-	private List<Residencia> residencias;
 
 	public List<Residencia> getResidencias() {
 		return residencias;

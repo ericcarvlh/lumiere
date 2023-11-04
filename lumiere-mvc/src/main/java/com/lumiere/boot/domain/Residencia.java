@@ -9,14 +9,17 @@ import jakarta.persistence.*;
 @Table(name = "RESIDENCIA")
 public class Residencia extends AbstractEntity<Long> {
 
-	@Column(name = "registro_residencia", nullable = false, unique = true, length = 20)
+	@Column(name = "registro_residencia", nullable = false, length = 20)
 	private String registroResidencia;
 	
-	@Column(name = "nome_residencia", nullable = false, unique = true, length = 60)
+	@Column(name = "nome_residencia", nullable = false, length = 60)
 	private String nomeResidencia;
 
-	@Column(name = "endereco_residencia", nullable = false, unique = true, length = 100)
-	public String enderecoResidencia;
+	@Column(name = "endereco_residencia", nullable = false, length = 100)
+	private String enderecoResidencia;
+	
+	@Column(name = "cidade_residencia", nullable = false, length = 100)
+	private String cidadeResidencia;
 	
 	@ManyToOne
 	@JoinColumn(name = "fk_Estado_cd_estado")

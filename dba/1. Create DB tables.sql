@@ -7,13 +7,14 @@ use lumieredb;
 CREATE TABLE Icone_Residencia (
 	cd_icone INT PRIMARY KEY IDENTITY(1, 1),
 	url_icone varchar(255) not null
-)
+);
 
 CREATE TABLE Residencia (
     cd_residencia INT PRIMARY KEY IDENTITY(1, 1),
     registro_residencia VARCHAR(20),
     nome_residencia VARCHAR(60),
     endereco_residencia VARCHAR(100),
+	cidade_residencia VARCHAR(100),
 	fk_Icone_Residencia_cd_icone INT,
     fk_Estado_cd_estado INT,
     fk_Usuario_cd_usuario INT
