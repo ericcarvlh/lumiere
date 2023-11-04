@@ -17,7 +17,7 @@ public class UsuarioDaoImpl extends AbstractDao<Usuario, Long> implements Usuari
 	
     public Usuario buscarUsuarioPorEmail(String email) {
     	String query = "SELECT "
-        		+ "new Usuario(u.nomeUsuario, u.emailUsuario, u.senhaUsuario)"
+        		+ "new Usuario(u.cdUsuario, u.nomeUsuario, u.emailUsuario, u.senhaUsuario)"
         		+ "FROM Usuario u "
         		+ String.format("WHERE u.emailUsuario = '%s'", email);
 	   TypedQuery<Usuario> typedQuery = entityManager.createQuery(query, Usuario.class);

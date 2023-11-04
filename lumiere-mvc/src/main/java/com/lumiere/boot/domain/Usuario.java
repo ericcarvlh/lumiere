@@ -8,26 +8,42 @@ import jakarta.persistence.*;
 @SuppressWarnings("serial")
 @Entity()
 @Table(name = "USUARIO")
-public class Usuario extends AbstractEntity<Long> {
+public class Usuario extends AbstractEntity<Integer> {
 	
 	/*
 	 * oh cheirei as cinzas da tua vo
 	 * 
 	*/
+	
+	@Column(name = "cd_usuario")
+	private int cdUsuario;
+	
+	@Column(name = "senha_usuario", nullable = false)
+    private String senhaUsuario;
 
-    public Usuario(String nomeUsuario, String emailUsuario, String senhaUsuario) {
+	@Column(name = "nome_usuario", nullable = false)
+    private String nomeUsuario;
+	
+	@Column(name = "data_de_cadastro", nullable = false)
+	private Date dataDeCadastro;
+	
+	@Column(name = "email_usuario", nullable = false)
+    private String emailUsuario;
+	
+	@OneToMany(mappedBy = "usuario")
+	private List<Residencia> residencias;
+	
+    public Usuario(int cdUsuario, String nomeUsuario, String emailUsuario, String senhaUsuario) {
         this.nomeUsuario = nomeUsuario;
         this.emailUsuario = emailUsuario;
         this.senhaUsuario = senhaUsuario;
+        setId(cdUsuario);
     }
     
     public Usuario() {
     	
     }
 	
-	@Column(name = "nome_usuario", nullable = false)
-    private String nomeUsuario;
-   
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}
@@ -35,9 +51,6 @@ public class Usuario extends AbstractEntity<Long> {
 	public void setNomeUsuario(String nomeUsuario) {
 		this.nomeUsuario = nomeUsuario;
 	}
-    
-	@Column(name = "email_usuario", nullable = false)
-    private String emailUsuario;
 
 	public String getEmailUsuario() {
 		return emailUsuario;
@@ -46,9 +59,6 @@ public class Usuario extends AbstractEntity<Long> {
 	public void setEmailUsuario(String emailUsuario) {
 		this.emailUsuario = emailUsuario;
 	}
-
-	@Column(name = "senha_usuario", nullable = false)
-    private String senhaUsuario;
     
 	public String getSenhaUsuario() {
 		return senhaUsuario;
@@ -58,9 +68,6 @@ public class Usuario extends AbstractEntity<Long> {
 		this.senhaUsuario = senhaUsuario;
 	}
 	
-	@Column(name = "data_de_cadastro", nullable = false)
-	private Date dataDeCadastro;
-	
 	public Date getDataDeCadastro() {
 		return dataDeCadastro;
 	}
@@ -68,9 +75,6 @@ public class Usuario extends AbstractEntity<Long> {
 	public void setDataDeCadastro(Date dataDeCadastro) {
 		this.dataDeCadastro = dataDeCadastro;
 	}
-	
-	@OneToMany(mappedBy = "usuario")
-	private List<Residencia> residencias;
 
 	public List<Residencia> getResidencias() {
 		return residencias;

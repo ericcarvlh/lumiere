@@ -27,7 +27,7 @@ public class SecurityConfig {
                         .requestMatchers("/css/**", "/img/**").permitAll()
                         .requestMatchers("/", "/home").permitAll()
                         .requestMatchers("/usuario/cadastrar", "/usuario/salvar").permitAll()
-                        .requestMatchers("/gastos/**").hasRole("USER")
+                        //.requestMatchers("/gastos/**", "/Residencia/**").authenticated()
                         .anyRequest().authenticated()
                 ).formLogin(
                 form -> form

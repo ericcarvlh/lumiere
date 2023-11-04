@@ -11,7 +11,24 @@ public class Residencia extends AbstractEntity<Long> {
 
 	@Column(name = "registro_residencia", nullable = false, unique = true, length = 20)
 	private String registroResidencia;
+	
+	@Column(name = "nome_residencia", nullable = false, unique = true, length = 60)
+	private String nomeResidencia;
 
+	@Column(name = "endereco_residencia", nullable = false, unique = true, length = 100)
+	public String enderecoResidencia;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_Estado_cd_estado")
+	private Estado estado;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_Usuario_cd_usuario")
+	private Usuario usuario;
+	
+	@OneToMany(mappedBy = "residencia")
+	private List<Dispositivo> dispositivo;
+	
 	public String getRegistroResidencia() {
 		return registroResidencia;
 	}
@@ -19,9 +36,6 @@ public class Residencia extends AbstractEntity<Long> {
 	public void setRegistroResidencia(String registroResidencia) {
 		this.registroResidencia = registroResidencia;
 	}
-	
-	@Column(name = "nome_residencia", nullable = false, unique = true, length = 60)
-	private String nomeResidencia;
 
 	public String getNomeResidencia() {
 		return nomeResidencia;
@@ -30,9 +44,6 @@ public class Residencia extends AbstractEntity<Long> {
 	public void setNomeResidencia(String nomeResidencia) {
 		this.nomeResidencia = nomeResidencia;
 	}
-	
-	@Column(name = "endereco_residencia", nullable = false, unique = true, length = 100)
-	public String enderecoResidencia;
 
 	public String getEnderecoResidencia() {
 		return enderecoResidencia;
@@ -41,10 +52,6 @@ public class Residencia extends AbstractEntity<Long> {
 	public void setEnderecoResidencia(String enderecoResidencia) {
 		this.enderecoResidencia = enderecoResidencia;
 	}
-	
-	@ManyToOne
-	@JoinColumn(name = "fk_Estado_cd_estado")
-	private Estado estado;
 
 	public Estado getEstado() {
 		return estado;
@@ -53,10 +60,6 @@ public class Residencia extends AbstractEntity<Long> {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
-	
-	@ManyToOne
-	@JoinColumn(name = "fk_Usuario_cd_usuario")
-	private Usuario usuario;
 
 	public Usuario getUsuario() {
 		return usuario;
@@ -65,9 +68,6 @@ public class Residencia extends AbstractEntity<Long> {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	@OneToMany(mappedBy = "residencia")
-	private List<Dispositivo> dispositivo;
 
 	public List<Dispositivo> getDispositivo() {
 		return dispositivo;

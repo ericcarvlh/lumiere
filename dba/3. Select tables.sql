@@ -29,3 +29,8 @@ SELECT
     *
 FROM
     Usuario;
+
+SELECT 
+	*
+FROM
+	Icone_Residencia
