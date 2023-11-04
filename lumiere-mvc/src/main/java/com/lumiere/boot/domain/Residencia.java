@@ -33,6 +33,14 @@ public class Residencia extends AbstractEntity<Long> {
 	@OneToMany(mappedBy = "residencia")
 	private List<Dispositivo> dispositivo;
 	
+	public String getCepResidencia() {
+		return cepResidencia;
+	}
+
+	public void setCepResidencia(String cepResidencia) {
+		this.cepResidencia = cepResidencia;
+	}
+	
 	public String getRegistroResidencia() {
 		return registroResidencia;
 	}

@@ -15,10 +15,24 @@
     </head>
 	
     <body>
-        <h1>Cadastrar residência</h1>
+        <h1>Cadastrar Residência</h1>
         
 		<tr th:each="i : ${iconesResidencia}">
 			<img th:src="${i.urlIcone}" th:id="${i.id}" height="70px" width="70px">
 		</tr>
+		
+		<form th:action="@{/Residencia/Cadastrar}" th:object="${residencia}" method="POST"> 
+            <input type="text" name="registro" id="registro" th:field="*{registroResidencia}">
+            <label for="registro">Apelido da residencia*</label>
+
+            <input type="text" name="nome" id="nome" th:field="*{nomeResidencia}">
+            <label for="nome">Número do registro*</label>
+
+            <input type="text" name="cep" id="cep" th:field="*{cepResidencia}">
+            <label for="cep">CEP*</label>
+
+            <input type="submit" id="submit" value="Salvar">
+            <label for="submit"></label>
+		</form>
     </body>
 </html>
