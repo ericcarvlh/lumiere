@@ -1,4 +1,4 @@
-package com.lumiere.boot.service;
+package com.lumiere.boot.security;
 
 import java.util.ArrayList;
 import java.util.Collection;

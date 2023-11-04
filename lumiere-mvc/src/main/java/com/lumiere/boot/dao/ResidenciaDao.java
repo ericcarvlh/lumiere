@@ -5,7 +5,6 @@ import java.util.List;
 import com.lumiere.boot.domain.Residencia;
 
 public interface ResidenciaDao {
-	
 	void save(Residencia residencia);
 	
 	void update(Residencia residencia);

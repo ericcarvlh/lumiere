@@ -26,6 +26,10 @@ public class Residencia extends AbstractEntity<Long> {
 	@JoinColumn(name = "fk_Usuario_cd_usuario")
 	private Usuario usuario;
 	
+	@ManyToOne
+	@JoinColumn(name = "fk_Icone_Residencia_cd_icone")
+	private IconeResidencia iconeResidencia;
+	
 	@OneToMany(mappedBy = "residencia")
 	private List<Dispositivo> dispositivo;
 	

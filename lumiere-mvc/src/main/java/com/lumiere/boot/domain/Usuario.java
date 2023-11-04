@@ -34,10 +34,10 @@ public class Usuario extends AbstractEntity<Integer> {
 	private List<Residencia> residencias;
 	
     public Usuario(int cdUsuario, String nomeUsuario, String emailUsuario, String senhaUsuario) {
+        setId(cdUsuario);
         this.nomeUsuario = nomeUsuario;
         this.emailUsuario = emailUsuario;
         this.senhaUsuario = senhaUsuario;
-        setId(cdUsuario);
     }
     
     public Usuario() {

@@ -33,4 +33,4 @@ FROM
 SELECT 
 	*
 FROM
-	Icone_Residencia
+	Icone_Residencia;

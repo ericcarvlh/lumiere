@@ -16,5 +16,9 @@
 	
     <body>
         <h1>Cadastrar residência</h1>
+        
+		<tr th:each="i : ${iconesResidencia}">
+			<img th:src="${i.urlIcone}" id="i.id" height="70px" width="70px">
+		</tr>    
     </body>
 </html>
