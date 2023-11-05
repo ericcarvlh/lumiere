@@ -38,9 +38,9 @@ public class UsuarioController {
 				
 		return "redirect:/usuario/login";
 	}
-	
+	//Coloquei o retorno como login/login pq no meu tava dando erro, antes tava Login/login
 	@GetMapping("/login")
 	public String logarUsuario(Usuario usuario) {
-		return "/Login/login";
+		return "/login/login";
 	}
 }
