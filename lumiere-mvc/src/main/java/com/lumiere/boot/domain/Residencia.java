@@ -80,4 +80,12 @@ public class Residencia extends AbstractEntity<Long> {
 	public void setDispositivo(List<Dispositivo> dispositivo) {
 		this.dispositivo = dispositivo;
 	}
+	
+	public IconeResidencia getIconeResidencia() {
+		return iconeResidencia;
+	}
+
+	public void setIconeResidencia(IconeResidencia iconeResidencia) {
+		this.iconeResidencia = iconeResidencia;
+	}
 }

@@ -1,6 +1,5 @@
 package com.lumiere.boot.api.viaCEP;
 
-import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -16,7 +15,6 @@ public class ViaCEP {
 
     public static Endereco buscaEnderecoPeloCEP(String cep) throws Exception {
         String enderecoURL = webService + cep + "/json/";
-        String textoJson = "";
         
     	URL url = new URL(enderecoURL);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();

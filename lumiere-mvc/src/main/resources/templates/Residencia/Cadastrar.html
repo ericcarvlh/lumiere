@@ -1,16 +1,10 @@
-<!--
-	Apelido residencia
-	Numero do registro
-	Cidade
-	Estado
-	Endereco
--->
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/responsive.css">
+        <link rel="stylesheet" href="../css/cadastrar_residencia.css">
         <title>Lumiere</title>
     </head>
 	
@@ -18,10 +12,12 @@
         <h1>Cadastrar Residência</h1>
         
 		<tr th:each="i : ${iconesResidencia}">
-			<img th:src="${i.urlIcone}" th:id="${i.id}" height="70px" width="70px">
+			<img th:src="${i.urlIcone}" th:id="${i.id}" name="iconePerfil" height="70px" width="70px">
 		</tr>
 		
 		<form th:action="@{/Residencia/Cadastrar}" th:object="${residencia}" method="POST"> 
+			<input type="hidden" name="cdIconeResidencia" id="iconeSelecionado" th:value="${cdIconeResidencia}">
+			
             <input type="text" name="registro" id="registro" th:field="*{registroResidencia}">
             <label for="registro">Apelido da residencia*</label>
 
@@ -35,4 +31,5 @@
             <label for="submit"></label>
 		</form>
     </body>
+    <script src="../js/CadastrarResidencia.js"></script>
 </html>

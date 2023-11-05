@@ -8,15 +8,17 @@ import com.lumiere.boot.domain.IconeResidencia;
 
 public interface EstadoDao {
 
-void save(Estado estado);
+	void save(Estado estado);
 	
 	void update(Estado estado);
 	
-	void delete(Long id);
+	void delete(Integer id);
 	
-	Estado findById(Long id);
+	Estado findById(Integer id);
 	
 	List<Estado> findAll();
 	
 	List<Estado> buscarUFeIdEstado();
+	
+	Estado buscarEstadoPorUF(String UFEstado);
 }

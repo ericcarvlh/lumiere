@@ -6,4 +6,6 @@ import com.lumiere.boot.domain.Estado;
 
 public interface EstadoService {
 	List<Estado> buscarUFeIdEstado();
+	
+	Estado buscarEstadoPorUF(String UFEstado);
 }

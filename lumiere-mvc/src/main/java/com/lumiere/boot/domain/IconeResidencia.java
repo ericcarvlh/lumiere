@@ -1,7 +1,10 @@
 package com.lumiere.boot.domain;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @SuppressWarnings("serial")
@@ -28,4 +31,7 @@ public class IconeResidencia extends AbstractEntity<Integer> {
 	public void setUrlIcone(String urlIcone) {
 		this.urlIcone = urlIcone;
 	}
+	
+	@OneToMany(mappedBy = "iconeResidencia")
+	private List<Residencia> residencias;
 }

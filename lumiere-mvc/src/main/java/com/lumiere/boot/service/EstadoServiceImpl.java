@@ -19,5 +19,9 @@ public class EstadoServiceImpl implements EstadoService {
 	public List<Estado> buscarUFeIdEstado() {
 		return estadoDao.buscarUFeIdEstado();
 	}
-
+	
+	@Override
+	public Estado buscarEstadoPorUF(String UFEstado) {
+		return estadoDao.buscarEstadoPorUF(UFEstado);
+	}
 }
