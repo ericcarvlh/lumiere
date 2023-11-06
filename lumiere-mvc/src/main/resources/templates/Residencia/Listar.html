@@ -16,6 +16,14 @@
     <body>
         <h1>Listar Residência (s)</h1>
         
+        <tr th:each="i : ${iconesResidencia}">
+			<img th:src="${i.urlIcone}" th:id="${i.id}" name="iconePerfil" height="70px" width="70px">
+		</tr>
+		
+		<tr th:each="j : ${nomesResidencia}">
+			<td th:text=${j.nomeResidencia}>nome da residencia</td>
+		</tr>
+		
     </body>
     <script src="../js/CadastrarResidencia.js"></script>
 </html>
