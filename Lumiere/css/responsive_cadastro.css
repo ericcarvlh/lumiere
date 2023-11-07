@@ -18,7 +18,7 @@
     }
     
     .h1 {
-        position: absolute;
+        position: relative;
         top: 30px;
         left: -100px;
         width: 100%;
