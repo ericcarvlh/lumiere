@@ -6,9 +6,10 @@ import jakarta.persistence.*;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "RESIDENCIA")
-public class Residencia extends AbstractEntity<Long> {
-
+@AttributeOverride(name = "id", column = @Column(name = "cd_residencia"))
+@Table(name = "Residencia")
+public class Residencia extends AbstractEntity<Integer> {
+	
 	@Column(name = "registro_residencia", nullable = false, length = 20)
 	private String registroResidencia;
 	

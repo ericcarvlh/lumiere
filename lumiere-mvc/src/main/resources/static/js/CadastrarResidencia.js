@@ -1,7 +1,9 @@
 addEventListener("load", () => {
 	let imgsIconeElement = document.querySelectorAll('[name="iconePerfil"]');
+	let iconeSelecionadoElement = document.getElementById('iconeSelecionado');
 	
 	imgsIconeElement[0].classList.add('foto-selecionada');
+	iconeSelecionadoElement.value = imgsIconeElement[0].id;
 	
 	imgsIconeElement.forEach(imgIconeElement => {
 	    imgIconeElement.addEventListener('click', () => {
@@ -10,7 +12,6 @@ addEventListener("load", () => {
             imgIconeSelecionada = imgIconeElement;
             imgIconeSelecionada.classList.add('foto-selecionada');
             
-            let iconeSelecionadoElement = document.getElementById('iconeSelecionado');
 	        let idIcone = imgIconeElement.id;
 	        iconeSelecionadoElement.value = idIcone;
 	    });

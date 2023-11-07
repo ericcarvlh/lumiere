@@ -1,6 +1,7 @@
 package com.lumiere.boot.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -56,6 +57,7 @@ public class ResidenciaController {
 		// para evitar o consumo de API's
 		// pego os outros atributos e seto eles nas tabelas
 		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
+		System.out.println(cdIconeResidencia);
 		try {
 			// uso a API ViaCEP (apos validar o CEP) para pesquisar os dados do endereco
 			Endereco endereco = ViaCEP.buscaEnderecoPeloCEP(residencia.getCepResidencia());
@@ -80,7 +82,11 @@ public class ResidenciaController {
 	}
 	
 	@GetMapping("/Listar")
-	public String listar(Model model) {
-		return "";
+	public String listar(Model model, @AuthenticationPrincipal UserDetails currentUser) {
+		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
+		
+		//residenciaService.buscarResidenciaPorUsuario(usuario.getId());
+		
+		return "/Residencia/Listar";
 	}
 }

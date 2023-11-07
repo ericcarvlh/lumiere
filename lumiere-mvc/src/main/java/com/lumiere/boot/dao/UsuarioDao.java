@@ -11,9 +11,9 @@ public interface UsuarioDao {
 	
 	void update(Usuario usuario);
 	
-	void delete(Long id);
+	void delete(Integer id);
 		
-	Usuario findById(Long id);
+	Usuario findById(Integer id);
 	
 	Usuario buscarUsuarioPorEmail(String email);
 	

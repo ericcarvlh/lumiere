@@ -11,7 +11,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
 @Repository
-public class UsuarioDaoImpl extends AbstractDao<Usuario, Long> implements UsuarioDao {	
+public class UsuarioDaoImpl extends AbstractDao<Usuario, Integer> implements UsuarioDao {	
 	@PersistenceContext
 	private EntityManager entityManager;
 	

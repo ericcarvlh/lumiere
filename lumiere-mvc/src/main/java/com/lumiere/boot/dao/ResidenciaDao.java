@@ -9,10 +9,11 @@ public interface ResidenciaDao {
 	
 	void update(Residencia residencia);
 	
-	void delete(Long id);
+	void delete(Integer id);
 	
-	Residencia findById(Long id);
+	Residencia findById(Integer id);
 	
 	List<Residencia> findAll();
 	
+	List<Residencia> buscarResidenciaPorUsuario(int cdUsuario);
 }

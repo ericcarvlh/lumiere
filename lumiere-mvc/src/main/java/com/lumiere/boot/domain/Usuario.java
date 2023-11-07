@@ -6,7 +6,7 @@ import java.util.List;
 import jakarta.persistence.*;
 
 @SuppressWarnings("serial")
-@Entity()
+@Entity
 @Table(name = "USUARIO")
 public class Usuario extends AbstractEntity<Integer> {
 	
@@ -14,6 +14,10 @@ public class Usuario extends AbstractEntity<Integer> {
 	 * oh cheirei as cinzas da tua vo
 	 * 
 	*/
+	
+	@AttributeOverrides({
+        @AttributeOverride(name = "id", column = @Column(name = "cd_usuario"))
+	})
 	
 	@Column(name = "cd_usuario")
 	private int cdUsuario;
