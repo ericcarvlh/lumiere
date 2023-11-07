@@ -52,7 +52,7 @@ public class ResidenciaController {
 	}
 	
 	@PostMapping("/Cadastrar")
-	public String registrar(int cdIconeResidencia, Residencia residencia, Model model, @AuthenticationPrincipal UserDetails currentUser) {
+	public String registrar(String cdIconeResidencia, Residencia residencia, Model model, @AuthenticationPrincipal UserDetails currentUser) {
 		// pego o cep e consulto no banco primeiro para ver se ele já foi cadastrado
 		// para evitar o consumo de API's
 		// pego os outros atributos e seto eles nas tabelas
@@ -70,7 +70,7 @@ public class ResidenciaController {
 			residencia.setUsuario(usuario);
 			// agora posso salvar no banco pois possuo todos os dados necessarios
 			IconeResidencia iconeResidencia = new IconeResidencia();
-			iconeResidencia.setId(cdIconeResidencia);
+			iconeResidencia.setId(Integer.parseInt(cdIconeResidencia));
 			residencia.setIconeResidencia(iconeResidencia);
 			residenciaService.salvar(residencia);
 		} catch (Exception e) {
@@ -81,8 +81,9 @@ public class ResidenciaController {
 	}
 	
 	@GetMapping("/Listar")
-	public String listar(ModelMap model) {
+	public String listar(ModelMap model, @AuthenticationPrincipal UserDetails currentUser) {
 		model.addAttribute("nomesResidencia", residenciaService.buscarTodos());
+		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
 		return "/Residencia/Listar";
 	}
 }
