@@ -21,10 +21,10 @@ public class ResidenciaServiceImpl implements ResidenciaService {
 		residenciaDao.save(residencia);
 	}
 
-	@Override
-	public List<Residencia> buscarResidenciaPorUsuario(int cdUsuario) {
-		return residenciaDao.buscarResidenciaPorUsuario(cdUsuario);
-	}
+	//@Override
+	//public List<Residencia> buscarResidenciaPorUsuario(int cdUsuario) {
+		//return residenciaDao.buscarResidenciaPorUsuario(cdUsuario);
+	//}
 	
 	@Override
 	public List<Residencia> buscarTodos() {
