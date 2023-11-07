@@ -20,8 +20,8 @@
     .h1 {
         position: relative;
         top: 30px;
-        left: -100px;
-        width: 100%;
+        left: 85px;
+        width: 1000px;
         color: #FFF;
         text-align: center;
         font-family: 'Lexend Exa', sans-serif;
@@ -56,8 +56,8 @@
     
     .nome {
         position: absolute;
-        top: 15px;
-        left: 50px;
+        top: 45px;
+        left: 80px;
         color: #FFF;
         text-align: center;
         font-family: 'Lexend Exa', sans-serif;
@@ -69,9 +69,9 @@
     
     #nome {
         position: absolute;
-        top: 50px;
-        left: 50px;
-        width: 45%;
+        top: 80px;
+        left: 80px;
+        width: 40%;
         height: 35px;
         flex-shrink: 0;
         border-radius: 13px;
@@ -81,8 +81,8 @@
     
     .usuario {
         position: absolute;
-        top: 110px;
-        left: 50px;
+        top: 135px;
+        left: 80px;
         color: #FFF;
         text-align: center;
         font-family: 'Lexend Exa', sans-serif;
@@ -94,9 +94,9 @@
     
     #usuario {
         position: absolute;
-        top: 150px;
-        left: 50px;
-        width: 45%;
+        top: 170px;
+        left: 80px;
+        width: 40%;
         height: 35px;
         flex-shrink: 0;
         border-radius: 13px;
@@ -106,8 +106,8 @@
     
     .email {
         position: absolute;
-        top: 210px;
-        left: 50px;
+        top: 225px;
+        left: 80px;
         color: #FFF;
         text-align: center;
         font-family: 'Lexend Exa', sans-serif;
@@ -119,9 +119,9 @@
     
     #email {
         position: absolute;
-        top: 250px;
-        left: 50px;
-        width: 45%;
+        top: 260px;
+        left: 80px;
+        width: 40%;
         height: 35px;
         flex-shrink: 0;
         border-radius: 13px;
@@ -131,8 +131,8 @@
     
     .senha {
         position: absolute;
-        top: 310px;
-        left: 50px;
+        top: 315px;
+        left: 80px;
         color: #FFF;
         text-align: center;
         font-family: 'Lexend Exa', sans-serif;
@@ -145,8 +145,8 @@
     #senha {
         position: absolute;
         top: 350px;
-        left: 50px;
-        width: 45%;
+        left: 80px;
+        width: 40%;
         height: 35px;
         flex-shrink: 0;
         border-radius: 13px;
@@ -156,8 +156,8 @@
     
     .confirma-senha {
         position: absolute;
-        top: 410px;
-        left: 50px;
+        top: 405px;
+        left: 80px;
         color: #FFF;
         text-align: center;
         font-family: 'Lexend Exa', sans-serif;
@@ -169,9 +169,9 @@
     
     #confirma-senha {
         position: absolute;
-        top: 450px;
-        left: 50px;
-        width: 45%;
+        top: 440px;
+        left: 80px;
+        width: 40%;
         height: 35px;
         flex-shrink: 0;
         border-radius: 13px;
