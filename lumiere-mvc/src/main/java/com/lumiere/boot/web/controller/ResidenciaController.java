@@ -80,13 +80,4 @@ public class ResidenciaController {
 		
 		return "/Residencia/Listar";
 	}
-	
-	@GetMapping("/Listar")
-	public String listar(Model model, @AuthenticationPrincipal UserDetails currentUser) {
-		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
-		
-		//residenciaService.buscarResidenciaPorUsuario(usuario.getId());
-		
-		return "/Residencia/Listar";
-	}
 }
