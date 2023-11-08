@@ -8,6 +8,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -82,6 +83,7 @@ public class ResidenciaController {
 		return "/Residencia/Listar";
 	}
 	
+<<<<<<< HEAD
 	@GetMapping("/Listar")
 	public String listar() {
 		List<Residencia> listResidencia = residenciaService.buscarTodos();
@@ -92,4 +94,11 @@ public class ResidenciaController {
 		
 		return "/Residencia/Listar";
 	}
+=======
+		@GetMapping("/Listar")
+		public String listar(ModelMap model) {
+			model.addAttribute("residencias", residenciaService.buscarTodos());
+			return "/Residencia/Listar";
+		}
+>>>>>>> 083a4a4d17b1cf2e08aac8591b349c84506b2ddc
 }
