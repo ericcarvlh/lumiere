@@ -83,7 +83,6 @@ public class ResidenciaController {
 		return "/Residencia/Listar";
 	}
 	
-<<<<<<< HEAD
 	@GetMapping("/Listar")
 	public String listar() {
 		List<Residencia> listResidencia = residenciaService.buscarTodos();
@@ -94,11 +93,4 @@ public class ResidenciaController {
 		
 		return "/Residencia/Listar";
 	}
-=======
-		@GetMapping("/Listar")
-		public String listar(ModelMap model) {
-			model.addAttribute("residencias", residenciaService.buscarTodos());
-			return "/Residencia/Listar";
-		}
->>>>>>> 083a4a4d17b1cf2e08aac8591b349c84506b2ddc
 }
