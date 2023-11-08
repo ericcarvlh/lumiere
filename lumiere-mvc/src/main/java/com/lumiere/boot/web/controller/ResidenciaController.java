@@ -72,7 +72,6 @@ public class ResidenciaController {
 			// seto os dados na residencia para associar
 			residencia.setUsuario(usuario);
 			// agora posso salvar no banco pois possuo todos os dados necessarios
-			System.out.println(cdIconeResidencia);
 			IconeResidencia iconeResidencia = new IconeResidencia();
 			iconeResidencia.setId(cdIconeResidencia);
 			residencia.setIconeResidencia(iconeResidencia);
@@ -81,16 +80,14 @@ public class ResidenciaController {
 			e.printStackTrace();
 		}
 		
-		return "/Residencia/Cadastrar";
+		return "redirect:/Residencia/Listar";
 	}
 	
 	@GetMapping("/Listar")
-	public String listar() {
-		List<Residencia> listResidencia = residenciaService.buscarTodos();
+	public String listar(Model model, @AuthenticationPrincipal UserDetails currentUser) {
+		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
 		
-		for (Residencia res: listResidencia) {
-			System.out.print(res.getUsuario().getNomeUsuario());
-		}
+		model.addAttribute("residenciasUsuario", residenciaService.buscarResidenciasPorUsuario(usuario.getId()));
 		
 		return "/Residencia/Listar";
 	}

@@ -4,25 +4,30 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "Icone_Residencia")
-public class IconeResidencia extends AbstractEntity<Integer> {
+public class IconeResidencia {
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cd_icone")
-	public int cdIcone;
-	
-	@Column(name = "url_icone", nullable = false)
-	public String urlIcone;
+	private Integer cdIcone;
 
-	public IconeResidencia() {}
-	
-    public IconeResidencia(int cdIcone, String urlIcone) {
-        setId(cdIcone);
-        this.urlIcone = urlIcone;
-    }
+	public Integer getId() {
+		return cdIcone;
+	}
+
+	public void setId(Integer id) {
+		this.cdIcone = id;
+	}
+		
+	@Column(name = "url_icone", nullable = false)
+	private String urlIcone;
 	
 	public String getUrlIcone() {
 		return urlIcone;

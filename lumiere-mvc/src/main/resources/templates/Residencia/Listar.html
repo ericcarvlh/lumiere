@@ -14,33 +14,19 @@
 	
     <body>
         <h1>Listar Residência (s)</h1>
-        
-       <!-- <ul>
-    <li th:each="residencia : ${residencia}" th:text="${nomeResidencia}"></li>
-		</ul> //-->
 		
-		
-		<div>
-	                <table th:action="@{/Residencia/Listar}" th:object="${residencia}" method="GET"> >
-	                    <thead>
-	                    <tr th:each="r : ${residencias}">
-	                        <th>#</th>
-	                        <th>Nome</th>
-	                        <th>Ação</th>
-	                    </tr>
-	                    </thead>
-	                    <tbody>
-	                    <tr>
-	                        <td th:text="$(r.cd_residencia)">3</td>
-	                        <td th:text="$(r.nome_residencia)">Administração</td>
-	                        <td colspan="2">
-	                            
-	                        </td>
-	                    </tr>
-	                    </tbody>
-	                </tableth:action="@{/Residencia/Cadastrar}" th:object="${residencia}" method="POST"> >
-	            </div>
-		
+		<center>
+			<div th:each="r: ${residenciasUsuario}">
+				<img th:src="${r.getIconeResidencia().getUrlIcone()}" th:id="${r.getIconeResidencia().getId()}" name="iconePerfil" height="70px" width="70px">
+				<hr>
+				<h2 th:text="${r.getNomeResidencia()}"></h2>
+				<p th:text="${r.getRegistroResidencia()}"></p>
+				<hr>
+				<p th:text="${r.getEstado().getNomeEstado()}"></p>
+				<br>
+			</div>
+		</center>
+
 		
     </body>
 </html>

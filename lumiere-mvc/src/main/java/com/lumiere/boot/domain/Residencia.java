@@ -4,11 +4,21 @@ import java.util.List;
 
 import jakarta.persistence.*;
 
-@SuppressWarnings("serial")
 @Entity
-@AttributeOverride(name = "id", column = @Column(name = "cd_residencia"))
 @Table(name = "Residencia")
-public class Residencia extends AbstractEntity<Integer> {
+public class Residencia  {
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "cd_residencia")
+	private Integer cdResidencia;
+
+	public Integer getId() {
+		return cdResidencia;
+	}
+
+	public void setId(Integer id) {
+		this.cdResidencia = id;
+	}
 	
 	@Column(name = "registro_residencia", nullable = false, length = 20)
 	private String registroResidencia;

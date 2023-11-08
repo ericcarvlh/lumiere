@@ -5,22 +5,26 @@ import java.util.List;
 
 import jakarta.persistence.*;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "USUARIO")
-public class Usuario extends AbstractEntity<Integer> {
+public class Usuario {
 	
 	/*
 	 * oh cheirei as cinzas da tua vo
 	 * 
 	*/
 	
-	@AttributeOverrides({
-        @AttributeOverride(name = "id", column = @Column(name = "cd_usuario"))
-	})
-	
 	@Column(name = "cd_usuario")
-	private int cdUsuario;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer cdUsuario;
+
+	public Integer getId() {
+		return cdUsuario;
+	}
+
+	public void setId(Integer id) {
+		this.cdUsuario = id;
+	}
 	
 	@Column(name = "senha_usuario", nullable = false)
     private String senhaUsuario;

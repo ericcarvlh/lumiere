@@ -28,4 +28,7 @@ INSERT INTO Icone_Residencia VALUES
 ('https://media.discordapp.net/attachments/943623054255333466/1170196919138664539/gatinho_icone.png'),
 ('https://media.discordapp.net/attachments/943623054255333466/1170196919419674804/indo_ali_icon.png'),
 ('https://media.discordapp.net/attachments/943623054255333466/1170196919692296222/porquin_icone.png'),
-('https://media.discordapp.net/attachments/943623054255333466/1170196919964942366/predio_icone.png')
+('https://media.discordapp.net/attachments/943623054255333466/1170196919964942366/predio_icone.png');
+
+INSERT INTO Residencia VALUES 
+('38383dks', 'residenciaRau', '70074900', 1, 1, 1);

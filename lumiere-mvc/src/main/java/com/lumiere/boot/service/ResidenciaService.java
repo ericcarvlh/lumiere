@@ -8,4 +8,6 @@ public interface ResidenciaService {
 	void salvar(Residencia residencia);
 	
 	List<Residencia> buscarTodos();
+	
+	List<Residencia> buscarResidenciasPorUsuario(int cdUsuario);
 }
