@@ -35,7 +35,7 @@ public class SecurityConfig {
                         .usernameParameter("emailUsuario")
                         .passwordParameter("senhaUsuario")
                         .loginProcessingUrl("/usuario/login")
-                        .defaultSuccessUrl("/Residencia/Cadastrar")
+                        .defaultSuccessUrl("/Residencia/Listar")
                         .permitAll()
         ).logout(
                 logout -> logout

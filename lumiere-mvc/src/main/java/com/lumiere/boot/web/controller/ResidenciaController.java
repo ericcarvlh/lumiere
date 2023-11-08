@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -87,8 +88,31 @@ public class ResidenciaController {
 	public String listar(Model model, @AuthenticationPrincipal UserDetails currentUser) {
 		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
 		
-		model.addAttribute("residenciasUsuario", residenciaService.buscarResidenciasPorUsuario(usuario.getId()));
+		List<Residencia> residenciasUsuario = residenciaService.buscarResidenciasPorUsuario(usuario.getId());
+		boolean botaoAdicionarResidencia = true;
+		if (residenciasUsuario.size() > 3) {
+			botaoAdicionarResidencia = false;
+			residenciasUsuario.remove(3);
+		}
+		
+		model.addAttribute("residenciasUsuario", residenciasUsuario);
+		model.addAttribute("botaoAdicionarResidencia", botaoAdicionarResidencia);
 		
 		return "/Residencia/Listar";
+	}
+	
+	@GetMapping("/Todas")
+	public String listarTodasResidencias(Model model, @AuthenticationPrincipal UserDetails currentUser) {
+		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
+		
+		model.addAttribute("residenciasUsuario", residenciaService.buscarTodasResidenciasPorUsuario(usuario.getId()));
+		
+		return "/Residencia/Todas";
+	}
+	
+	@GetMapping("/Detalhes/{cdResidencia}") 
+	public String excluir(@PathVariable("cdResidencia") int cdResidencia) {
+		
+		return "/Residencia/Detalhes";
 	}
 }

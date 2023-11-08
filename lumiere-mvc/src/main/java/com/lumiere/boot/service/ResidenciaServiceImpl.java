@@ -30,4 +30,9 @@ public class ResidenciaServiceImpl implements ResidenciaService {
 	public List<Residencia> buscarResidenciasPorUsuario(int cdUsuario) {
 		return residenciaDao.buscarResidenciasPorUsuario(cdUsuario);
 	}
+
+	@Override
+	public List<Residencia> buscarTodasResidenciasPorUsuario(int cdUsuario) {
+		return residenciaDao.buscarTodasResidenciasPorUsuario(cdUsuario);
+	}
 }
