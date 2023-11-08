@@ -72,6 +72,7 @@ public class ResidenciaController {
 			// seto os dados na residencia para associar
 			residencia.setUsuario(usuario);
 			// agora posso salvar no banco pois possuo todos os dados necessarios
+			System.out.println(cdIconeResidencia);
 			IconeResidencia iconeResidencia = new IconeResidencia();
 			iconeResidencia.setId(cdIconeResidencia);
 			residencia.setIconeResidencia(iconeResidencia);
@@ -80,7 +81,7 @@ public class ResidenciaController {
 			e.printStackTrace();
 		}
 		
-		return "/Residencia/Listar";
+		return "/Residencia/Cadastrar";
 	}
 	
 	@GetMapping("/Listar")
