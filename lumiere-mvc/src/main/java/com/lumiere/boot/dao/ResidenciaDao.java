@@ -14,6 +14,4 @@ public interface ResidenciaDao {
 	Residencia findById(Integer id);
 	
 	List<Residencia> findAll();
-	
-	List<Residencia> buscarResidenciaPorUsuario(int cdUsuario);
 }

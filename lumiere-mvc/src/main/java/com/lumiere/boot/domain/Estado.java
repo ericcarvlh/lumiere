@@ -8,10 +8,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "ESTADO")
 public class Estado extends AbstractEntity<Integer> {
-
-	@Column(name = "cd_estado")
-	private int cdEstado; 
-	
+		
 	@Column(name = "UF_estado", nullable = false, unique = true, length = 2)
 	private String UFEstado;
 

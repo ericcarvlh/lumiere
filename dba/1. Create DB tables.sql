@@ -10,7 +10,7 @@ CREATE TABLE Icone_Residencia (
 );
 
 CREATE TABLE Residencia (
-    cd_residencia INT PRIMARY KEY IDENTITY(1, 1),
+    id INT PRIMARY KEY IDENTITY(1, 1),
     registro_residencia VARCHAR(20),
     nome_residencia VARCHAR(60),
     cep_residencia CHAR(8),
@@ -73,7 +73,7 @@ ALTER TABLE Dispositivo ADD CONSTRAINT FK_Dispositivo_2
  
 ALTER TABLE Dispositivo ADD CONSTRAINT FK_Dispositivo_3
     FOREIGN KEY (fk_Residencia_cd_residencia)
-    REFERENCES Residencia (cd_residencia)
+    REFERENCES Residencia (id)
     ON DELETE CASCADE;
  
 ALTER TABLE Consumo ADD CONSTRAINT FK_Consumo_2
