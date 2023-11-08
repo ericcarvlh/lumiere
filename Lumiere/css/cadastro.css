@@ -161,6 +161,10 @@ body {
     line-height: normal;
 }
 
+.span {
+    text-decoration: underline;
+}
+
 #notif-email {
     width: 20px;
     height: 20px;

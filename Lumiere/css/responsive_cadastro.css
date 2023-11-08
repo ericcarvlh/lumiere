@@ -210,6 +210,11 @@
         font-weight: 400;
         line-height: normal;
     }
+
+    .span {
+        text-decoration: underline;
+    }
+    
     
     #notif-email {
         position: absolute;

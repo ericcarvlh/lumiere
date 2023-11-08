@@ -759,26 +759,26 @@
 }
 
 /* Desktops */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1440px) {
     body {
         width: 100%;
-        height: 700px;
+        height: 100vh;
         flex-shrink: 0;
-        background: linear-gradient(180deg, #052668 0%, #1A40A2 100%);
+        background: linear-gradient(180deg, #052668 0%, #3D1AA2 100%);
     }
     
     .esquerda {
         width: 300px;
-        height: 700px;
+        height: 647px;
         flex-shrink: 0;
     }
 
     .container {
         position: absolute;
-        top: 40px;
-        left: 450px;
+        top: 60px;
+        left: 430px;
         width: 36%;
-        height: 610px;
+        height: 550px;
         flex-shrink: 0;
 
         border-radius: 30px;
@@ -789,11 +789,11 @@
 
     .h1 {
         position: absolute;
-        top: 70px;
+        top: 60px;
         color: #FFF;
-        text-align:center;
+        text-align: center;
         font-family: 'Lexend Exa', sans-serif;
-        font-size: 22px;
+        font-size: 25px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -802,7 +802,7 @@
     .economizar {
         color: #FFA318;
         font-family: 'Lexend Exa', sans-serif;
-        font-size: 22px;
+        font-size: 25px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -811,8 +811,8 @@
     #email {
         position: absolute;
         top: 170px;
-        left: 50px;
-        width: 80%;
+        left: 75px;
+        width: 70%;
         height: 65px;
         flex-shrink: 0;
         border-radius: 10px;
@@ -838,8 +838,8 @@
     #senha {
         position: absolute;
         top: 260px;
-        left: 50px;
-        width: 80%;
+        left: 75px;
+        width: 70%;
         height: 65px;
         flex-shrink: 0;
         border-radius: 10px;
@@ -864,8 +864,8 @@
 
     #conectado {
         position: absolute;
-        top: 360px;
-        left: 50px;
+        top: 350px;
+        left: 75px;
         width: 21px;
         height: 21px;
         flex-shrink: 0;
@@ -874,8 +874,8 @@
 
     .check {
         position: absolute;
-        top: 360px;
-        left: 80px;
+        top: 350px;
+        left: 110px;
         width: 231px;
         height: 18px;
         flex-shrink: 0;
@@ -890,9 +890,9 @@
 
     #submit {
         position: absolute;
-        top: 420px;
-        left: 130px;
-        width: 50%;
+        top: 390px;
+        left: 155px;
+        width: 40%;
         height: 60px;
         flex-shrink: 0;
 
@@ -909,8 +909,8 @@
 
     .h2 {
         position: absolute;
-        top: 520px;
-        left: 110px;
+        top: 470px;
+        left: 95px;
         width: 78%;
         height: 18px;
         flex-shrink: 0;
@@ -926,8 +926,8 @@
     .h3 a{
         position: absolute;
         width: 30%;
-        top: 550px;
-        left: 210px;
+        top: 495px;
+        left: 198px;
         color: #FFA318;
         font-family: 'Lexend Exa', sans-serif;
         font-size: 15px;
@@ -941,7 +941,7 @@
         position: absolute;
         left: 78.5%;
         width: 290px;
-        height: 700px;
+        height: 649px;
         flex-shrink: 0;
     }
 }
