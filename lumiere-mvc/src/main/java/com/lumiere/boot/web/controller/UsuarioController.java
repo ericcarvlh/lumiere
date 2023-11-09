@@ -41,6 +41,6 @@ public class UsuarioController {
 	//Coloquei o retorno como login/login pq no meu tava dando erro, antes tava Login/login
 	@GetMapping("/login")
 	public String logarUsuario(Usuario usuario) {
-		return "/login/login";
+		return "/Login/login";
 	}
 }

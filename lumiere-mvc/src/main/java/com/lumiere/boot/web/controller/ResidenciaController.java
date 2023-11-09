@@ -104,7 +104,7 @@ public class ResidenciaController {
 	@GetMapping("/Todas")
 	public String listarTodasResidencias(Model model, @AuthenticationPrincipal UserDetails currentUser) {
 		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
-		
+				
 		model.addAttribute("residenciasUsuario", residenciaService.buscarTodasResidenciasPorUsuario(usuario.getId()));
 		
 		return "/Residencia/Todas";
