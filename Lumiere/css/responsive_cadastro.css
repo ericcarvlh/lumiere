@@ -68,6 +68,8 @@
     }
     
     #nome {
+        font-family: 'Lexend Exa', sans-serif;
+        color: rgba(0, 0, 0, 0.60);
         position: absolute;
         top: 80px;
         left: 80px;
@@ -93,6 +95,8 @@
     }
     
     #usuario {
+        font-family: 'Lexend Exa', sans-serif;
+        color: rgba(0, 0, 0, 0.60);
         position: absolute;
         top: 170px;
         left: 80px;
@@ -118,6 +122,8 @@
     }
     
     #email {
+        font-family: 'Lexend Exa', sans-serif;
+        color: rgba(0, 0, 0, 0.60);
         position: absolute;
         top: 260px;
         left: 80px;
@@ -143,6 +149,8 @@
     }
     
     #senha {
+        font-family: 'Lexend Exa', sans-serif;
+        color: rgba(0, 0, 0, 0.60);
         position: absolute;
         top: 350px;
         left: 80px;
@@ -168,6 +176,8 @@
     }
     
     #confirma-senha {
+        font-family: 'Lexend Exa', sans-serif;
+        color: rgba(0, 0, 0, 0.60);
         position: absolute;
         top: 440px;
         left: 80px;
