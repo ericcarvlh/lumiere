@@ -1,0 +1,70 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #5E20E2 0%, #00153F 100%);
+}
+
+.h1 {
+    width: 503px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; /* 50.2px */
+}
+
+.logo-fundo-esquerda{
+    width: 400px;
+    height: 750px;
+    flex-shrink: 0;
+}
+.logo-fundo-direita {
+    position: absolute;
+    top: 0px;
+    left: 74.4%;
+    width: 395px;
+    height: 750px;
+    flex-shrink: 0;
+}
+
+.icon-circulo{
+    width: 75px;
+    height: 75px;
+    flex-shrink: 0;
+    border-radius: 145.565px;
+    border: 0.945px solid rgba(255, 255, 255, 0.00);
+    background: radial-gradient(231% 135.8% at 0.9% 2.98%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(14.178360939025879px);
+}
+
+.adicionar{
+    color: rgba(255, 255, 255, 0.70);
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; /* 25.1px */
+}
+
+
+/*
+fontes:
+
+font-family: 'Lexend Exa', sans-serif;
+font-family: 'Urbanist', sans-serif;
+*/
