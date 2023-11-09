@@ -90,6 +90,7 @@
     }
     
     #nome {
+        padding-left: 20px;
         position: absolute;
         top: 90px;
         left: 80px;
@@ -99,6 +100,8 @@
         border-radius: 11.678px;
         background: rgba(255, 255, 255, 0.50);
         border-style: none;
+        color: rgba(0, 0, 0, 0.60);
+        font-family: 'Lexend Exa', sans-serif;
     }
     
     .numero {
@@ -115,6 +118,7 @@
     }
     
     #numero {
+        padding-left: 20px;
         position: absolute;
         top: 190px;
         left: 80px;
@@ -124,6 +128,8 @@
         border-radius: 11.678px;
         background: rgba(255, 255, 255, 0.50);
         border-style: none;
+        color: rgba(0, 0, 0, 0.60);
+        font-family: 'Lexend Exa', sans-serif;
     }
     
     .cep {
@@ -140,6 +146,7 @@
     }
     
     #cep {
+        padding-left: 20px;
         position: absolute;
         top: 285px;
         left: 165px;
@@ -150,6 +157,8 @@
         border-radius: 11.678px;
         background: rgba(255, 255, 255, 0.50);
         border-style: none;
+        color: rgba(0, 0, 0, 0.60);
+        font-family: 'Lexend Exa', sans-serif;
     }
     
     .h2 {

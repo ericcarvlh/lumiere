@@ -809,6 +809,7 @@
     }
 
     #email {
+        padding-left: 20px;
         position: absolute;
         top: 170px;
         left: 75px;
@@ -836,6 +837,7 @@
     }
 
     #senha {
+        padding-left: 20px;
         position: absolute;
         top: 260px;
         left: 75px;
