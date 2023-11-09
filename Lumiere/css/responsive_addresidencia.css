@@ -33,14 +33,14 @@
     
     .logo-fundo-direita {
         position: absolute;
-        left: 66.67%;
-        width: 450px;
+        left: 70.3%;
+        width: 400px;
         height: 647.4px;
         flex-shrink: 0;
     }
 
     .logo-fundo-esquerda {
-        width: 360px;
+        width: 400px;
         height: 647.4px;
         flex-shrink: 0;
     }
