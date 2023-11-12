@@ -8,4 +8,4 @@
 
 ## Diagrama Lógico 
 
-![DER](imgs/diagrama-logico.png)
+![Diagrama Lógico](imgs/diagrama-logico.png)
