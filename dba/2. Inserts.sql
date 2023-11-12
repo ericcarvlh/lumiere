@@ -32,3 +32,6 @@ INSERT INTO Icone_Residencia VALUES
 
 INSERT INTO Residencia VALUES 
 ('38383dks', 'residenciaRau', '70074900', 1, 1, 1);
+
+INSERT INTO Tipo_Dispositivo VALUES 
+('Eletrônico')

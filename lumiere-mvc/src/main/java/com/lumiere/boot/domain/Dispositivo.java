@@ -5,7 +5,7 @@ import java.util.List;
 import jakarta.persistence.*;
 
 @SuppressWarnings("serial")
-@Entity()
+@Entity
 @Table(name = "DISPOSITIVO")
 public class Dispositivo extends AbstractEntity<Long> {
 	
@@ -17,6 +17,31 @@ public class Dispositivo extends AbstractEntity<Long> {
 	@Column(name = "KWh_dispositivo", nullable = false)
 	private double KWhDispositivo; 
 	
+	@Column(name = "nome_dispositivo", nullable = false)
+	private String nomeDispositivo;
+	
+	@Column(name = "tempo_de_uso_diario", nullable = false)
+	private int tempoUsoDiario;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_Residencia_cd_residencia")
+	private Residencia residencia;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_tipo_dispositivo_cd_tipo_dispositivo")
+	private TipoDispositivo tipoDispositivo;
+	
+	@OneToMany(mappedBy = "dispositivo")
+	private List<Consumo> consumo;
+	
+	public int getTempoUsoDiario() {
+		return tempoUsoDiario;
+	}
+	
+	public void setTempoUsoDiario(int tempoUsoDiario) {
+		this.tempoUsoDiario = tempoUsoDiario;
+	}
+	
 	public double getKWhDispositivo() {
 		return KWhDispositivo;
 	}
@@ -24,9 +49,6 @@ public class Dispositivo extends AbstractEntity<Long> {
 	public void setKWhDispositivo(double kWhDispositivo) {
 		KWhDispositivo = kWhDispositivo;
 	}
-
-	@Column(name = "nome_dispositivo", nullable = false)
-	private String nomeDispositivo;
 	
 	public String getNomeDispositivo() {
 		return nomeDispositivo;
@@ -36,9 +58,13 @@ public class Dispositivo extends AbstractEntity<Long> {
 		this.nomeDispositivo = nomeDispositivo;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "fk_Residencia_cd_residencia")
-	private Residencia residencia;
+	public TipoDispositivo getTipoDispositivo() {
+		return tipoDispositivo;
+	}
+
+	public void setTipoDispositivo(TipoDispositivo tipoDispositivo) {
+		this.tipoDispositivo = tipoDispositivo;
+	}
 
 	public Residencia getResidencia() {
 		return residencia;
@@ -47,9 +73,6 @@ public class Dispositivo extends AbstractEntity<Long> {
 	public void setResidencia(Residencia residencia) {
 		this.residencia = residencia;
 	}
-	
-	@OneToMany(mappedBy = "dispositivo")
-	private List<Consumo> consumo;
 
 	public List<Consumo> getConsumo() {
 		return consumo;

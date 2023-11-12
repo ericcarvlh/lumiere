@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/responsive.css">
+        <title>Lumiere</title>
+    </head>
+	<body>
+		<h2>Cadastrar Dispositivo</h2>
+		
+		<form th:action="@{/Dispositivo/Cadastrar}" th:object="${dispositivo}" method="POST"> 
+			<input type="hidden" name="cdResidencia" id="cdResidencia" th:value="${cdResidencia}">
+						
+	        <label for="nomeDisposivito">Apelido do dispositivo</label>
+	        <input type="text" name="nomeDisposivito" id="nomeDisposivito" th:field="*{nomeDispositivo}">
+	        
+	        <br>
+	        
+	        <label for="KWhDispositivo">KW/h dispositivo</label>
+	        <input type="text" name="KWhDispositivo" id="KWhDispositivo" th:field="*{KWhDispositivo}">
+	        	        
+	       	<br>
+
+	        <label for="categoriaSelect">Tipo Dispositivo</label>
+	        <select name="categoriaSelect" id="categoriaSelect">
+	             <option value="0">Categoria Dispositivo</option>
+	             <option th:each="tD : ${tipoDispositivos}" th:value="${tD.getId()}" th:text="${tD.getTipoDispositivo()}"></option>
+	        </select>
+	        
+	        <br>
+	        
+	        <label for="tempoUsoDiario">Tempo de consumo diário</label>
+	        <input type="text" name="tempoUsoDiario" id="tempoUsoDiario" th:field="*{tempoUsoDiario}">
+	        
+	        <br>
+	        
+	        <label for="submit"></label>
+	        <input type="submit" id="submit" value="Salvar">
+		</form>
+	</body>
+	
+	<script src="/js/CadastrarDispositivo.js"></script>    
+</html>
+    

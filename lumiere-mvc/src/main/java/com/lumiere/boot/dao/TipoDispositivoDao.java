@@ -7,13 +7,13 @@ import com.lumiere.boot.domain.TipoDispositivo;
 
 public interface TipoDispositivoDao {
 
-void save(TipoDispositivo tipodispositivo);
+	void save(TipoDispositivo tipodispositivo);
 	
 	void update(TipoDispositivo tipodispositivo);
 	
-	void delete(Long id);
+	void delete(Integer id);
 	
-	TipoDispositivo findById(Long id);
+	TipoDispositivo findById(Integer id);
 	
 	List<TipoDispositivo> findAll();
 }

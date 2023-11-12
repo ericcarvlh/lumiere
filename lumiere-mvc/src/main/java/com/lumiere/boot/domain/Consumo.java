@@ -30,17 +30,6 @@ public class Consumo extends AbstractEntity<Long> {
 		this.dataConsumo = dataConsumo;
 	}
 	
-	@Column(name = "tempo_de_consumo_diario", nullable = false)
-	private int tempoDeConsumo;
-	
-	public int getTempoDeConsumo() {
-		return tempoDeConsumo;
-	}
-	
-	public void setTempoDeConsumo(int tempoDeConsumo) {
-		this.tempoDeConsumo = tempoDeConsumo;
-	}
-	
 	@ManyToOne
 	@JoinColumn(name = "fk_Dispositivo_cd_dispositivo")
 	private Dispositivo dispositivo;
