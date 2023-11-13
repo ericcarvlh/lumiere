@@ -4,15 +4,26 @@ import java.util.List;
 
 import jakarta.persistence.*;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "DISPOSITIVO")
-public class Dispositivo extends AbstractEntity<Long> {
+public class Dispositivo {
 	
 	/*
 	 * hello it's 'f' world
 	 * 
 	*/
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "cd_dispositivo")
+	private Integer cdDispositivo;
+
+	public Integer getId() {
+		return cdDispositivo;
+	}
+
+	public void setId(Integer id) {
+		this.cdDispositivo = id;
+	}
 
 	@Column(name = "KWh_dispositivo", nullable = false)
 	private double KWhDispositivo; 

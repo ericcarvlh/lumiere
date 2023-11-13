@@ -3,10 +3,21 @@ package com.lumiere.boot.domain;
 import java.sql.Date;
 import jakarta.persistence.*;
 
-@SuppressWarnings("serial")
 @Entity()
 @Table(name = "CONSUMO")
-public class Consumo extends AbstractEntity<Long> {
+public class Consumo {
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "cd_consumo")
+	private Integer cdConsumo;
+
+	public Integer getId() {
+		return cdConsumo;
+	}
+
+	public void setId(Integer id) {
+		this.cdConsumo = id;
+	}
 	
 	@Column(name = "preco_consumo", nullable = false)
 	private double precoConsumo;

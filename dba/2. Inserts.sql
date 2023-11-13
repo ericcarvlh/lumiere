@@ -35,3 +35,9 @@ INSERT INTO Residencia VALUES
 
 INSERT INTO Tipo_Dispositivo VALUES 
 ('Eletrônico')
+
+SELECT * FROM Dispositivo
+SELECT * FROM Estado
+
+INSERT INTO Consumo VALUES 
+(0.012, '2023-11-11', 1), (0.012, '2023-11-12', 1);

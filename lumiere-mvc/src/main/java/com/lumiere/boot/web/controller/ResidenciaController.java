@@ -1,9 +1,17 @@
 package com.lumiere.boot.web.controller;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -12,15 +20,25 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.lumiere.boot.api.viaCEP.ViaCEP;
 import com.lumiere.boot.api.viaCEP.domain.Endereco;
 import com.lumiere.boot.dao.UsuarioDaoImpl;
+import com.lumiere.boot.domain.Consumo;
 import com.lumiere.boot.domain.Estado;
 import com.lumiere.boot.domain.IconeResidencia;
 import com.lumiere.boot.domain.Residencia;
 import com.lumiere.boot.domain.Usuario;
+import com.lumiere.boot.domain.json.ConsumoJSON;
+import com.lumiere.boot.service.ConsumoService;
 import com.lumiere.boot.service.EstadoService;
 import com.lumiere.boot.service.IconeResidenciaService;
 import com.lumiere.boot.service.ResidenciaService;
@@ -39,6 +57,9 @@ public class ResidenciaController {
 	
 	@Autowired 
 	private ResidenciaService residenciaService;
+	
+	@Autowired 
+	private ConsumoService consumoService ;
 	
 	@GetMapping("/Residencias") 
 	public String residencias(@AuthenticationPrincipal UserDetails currentUser) {
@@ -111,8 +132,25 @@ public class ResidenciaController {
 	}
 	
 	@GetMapping("/Detalhes/{cdResidencia}") 
-	public String excluir(@PathVariable("cdResidencia") int cdResidencia) {
+	public String detalhes(@PathVariable("cdResidencia") int cdResidencia) {
 		
 		return "/Residencia/Detalhes";
 	}
+	
+	@PostMapping("/obterResidencias/{cdResidencia}")
+    @ResponseBody
+	public String obterResidencias(@PathVariable("cdResidencia") int cdResidencia) {
+		List<Consumo> listConsumo = consumoService.buscarConsumosPorCdResidencia(cdResidencia);
+		
+		String strJson = "";
+		for (Consumo consumo: listConsumo) {
+			try {
+				strJson = ConsumoJSON.converteResidenciaParaJSON(consumo);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+        return strJson;
+    }
 }

@@ -23,4 +23,8 @@ public class ResidenciaDaoImpl extends AbstractDao<Residencia, Integer> implemen
 	public List<Residencia> buscarTodasResidenciasPorUsuario(int cdUsuario) {
 		return createQuery("SELECT r FROM Residencia r WHERE r.usuario.cdUsuario = ?1", cdUsuario);
 	}
+	
+	public List<Residencia> buscarResidenciasPorCdResidencia(int cdResidencia) {
+		return createQuery("SELECT r FROM Residencia r WHERE r.cdResidencia = ?1", cdResidencia);
+	}
 }
