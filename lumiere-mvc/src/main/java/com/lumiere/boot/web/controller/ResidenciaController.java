@@ -1,7 +1,6 @@
 package com.lumiere.boot.web.controller;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,26 +8,15 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
 import com.lumiere.boot.api.viaCEP.ViaCEP;
 import com.lumiere.boot.api.viaCEP.domain.Endereco;
 import com.lumiere.boot.dao.UsuarioDaoImpl;
@@ -37,11 +25,15 @@ import com.lumiere.boot.domain.Estado;
 import com.lumiere.boot.domain.IconeResidencia;
 import com.lumiere.boot.domain.Residencia;
 import com.lumiere.boot.domain.Usuario;
-import com.lumiere.boot.domain.json.ConsumoJSON;
+import com.lumiere.boot.repository.residencia.ConsultaMediaConsumoAnual;
+import com.lumiere.boot.repository.residencia.SPConsultaMediaConsumoAnual;
 import com.lumiere.boot.service.ConsumoService;
 import com.lumiere.boot.service.EstadoService;
 import com.lumiere.boot.service.IconeResidenciaService;
 import com.lumiere.boot.service.ResidenciaService;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 @Controller
 @RequestMapping("/Residencia")
@@ -60,6 +52,9 @@ public class ResidenciaController {
 	
 	@Autowired 
 	private ConsumoService consumoService ;
+	
+	@Autowired
+	SPConsultaMediaConsumoAnual spConsultaMediaConsumoAnual;
 	
 	@GetMapping("/Residencias") 
 	public String residencias(@AuthenticationPrincipal UserDetails currentUser) {
@@ -136,21 +131,47 @@ public class ResidenciaController {
 		
 		return "/Residencia/Detalhes";
 	}
+
 	
-	@PostMapping("/obterResidencias/{cdResidencia}")
+	@PostMapping("/obterGastoAnualPorResidencia/{cdResidencia}")
     @ResponseBody
-	public String obterResidencias(@PathVariable("cdResidencia") int cdResidencia) {
+	public String obterResidencias(@PathVariable("cdResidencia") int cdResidencia) {				                
 		List<Consumo> listConsumo = consumoService.buscarConsumosPorCdResidencia(cdResidencia);
+				
+		spConsultaMediaConsumoAnual.getUerInfo(cdResidencia);
 		
-		String strJson = "";
+		Map<Integer, Double> mapValores = new HashMap<Integer, Double>();
 		for (Consumo consumo: listConsumo) {
 			try {
-				strJson = ConsumoJSON.converteResidenciaParaJSON(consumo);
+				String input = consumo.getDataConsumo().toString().replace( " " , "T" );
+				double valorConsumo = consumo.getPrecoConsumo();
+				LocalDateTime ltd = LocalDateTime.parse(input);
+				
+				int ano = ltd.getYear();
+				int mes = ltd.getMonthValue();
+				if (!mapValores.containsKey(ano))
+					mapValores.put(ano, valorConsumo);
+				else
+					mapValores.put(ano, mapValores.get(ano) + valorConsumo);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+				
+		JSONArray array = new JSONArray();
+		for (Map.Entry<Integer, Double> entry : mapValores.entrySet()) {
+		    int ano = entry.getKey();
+		    double consumoTotal = entry.getValue() / 12;
+
+		    JSONObject jsonObjTest = new JSONObject(); // Crie um novo objeto em cada iteração
+
+		    jsonObjTest.put("ano", ano);
+		    jsonObjTest.put("consumoTotal", consumoTotal);
+
+		    array.put(jsonObjTest);
+		}	
 		
-        return strJson;
+        return array.toString();
     }
 }

@@ -36,8 +36,20 @@ INSERT INTO Residencia VALUES
 INSERT INTO Tipo_Dispositivo VALUES 
 ('Eletrônico')
 
-SELECT * FROM Dispositivo
-SELECT * FROM Estado
+INSERT INTO Consumo VALUES 
+(0.34, '2021-11-13', 1), (0.84, '2021-11-13', 1);
 
 INSERT INTO Consumo VALUES 
-(0.012, '2023-11-11', 1), (0.012, '2023-11-12', 1);
+(0.23, '2022-11-13', 1), (0.34, '2022-11-13', 1);
+
+INSERT INTO Consumo VALUES 
+(0.45, '2023-11-10', 1), (1.2, '2023-11-10', 1);
+
+INSERT INTO Consumo VALUES 
+(0.45, '2023-10-10', 1), (3.2, '2023-10-10', 1);
+
+INSERT INTO Consumo VALUES 
+(1.45, '2023-09-10', 1), (3.2, '2023-09-10', 1);
+
+INSERT INTO Consumo VALUES 
+(0.03, '2023-11-12', 2);

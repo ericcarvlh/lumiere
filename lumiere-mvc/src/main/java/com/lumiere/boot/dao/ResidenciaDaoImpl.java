@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 import com.lumiere.boot.domain.Residencia;
+import com.lumiere.boot.repository.residencia.SPConsultaMediaConsumoAnual;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
