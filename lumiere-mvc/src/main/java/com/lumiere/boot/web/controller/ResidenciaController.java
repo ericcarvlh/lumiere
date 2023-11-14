@@ -138,40 +138,21 @@ public class ResidenciaController {
 	public String obterResidencias(@PathVariable("cdResidencia") int cdResidencia) {				                
 		List<Consumo> listConsumo = consumoService.buscarConsumosPorCdResidencia(cdResidencia);
 				
-		spConsultaMediaConsumoAnual.getUerInfo(cdResidencia);
-		
-		Map<Integer, Double> mapValores = new HashMap<Integer, Double>();
-		for (Consumo consumo: listConsumo) {
-			try {
-				String input = consumo.getDataConsumo().toString().replace( " " , "T" );
-				double valorConsumo = consumo.getPrecoConsumo();
-				LocalDateTime ltd = LocalDateTime.parse(input);
+		List<ConsultaMediaConsumoAnual> listMediaConsumo = spConsultaMediaConsumoAnual.callConsultaMediaConsumoAnual(cdResidencia);
 				
-				int ano = ltd.getYear();
-				int mes = ltd.getMonthValue();
-				if (!mapValores.containsKey(ano))
-					mapValores.put(ano, valorConsumo);
-				else
-					mapValores.put(ano, mapValores.get(ano) + valorConsumo);
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-				
-		JSONArray array = new JSONArray();
-		for (Map.Entry<Integer, Double> entry : mapValores.entrySet()) {
-		    int ano = entry.getKey();
-		    double consumoTotal = entry.getValue() / 12;
+		JSONArray jsonArray = new JSONArray();
+		for (ConsultaMediaConsumoAnual c : listMediaConsumo) {
+		    int ano = c.getAno();
+		    double consumoTotal = c.getConsumoTotal();
 
 		    JSONObject jsonObjTest = new JSONObject(); // Crie um novo objeto em cada iteração
 
 		    jsonObjTest.put("ano", ano);
 		    jsonObjTest.put("consumoTotal", consumoTotal);
 
-		    array.put(jsonObjTest);
-		}	
+		    jsonArray.put(jsonObjTest);
+		}
 		
-        return array.toString();
+        return jsonArray.toString();
     }
 }

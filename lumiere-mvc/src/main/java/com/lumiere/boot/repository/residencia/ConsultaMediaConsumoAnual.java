@@ -2,15 +2,18 @@ package com.lumiere.boot.repository.residencia;
 
 import jakarta.persistence.*;
 
-/*@MappedSuperclass
-@SqlResultSetMapping(name = "MediaConsumoAnual", 
-	classes = @ConstructorResult(targetClass = ConsultaMediaConsumoAnual.class, 
-	columns = { 
-		@ColumnResult(name = "ano", type = Integer.class),
-		@ColumnResult(name = "consumoTotal", type = Double.class) 
-	}))*/
-
+@SqlResultSetMapping(
+        name = "MediaConsumoAnual",
+        classes = @ConstructorResult(
+                targetClass = ConsultaMediaConsumoAnual.class,
+                columns = {
+                    @ColumnResult(name = "ano", type = Integer.class),
+                    @ColumnResult(name = "consumoTotal", type = Double.class)
+        })
+)
+@Entity
 public class ConsultaMediaConsumoAnual {
+	@Id
     private int ano;
     private double consumoTotal;
 
