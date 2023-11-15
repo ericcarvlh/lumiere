@@ -53,3 +53,30 @@ WHERE
 	c.data_consumo >= DATEADD(day,-7, GETDATE())
 GROUP BY
 	c.data_consumo
+
+/* Select para consultar o consumo por dispositivo */
+
+SELECT 
+	d.nome_dispositivo,
+	SUM(c.preco_consumo) as consumoTotal
+FROM
+	Consumo as c
+INNER JOIN	
+	Dispositivo as d
+ON 
+	c.fk_Dispositivo_cd_dispositivo = d.cd_dispositivo
+WHERE	
+	d.fk_Residencia_cd_residencia = 1
+GROUP BY 
+	d.nome_dispositivo
+
+SELECT 
+	*
+FROM
+	Consumo as c
+INNER JOIN	
+	Dispositivo as d
+ON 
+	c.fk_Dispositivo_cd_dispositivo = d.cd_dispositivo
+WHERE	
+	d.fk_Residencia_cd_residencia = 1

@@ -2,7 +2,7 @@ const pathURL = (location.pathname).substring(1);
 const cdResidencia = pathURL.split("/")[2];
 
 $.ajax({
-    url : `../obterGastoAnualPorResidencia/${cdResidencia}`,
+    url : `/API/obterGastoMedioAnualPorResidencia/${cdResidencia}`,
     type: 'POST',
     dataType : 'json',
     success : function(response) {

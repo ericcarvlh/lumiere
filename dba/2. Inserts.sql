@@ -36,20 +36,23 @@ INSERT INTO Residencia VALUES
 INSERT INTO Tipo_Dispositivo VALUES 
 ('Eletrônico')
 
-INSERT INTO Consumo VALUES 
-(0.34, '2021-11-13', 1), (0.84, '2021-11-13', 1);
+INSERT INTO Dispositivo VALUES 
+(3.4, 'TV', 4, 1, 1)
 
 INSERT INTO Consumo VALUES 
-(0.23, '2022-11-13', 1), (0.34, '2022-11-13', 1);
+(0.34, '2021-11-09', 3), (0.84, '2021-11-10', 3),
+(0.23, '2022-11-11', 3), (0.34, '2022-11-12', 3);
+
+INSERT INTO Dispositivo VALUES 
+(3, 'IPOD', 7, 1, 1)
 
 INSERT INTO Consumo VALUES 
-(0.45, '2023-11-10', 1), (1.2, '2023-11-10', 1);
+(0.34, '2021-11-05', 4), (4.84, '2021-11-08', 4),
+(1.23, '2022-11-11', 4), (0.34, '2022-11-01', 4);
+
+INSERT INTO Dispositivo VALUES 
+(3, 'Notebook', 5, 1, 1)
 
 INSERT INTO Consumo VALUES 
-(0.45, '2023-10-10', 1), (3.2, '2023-10-10', 1);
-
-INSERT INTO Consumo VALUES 
-(1.45, '2023-09-10', 1), (3.2, '2023-09-10', 1);
-
-INSERT INTO Consumo VALUES 
-(0.03, '2023-11-12', 2);
+(0.34, '2021-11-05', 5), (2.84, '2021-11-08', 5),
+(1.23, '2022-11-11', 5), (0.34, '2022-11-01', 5);

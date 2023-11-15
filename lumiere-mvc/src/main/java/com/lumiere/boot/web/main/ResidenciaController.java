@@ -1,4 +1,4 @@
-package com.lumiere.boot.web.controller;
+package com.lumiere.boot.web.main;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -25,8 +25,8 @@ import com.lumiere.boot.domain.Estado;
 import com.lumiere.boot.domain.IconeResidencia;
 import com.lumiere.boot.domain.Residencia;
 import com.lumiere.boot.domain.Usuario;
-import com.lumiere.boot.repository.residencia.ConsultaMediaConsumoAnual;
-import com.lumiere.boot.repository.residencia.SPConsultaMediaConsumoAnual;
+import com.lumiere.boot.domain.API.ConsumoAPI;
+import com.lumiere.boot.repository.residencia.ConsumoAPIDAO;
 import com.lumiere.boot.service.ConsumoService;
 import com.lumiere.boot.service.EstadoService;
 import com.lumiere.boot.service.IconeResidenciaService;
@@ -49,12 +49,6 @@ public class ResidenciaController {
 	
 	@Autowired 
 	private ResidenciaService residenciaService;
-	
-	@Autowired 
-	private ConsumoService consumoService ;
-	
-	@Autowired
-	SPConsultaMediaConsumoAnual spConsultaMediaConsumoAnual;
 	
 	@GetMapping("/Residencias") 
 	public String residencias(@AuthenticationPrincipal UserDetails currentUser) {
@@ -130,29 +124,5 @@ public class ResidenciaController {
 	public String detalhes(@PathVariable("cdResidencia") int cdResidencia) {
 		
 		return "/Residencia/Detalhes";
-	}
-
-	
-	@PostMapping("/obterGastoAnualPorResidencia/{cdResidencia}")
-    @ResponseBody
-	public String obterResidencias(@PathVariable("cdResidencia") int cdResidencia) {				                
-		List<Consumo> listConsumo = consumoService.buscarConsumosPorCdResidencia(cdResidencia);
-				
-		List<ConsultaMediaConsumoAnual> listMediaConsumo = spConsultaMediaConsumoAnual.callConsultaMediaConsumoAnual(cdResidencia);
-				
-		JSONArray jsonArray = new JSONArray();
-		for (ConsultaMediaConsumoAnual c : listMediaConsumo) {
-		    int ano = c.getAno();
-		    double consumoTotal = c.getConsumoTotal();
-
-		    JSONObject jsonObjTest = new JSONObject(); // Crie um novo objeto em cada iteração
-
-		    jsonObjTest.put("ano", ano);
-		    jsonObjTest.put("consumoTotal", consumoTotal);
-
-		    jsonArray.put(jsonObjTest);
-		}
-		
-        return jsonArray.toString();
-    }
+	}	
 }
