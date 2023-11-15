@@ -35,7 +35,8 @@ INNER JOIN
 ON 
 	c.fk_Dispositivo_cd_dispositivo = d.cd_dispositivo
 WHERE 
-	d.fk_Residencia_cd_residencia = 1 and
+	d.fk_Residencia_cd_residencia = 1 
+	AND
 	YEAR(c.data_consumo) = 2023
 
 /* Select para consultar o consumo total em um periodo de ateh 7 dias */
@@ -70,8 +71,10 @@ WHERE
 GROUP BY 
 	d.nome_dispositivo
 
+/* Select para consultar o consumo por dispositivo no mes e ano atual */
+
 SELECT 
-	*
+	SUM(c.preco_consumo) as consumoTotal
 FROM
 	Consumo as c
 INNER JOIN	
@@ -79,4 +82,36 @@ INNER JOIN
 ON 
 	c.fk_Dispositivo_cd_dispositivo = d.cd_dispositivo
 WHERE	
+	d.fk_Residencia_cd_residencia = 1
+	AND 
+	MONTH(c.data_consumo) = MONTH(GETDATE())
+	AND 
+	YEAR(c.data_consumo) = YEAR(GETDATE())
+
+/* Select para consultar o consumo total nos últimos 60 dias */
+
+SELECT 
+	SUM(preco_consumo) / COUNT(*) as quantidadeItens
+FROM 
+	Consumo as c 
+INNER JOIN	
+	Dispositivo as d
+ON 
+	c.fk_Dispositivo_cd_dispositivo = d.cd_dispositivo
+WHERE	
+	d.fk_Residencia_cd_residencia = 1
+	AND 
+	c.data_consumo >= DATEADD(day, -60, GETDATE())
+
+/* Select para consultar o extrato de consumo por residencia */
+
+SELECT	
+	*
+FROM 
+	Consumo as c
+INNER JOIN 
+	Dispositivo as d
+ON 
+	c.fk_Dispositivo_cd_dispositivo = d.cd_dispositivo
+WHERE 
 	d.fk_Residencia_cd_residencia = 1

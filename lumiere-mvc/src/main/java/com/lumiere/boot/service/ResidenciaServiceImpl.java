@@ -37,7 +37,7 @@ public class ResidenciaServiceImpl implements ResidenciaService {
 	}
 	
 	@Override
-	public List<Residencia> buscarTodasResidenciasPorCdResidencia(int cdResidencia) {
-		return residenciaDao.buscarResidenciasPorCdResidencia(cdResidencia);
+	public Residencia buscarResidenciaPorCdResidencia(int cdResidencia) {
+		return residenciaDao.findById(cdResidencia);
 	}
 }

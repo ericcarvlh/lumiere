@@ -18,6 +18,4 @@ public interface ResidenciaDao {
 	List<Residencia> buscarResidenciasPorUsuario(int cdUsuario);
 	
 	List<Residencia> buscarTodasResidenciasPorUsuario(int cdUsuario);
-	
-	List<Residencia> buscarResidenciasPorCdResidencia(int cdResidencia);
 }

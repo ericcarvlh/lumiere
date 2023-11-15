@@ -27,7 +27,6 @@ function inicializaGraficoAnual(nomes, consumos) {
 
 function montaGraficoConsumoTotalPorDispositivo(nomeCanvas, nomes, consumos) {
 	let ctx = document.getElementById(nomeCanvas)
-	console.log(nomes)
 	
 	new Chart(ctx, {
         type: 'pie',

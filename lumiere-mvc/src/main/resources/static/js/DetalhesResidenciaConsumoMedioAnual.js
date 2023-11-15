@@ -2,7 +2,7 @@ const pathURL = (location.pathname).substring(1)
 const cdResidencia = pathURL.split("/")[2]
 
 $.ajax({
-    url : `/API/obterGastoMedioAnualPorResidencia/${cdResidencia}`,
+    url : `/API/obterConsumoMedioAnual/${cdResidencia}`,
     type: 'POST',
     dataType : 'json',
     success : function(response) {
@@ -16,6 +16,8 @@ $.ajax({
 				consumos.push(obj.consumoTotal)		
 			}
 			
+			inicializaElementosConsumoMedioAnual(anos)
+			teste(anos)
 			inicializaConsumoAnual(consumos, anos)
 		}
     },
@@ -43,7 +45,7 @@ function inicializaConsumoAnual(consumos, anos) {
 function montaGraficoConsumoAnual(nomeCanvas, consumos, anos) {
 	const ctx = document.getElementById(nomeCanvas)
 		
-	chartGastoAnual = new Chart(ctx, {
+	chartGastoMedioAnual = new Chart(ctx, {
         type: 'line',
         data: {
   			labels: anos,
@@ -88,11 +90,7 @@ function montaGraficoConsumoAnual(nomeCanvas, consumos, anos) {
 						display: true,
 						text: 'REAIS',
 					}
-				},
-				xAxes: [{
-					type: 'time',
-					distribution: 'linear'
-				}]
+				}
       		}
 		}
     })
