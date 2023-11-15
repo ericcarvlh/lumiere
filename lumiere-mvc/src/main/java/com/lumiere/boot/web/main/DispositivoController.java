@@ -1,4 +1,4 @@
-package com.lumiere.boot.web.controller;
+package com.lumiere.boot.web.main;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

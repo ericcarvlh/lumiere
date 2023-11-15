@@ -1,4 +1,4 @@
-package com.lumiere.boot.web.controller;
+package com.lumiere.boot.web.main;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
