@@ -5,19 +5,57 @@ $.ajax({
     success : function(response) {
         if (response.length > 0) {
 			json = response
-			let consumos = [];
-			let nomes = [];
+			let nomes = []
+			let consumos = []
 			for(let i = 0; i < json.length; i++) {
 			    let obj = json[i];
-			    nomes.push(obj.nomeDispositivo);
-				consumos.push(obj.consumoTotal);			
+			    nomes.push(obj.nomeDispositivo)
+				consumos.push(obj.consumoTotal)		
 			}
 			
-			console.log(consumos);
-			console.log(nomes);
+			inicializaGraficoAnual(nomes, consumos)
 		}
     },
     error : function(response) {
-        console.log("Access Fail "+ response);
+        console.log("Access Fail "+ response)
     }
 })
+
+function inicializaGraficoAnual(nomes, consumos) {	
+	montaGraficoConsumoTotalPorDispositivo('gasto-total-por-dispositivo', nomes, consumos)
+}
+
+function montaGraficoConsumoTotalPorDispositivo(nomeCanvas, nomes, consumos) {
+	let ctx = document.getElementById(nomeCanvas)
+	console.log(nomes)
+	
+	new Chart(ctx, {
+        type: 'pie',
+        data: {
+  			labels: nomes,
+  			datasets: [{
+	    		label: 'Consumo total',
+	    		data: consumos,
+	    		fill: false,
+  			}]
+  		},
+        options: {
+			responsive: true,
+		    plugins: {
+			  legend: {
+				position: "left",
+			  },
+			  title: {
+		        display: true,
+		        text: 'Gestão de gasto atual',
+		        align: 'start',
+				font: {
+		          size: 20,
+		          family: 'lexand exa',
+		          weight: 'bold',
+		        },
+		      }
+		    }
+		}
+    })
+}

@@ -21,9 +21,9 @@ public class ResidenciaAPI {
 	@Autowired
 	ConsumoAPIDAO spConsultaMediaConsumoAnual;
 	
-	@PostMapping("/obterGastoMedioAnualPorResidencia/{cdResidencia}")
+	@PostMapping("/obterConsumoMedioAnual/{cdResidencia}")
     @ResponseBody
-	public String obterGastoMedioAnualPorResidencia(@PathVariable("cdResidencia") int cdResidencia) {				                				
+	public String obterConsumoMedioAnual(@PathVariable("cdResidencia") int cdResidencia) {				                				
 		List<ConsumoAPI> listMediaConsumo = spConsultaMediaConsumoAnual.callConsultaMediaConsumoAnual(cdResidencia);
 				
 		JSONArray jsonArray = new JSONArray();
