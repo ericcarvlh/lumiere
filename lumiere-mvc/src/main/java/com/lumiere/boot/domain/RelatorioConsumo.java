@@ -1,11 +1,11 @@
-package com.lumiere.boot.domain.API;
+package com.lumiere.boot.domain;
 
 import jakarta.persistence.*;
 
 @SqlResultSetMapping(
         name = "MediaConsumoAnual",
         classes = @ConstructorResult(
-                targetClass = ConsumoAPI.class,
+                targetClass = RelatorioConsumo.class,
                 columns = {
                     @ColumnResult(name = "ano", type = Integer.class),
                     @ColumnResult(name = "consumoTotal", type = Double.class)
@@ -14,14 +14,30 @@ import jakarta.persistence.*;
 @SqlResultSetMapping(
         name = "consumoTotalPorDispositivo",
         classes = @ConstructorResult(
-                targetClass = ConsumoAPI.class,
+                targetClass = RelatorioConsumo.class,
                 columns = {
                     @ColumnResult(name = "nomeDispositivo", type = String.class),
                     @ColumnResult(name = "consumoTotal", type = Double.class)
         })
 )
+@SqlResultSetMapping(
+        name = "faturaAtual",
+        classes = @ConstructorResult(
+                targetClass = RelatorioConsumo.class,
+                columns = {
+                    @ColumnResult(name = "consumoTotal", type = Double.class)
+        })
+)
+@SqlResultSetMapping(
+        name = "consumoMedio",
+        classes = @ConstructorResult(
+                targetClass = RelatorioConsumo.class,
+                columns = {
+                    @ColumnResult(name = "consumoTotal", type = Double.class)
+        })
+)
 @Entity
-public class ConsumoAPI {
+public class RelatorioConsumo {
 	@Id
 	private int id;
 	

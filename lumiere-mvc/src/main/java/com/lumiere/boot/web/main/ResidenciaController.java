@@ -1,5 +1,6 @@
 package com.lumiere.boot.web.main;
 
+import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -19,14 +20,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.lumiere.boot.api.viaCEP.ViaCEP;
 import com.lumiere.boot.api.viaCEP.domain.Endereco;
+import com.lumiere.boot.dao.RelatorioConsumoDao;
 import com.lumiere.boot.dao.UsuarioDaoImpl;
 import com.lumiere.boot.domain.Consumo;
 import com.lumiere.boot.domain.Estado;
 import com.lumiere.boot.domain.IconeResidencia;
+import com.lumiere.boot.domain.RelatorioConsumo;
 import com.lumiere.boot.domain.Residencia;
 import com.lumiere.boot.domain.Usuario;
-import com.lumiere.boot.domain.API.ConsumoAPI;
-import com.lumiere.boot.repository.residencia.ConsumoAPIDAO;
 import com.lumiere.boot.service.ConsumoService;
 import com.lumiere.boot.service.EstadoService;
 import com.lumiere.boot.service.IconeResidenciaService;
@@ -40,6 +41,9 @@ import jakarta.persistence.PersistenceContext;
 public class ResidenciaController {	
 	@Autowired
 	UsuarioDaoImpl usuarioDaoImpl;
+	
+	@Autowired
+	RelatorioConsumoDao relatorioConsumoDao;
 	
 	@Autowired
 	private IconeResidenciaService iconeResidenciaService;
@@ -121,7 +125,18 @@ public class ResidenciaController {
 	}
 	
 	@GetMapping("/Detalhes/{cdResidencia}") 
-	public String detalhes(@PathVariable("cdResidencia") int cdResidencia) {
+	public String detalhes(Model model, @PathVariable("cdResidencia") int cdResidencia) {
+		Residencia residencia = residenciaService.buscarResidenciaPorCdResidencia(cdResidencia);
+				
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		String valorPorKWh = formatter.format(residencia.getEstado().getPrecoKwh());
+		String faturaAtual = formatter.format(relatorioConsumoDao.callConsultaFaturaAtual(cdResidencia).getConsumoTotal());
+		String consumoMedio = formatter.format(relatorioConsumoDao.callConsultaConsumoMedio60Dias(cdResidencia).getConsumoTotal());
+		
+		model.addAttribute("UFEstado", residencia.getEstado().getUFEstado());
+		model.addAttribute("precoKWh", valorPorKWh);
+		model.addAttribute("faturaAtual", faturaAtual);
+		model.addAttribute("consumoMedio", consumoMedio);
 		
 		return "/Residencia/Detalhes";
 	}	
