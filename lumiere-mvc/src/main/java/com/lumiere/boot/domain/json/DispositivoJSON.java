@@ -9,7 +9,7 @@ public class DispositivoJSON {
 	public static String converteResidenciaParaJSON(Dispositivo dispositivo) throws Exception {
 		DispositivoDomain dispositivoDomain = new DispositivoDomain();
 		dispositivoDomain.setCdDispositivo(dispositivo.getId());
-		dispositivoDomain.setKWhDispositivo(dispositivo.getKWhDispositivo());
+		dispositivoDomain.setWattsDispositivo(dispositivo.getWattsDispositivo());
 		dispositivoDomain.setNomeDispositivo(dispositivo.getNomeDispositivo());
 		dispositivoDomain.setFkResidenciaCdResidencia(dispositivo.getResidencia().getId());
 		dispositivoDomain.setFkTipoDispositivoCdTipoDispositivo(dispositivo.getTipoDispositivo().getId());
@@ -22,7 +22,7 @@ public class DispositivoJSON {
 
 class DispositivoDomain {
 	private int cdDispositivo;
-	private double KWhDispositivo;
+	private double wattsDispositivo;
 	private String nomeDispositivo;
 	private int tempoDeConsumoDiario;
 	private int fkResidenciaCdResidencia;
@@ -34,11 +34,11 @@ class DispositivoDomain {
 	public void setCdDispositivo(int cdDispositivo) {
 		this.cdDispositivo = cdDispositivo;
 	}
-	public double getKWhDispositivo() {
-		return KWhDispositivo;
+	public double getWattsDispositivo() {
+		return wattsDispositivo;
 	}
-	public void setKWhDispositivo(double kWhDispositivo) {
-		KWhDispositivo = kWhDispositivo;
+	public void setWattsDispositivo(double wattsDispositivo) {
+		this.wattsDispositivo = wattsDispositivo;
 	}
 	public String getNomeDispositivo() {
 		return nomeDispositivo;

@@ -27,7 +27,7 @@ CREATE TABLE tipo_dispositivo (
 
 CREATE TABLE Dispositivo (
     cd_dispositivo INT PRIMARY KEY IDENTITY(1, 1),
-    KWh_dispositivo FLOAT,
+    watts_dispositivo DECIMAL(8, 2),
     nome_dispositivo VARCHAR(60),
 	tempo_de_uso_diario INT,
     fk_Residencia_cd_residencia INT,
@@ -40,12 +40,13 @@ CREATE TABLE Estado (
     cd_estado INT PRIMARY KEY IDENTITY(1, 1),
     nome_estado VARCHAR(40),
     UF_estado VARCHAR(2),
-    preco_KWH FLOAT
+    preco_KWH DECIMAL(5, 3)
 );
 
 CREATE TABLE Consumo (
     cd_consumo INT PRIMARY KEY IDENTITY(1, 1),
-    preco_consumo FLOAT,
+    preco_consumo DECIMAL(10, 2),
+	kwh_consumo DECIMAL(8, 2),
     data_consumo DATE,
     fk_Dispositivo_cd_dispositivo INT
 );

@@ -25,8 +25,8 @@ public class Dispositivo {
 		this.cdDispositivo = id;
 	}
 
-	@Column(name = "KWh_dispositivo", nullable = false)
-	private double KWhDispositivo; 
+	@Column(name = "watts_dispositivo", nullable = false)
+	private double wattsDispositivo; 
 	
 	@Column(name = "nome_dispositivo", nullable = false)
 	private String nomeDispositivo;
@@ -53,12 +53,12 @@ public class Dispositivo {
 		this.tempoUsoDiario = tempoUsoDiario;
 	}
 	
-	public double getKWhDispositivo() {
-		return KWhDispositivo;
+	public double getWattsDispositivo() {
+		return wattsDispositivo;
 	}
 
-	public void setKWhDispositivo(double kWhDispositivo) {
-		KWhDispositivo = kWhDispositivo;
+	public void setWattsDispositivo(double wattsDispositivo) {
+		this.wattsDispositivo = wattsDispositivo;
 	}
 	
 	public String getNomeDispositivo() {
