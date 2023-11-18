@@ -185,7 +185,7 @@ body {
 .container-3 {
     position: absolute;
     top: 350px;
-    left: 700px;
+    left: 720px;
     width: 24%;
     width: 323.138px;
     height: 140px;
@@ -242,6 +242,29 @@ body {
     font-weight: 400;
     line-height: 125.5%; 
 }
+
+.container-4 {
+    position: absolute;
+    top: 550px;
+    left: 280px;
+    width: 58%;
+    height: 700px;
+    flex-shrink: 0;
+
+    border-radius: 13.688px;
+    border: 0.913px solid rgba(255, 255, 255, 0.00);
+    background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(19.162500381469727px);
+    border-style: none;
+}
+
+
+
+
+
+
+
+
 
 
 footer {
