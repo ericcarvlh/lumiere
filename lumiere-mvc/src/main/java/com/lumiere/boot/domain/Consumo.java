@@ -11,17 +11,23 @@ public class Consumo {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cd_consumo")
 	private Integer cdConsumo;
-
-	public Integer getId() {
-		return cdConsumo;
-	}
-
-	public void setId(Integer id) {
-		this.cdConsumo = id;
-	}
 	
 	@Column(name = "preco_consumo", nullable = false)
 	private double precoConsumo;
+	
+	@Column(name = "kwh_consumo", nullable = false)
+	private double kwhConsumo;
+	
+	@Column(name = "data_consumo", nullable = false)
+	private Date dataConsumo;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_Dispositivo_cd_dispositivo")
+	private Dispositivo dispositivo;
+
+	public Date getDataConsumo() {
+		return dataConsumo;
+	}
 	
 	public double getPrecoConsumo() {
 		return precoConsumo;
@@ -31,21 +37,18 @@ public class Consumo {
 		this.precoConsumo = precoConsumo;
 	}
 	
-	@Column(name = "data_consumo", nullable = false)
-	private Date dataConsumo;
-	
-	public Date getDataConsumo() {
-		return dataConsumo;
-	}
-	
 	public void setDataConsumo(Date dataConsumo) {
 		this.dataConsumo = dataConsumo;
 	}
 	
-	@ManyToOne
-	@JoinColumn(name = "fk_Dispositivo_cd_dispositivo")
-	private Dispositivo dispositivo;
+	public Integer getId() {
+		return cdConsumo;
+	}
 
+	public void setId(Integer id) {
+		this.cdConsumo = id;
+	}
+	
 	public Dispositivo getDispositivo() {
 		return dispositivo;
 	}
