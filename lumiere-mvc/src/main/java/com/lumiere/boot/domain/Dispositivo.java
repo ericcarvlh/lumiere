@@ -4,29 +4,62 @@ import java.util.List;
 
 import jakarta.persistence.*;
 
-@SuppressWarnings("serial")
-@Entity()
+@Entity
 @Table(name = "DISPOSITIVO")
-public class Dispositivo extends AbstractEntity<Long> {
+public class Dispositivo {
 	
 	/*
 	 * hello it's 'f' world
 	 * 
 	*/
-
-	@Column(name = "KWh_dispositivo", nullable = false)
-	private double KWhDispositivo; 
 	
-	public double getKWhDispositivo() {
-		return KWhDispositivo;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "cd_dispositivo")
+	private Integer cdDispositivo;
+
+	public Integer getId() {
+		return cdDispositivo;
 	}
 
-	public void setKWhDispositivo(double kWhDispositivo) {
-		KWhDispositivo = kWhDispositivo;
+	public void setId(Integer id) {
+		this.cdDispositivo = id;
 	}
 
+	@Column(name = "watts_dispositivo", nullable = false)
+	private double wattsDispositivo; 
+	
 	@Column(name = "nome_dispositivo", nullable = false)
 	private String nomeDispositivo;
+	
+	@Column(name = "tempo_de_uso_diario", nullable = false)
+	private int tempoUsoDiario;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_Residencia_cd_residencia")
+	private Residencia residencia;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_tipo_dispositivo_cd_tipo_dispositivo")
+	private TipoDispositivo tipoDispositivo;
+	
+	@OneToMany(mappedBy = "dispositivo")
+	private List<Consumo> consumo;
+	
+	public int getTempoUsoDiario() {
+		return tempoUsoDiario;
+	}
+	
+	public void setTempoUsoDiario(int tempoUsoDiario) {
+		this.tempoUsoDiario = tempoUsoDiario;
+	}
+	
+	public double getWattsDispositivo() {
+		return wattsDispositivo;
+	}
+
+	public void setWattsDispositivo(double wattsDispositivo) {
+		this.wattsDispositivo = wattsDispositivo;
+	}
 	
 	public String getNomeDispositivo() {
 		return nomeDispositivo;
@@ -36,9 +69,13 @@ public class Dispositivo extends AbstractEntity<Long> {
 		this.nomeDispositivo = nomeDispositivo;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "fk_Residencia_cd_residencia")
-	private Residencia residencia;
+	public TipoDispositivo getTipoDispositivo() {
+		return tipoDispositivo;
+	}
+
+	public void setTipoDispositivo(TipoDispositivo tipoDispositivo) {
+		this.tipoDispositivo = tipoDispositivo;
+	}
 
 	public Residencia getResidencia() {
 		return residencia;
@@ -47,9 +84,6 @@ public class Dispositivo extends AbstractEntity<Long> {
 	public void setResidencia(Residencia residencia) {
 		this.residencia = residencia;
 	}
-	
-	@OneToMany(mappedBy = "dispositivo")
-	private List<Consumo> consumo;
 
 	public List<Consumo> getConsumo() {
 		return consumo;

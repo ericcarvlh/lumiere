@@ -1,35 +1,49 @@
-package com.lumiere.boot.web.controller;
+package com.lumiere.boot.web.main;
 
+import java.text.NumberFormat;
+import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 import com.lumiere.boot.api.viaCEP.ViaCEP;
 import com.lumiere.boot.api.viaCEP.domain.Endereco;
+import com.lumiere.boot.dao.RelatorioConsumoDao;
 import com.lumiere.boot.dao.UsuarioDaoImpl;
+import com.lumiere.boot.domain.Consumo;
 import com.lumiere.boot.domain.Estado;
 import com.lumiere.boot.domain.IconeResidencia;
+import com.lumiere.boot.domain.RelatorioConsumo;
 import com.lumiere.boot.domain.Residencia;
 import com.lumiere.boot.domain.Usuario;
+import com.lumiere.boot.service.ConsumoService;
 import com.lumiere.boot.service.EstadoService;
 import com.lumiere.boot.service.IconeResidenciaService;
 import com.lumiere.boot.service.ResidenciaService;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 @Controller
 @RequestMapping("/Residencia")
 public class ResidenciaController {	
 	@Autowired
 	UsuarioDaoImpl usuarioDaoImpl;
+	
+	@Autowired
+	RelatorioConsumoDao relatorioConsumoDao;
 	
 	@Autowired
 	private IconeResidenciaService iconeResidenciaService;
@@ -95,6 +109,20 @@ public class ResidenciaController {
 			residenciasUsuario.remove(3);
 		}
 		
+		model.addAttribute("residencia1", residenciasUsuario.size() > 0 ? residenciasUsuario.get(0) : null);
+		model.addAttribute("residencia2", residenciasUsuario.size() > 1 ? residenciasUsuario.get(1) : null);
+		model.addAttribute("residencia3", residenciasUsuario.size() > 2 ? residenciasUsuario.get(2) : null);
+		
+		boolean zeroResidencia = residenciasUsuario.isEmpty();
+		boolean umaResidencia = residenciasUsuario.size() == 1;
+		boolean duasResidencias = residenciasUsuario.size() == 2;
+		boolean tresResidencias = residenciasUsuario.size() >= 3;
+		model.addAttribute("zeroResidencia", zeroResidencia);
+		model.addAttribute("umaResidencia", umaResidencia);
+		model.addAttribute("duasResidencias", duasResidencias);
+		model.addAttribute("tresResidencias", tresResidencias);
+		
+		
 		model.addAttribute("residenciasUsuario", residenciasUsuario);
 		model.addAttribute("botaoAdicionarResidencia", botaoAdicionarResidencia);
 		
@@ -111,8 +139,19 @@ public class ResidenciaController {
 	}
 	
 	@GetMapping("/Detalhes/{cdResidencia}") 
-	public String excluir(@PathVariable("cdResidencia") int cdResidencia) {
+	public String detalhes(Model model, @PathVariable("cdResidencia") int cdResidencia) {
+		Residencia residencia = residenciaService.buscarResidenciaPorCdResidencia(cdResidencia);
+				
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		String valorPorKWh = formatter.format(residencia.getEstado().getPrecoKwh());
+		String faturaAtual = formatter.format(relatorioConsumoDao.callConsultaFaturaAtual(cdResidencia).getConsumoTotal());
+		String consumoMedio = formatter.format(relatorioConsumoDao.callConsultaConsumoMedio60Dias(cdResidencia).getConsumoTotal());
+		
+		model.addAttribute("UFEstado", residencia.getEstado().getUFEstado());
+		model.addAttribute("precoKWh", valorPorKWh);
+		model.addAttribute("faturaAtual", faturaAtual);
+		model.addAttribute("consumoMedio", consumoMedio);
 		
 		return "/Residencia/Detalhes";
-	}
+	}	
 }

@@ -1,5 +1,9 @@
 use lumieredb;
 
+-- --------------------------------- --
+--   Select nas principais tabelas   --
+-- --------------------------------- --
+
 SELECT 
     *
 FROM

@@ -8,13 +8,15 @@ import com.lumiere.boot.domain.Consumo;
 
 public interface ConsumoDao {
 
-void save(Consumo consumo);
+	void save(Consumo consumo);
 	
 	void update(Consumo consumo);
 	
-	void delete(Long id);
+	void delete(Integer id);
 	
-	Consumo findById(Long id);
+	Consumo findById(Integer id);
 	
 	List<Consumo> findAll();
+	
+	List<Consumo> buscarConsumosPorCdResidencia(int cdResidencia);
 }

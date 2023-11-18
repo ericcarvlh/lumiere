@@ -2,6 +2,8 @@ package com.lumiere.boot.domain;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -11,14 +13,6 @@ public class Residencia  {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cd_residencia")
 	private Integer cdResidencia;
-
-	public Integer getId() {
-		return cdResidencia;
-	}
-
-	public void setId(Integer id) {
-		this.cdResidencia = id;
-	}
 	
 	@Column(name = "registro_residencia", nullable = false, length = 20)
 	private String registroResidencia;
@@ -43,6 +37,14 @@ public class Residencia  {
 	
 	@OneToMany(mappedBy = "residencia")
 	private List<Dispositivo> dispositivo;
+	
+	public Integer getId() {
+		return cdResidencia;
+	}
+
+	public void setId(Integer id) {
+		this.cdResidencia = id;
+	}
 	
 	public String getCepResidencia() {
 		return cepResidencia;

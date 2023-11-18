@@ -15,5 +15,5 @@ addEventListener("load", () => {
 	        let idIcone = imgIconeElement.id;
 	        iconeSelecionadoElement.value = idIcone;
 	    });
-	})
-})
+	});
+});

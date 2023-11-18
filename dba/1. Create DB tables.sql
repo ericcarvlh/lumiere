@@ -16,30 +16,38 @@ CREATE TABLE Residencia (
     cep_residencia CHAR(8),
 	fk_Icone_Residencia_cd_icone INT,
     fk_Estado_cd_estado INT,
-    fk_Usuario_cd_usuario INT
+    fk_Usuario_cd_usuario INT,
 	FOREIGN KEY (fk_Icone_Residencia_cd_icone) REFERENCES Icone_Residencia(cd_icone)
 ); 
 
+CREATE TABLE tipo_dispositivo (
+    cd_tipo_dispositivo INT PRIMARY KEY IDENTITY(1, 1),
+    tipo_dispositivo VARCHAR(60)
+);
+
 CREATE TABLE Dispositivo (
     cd_dispositivo INT PRIMARY KEY IDENTITY(1, 1),
-    KWh_dispositivo FLOAT,
-    fk_tipo_dispositivo_tipo_dispositivo_PK VARCHAR,
+    watts_dispositivo DECIMAL(8, 2),
     nome_dispositivo VARCHAR(60),
-    fk_Residencia_cd_residencia INT
+	tempo_de_uso_diario INT,
+    fk_Residencia_cd_residencia INT,
+	fk_tipo_dispositivo_cd_tipo_dispositivo INT,
+	FOREIGN KEY (fk_tipo_dispositivo_cd_tipo_dispositivo) REFERENCES tipo_dispositivo (cd_tipo_dispositivo),
+	FOREIGN KEY (fk_Residencia_cd_residencia) REFERENCES Residencia (cd_residencia)
 );
 
 CREATE TABLE Estado (
     cd_estado INT PRIMARY KEY IDENTITY(1, 1),
     nome_estado VARCHAR(40),
     UF_estado VARCHAR(2),
-    preco_KWH FLOAT
+    preco_KWH DECIMAL(5, 3)
 );
 
 CREATE TABLE Consumo (
     cd_consumo INT PRIMARY KEY IDENTITY(1, 1),
-    preco_consumo FLOAT,
+    preco_consumo DECIMAL(10, 2),
+	kwh_consumo DECIMAL(8, 2),
     data_consumo DATE,
-    tempo_de_consumo_diario INT,
     fk_Dispositivo_cd_dispositivo INT
 );
 
@@ -49,11 +57,6 @@ CREATE TABLE Usuario (
     email_usuario VARCHAR(60),
     senha_usuario VARCHAR(255),
     data_de_cadastro DATE
-);
-
-CREATE TABLE tipo_dispositivo (
-    tipo_dispositivo_PK VARCHAR NOT NULL PRIMARY KEY,
-    tipo_dispositivo VARCHAR
 );
  
 ALTER TABLE Residencia ADD CONSTRAINT FK_Residencia_2
@@ -65,16 +68,6 @@ ALTER TABLE Residencia ADD CONSTRAINT FK_Residencia_3
     FOREIGN KEY (fk_Usuario_cd_usuario)
     REFERENCES Usuario (cd_usuario)
     ON DELETE SET NULL;
- 
-ALTER TABLE Dispositivo ADD CONSTRAINT FK_Dispositivo_2
-    FOREIGN KEY (fk_tipo_dispositivo_tipo_dispositivo_PK)
-    REFERENCES tipo_dispositivo (tipo_dispositivo_PK)
-    ON DELETE NO ACTION;
- 
-ALTER TABLE Dispositivo ADD CONSTRAINT FK_Dispositivo_3
-    FOREIGN KEY (fk_Residencia_cd_residencia)
-    REFERENCES Residencia (cd_residencia)
-    ON DELETE CASCADE;
  
 ALTER TABLE Consumo ADD CONSTRAINT FK_Consumo_2
     FOREIGN KEY (fk_Dispositivo_cd_dispositivo)

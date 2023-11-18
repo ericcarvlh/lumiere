@@ -12,4 +12,6 @@ public interface ResidenciaService {
 	List<Residencia> buscarResidenciasPorUsuario(int cdUsuario);
 	
 	List<Residencia> buscarTodasResidenciasPorUsuario(int cdUsuario);
+	
+	Residencia buscarResidenciaPorCdResidencia(int cdResidencia);
 }

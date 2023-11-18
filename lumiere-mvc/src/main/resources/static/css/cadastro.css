@@ -1,0 +1,216 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #052668 0%, #1A40A2 100%);
+}
+
+.h1 {
+    width: 1143px;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.logo-fundo {
+    width: 687px;
+    height: 636px;
+    flex-shrink: 0;
+}
+
+.container {
+    width: 1054px;
+    height: 585px;
+    flex-shrink: 0;
+
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.00);
+    background: radial-gradient(238.88% 140.02% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(15px);
+}
+
+.nome {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#nome {
+    width: 449px;
+    height: 41px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.50);
+    border-style: none;
+}
+
+.usuario {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#usuario {
+    width: 449px;
+    height: 41px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.50);
+    border-style: none;
+}
+
+.email {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#email {
+    width: 449px;
+    height: 41px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.50);
+    border-style: none;
+}
+
+.senha {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#senha {
+    width: 449px;
+    height: 41px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.50);
+    border-style: none;
+}
+
+.confirma-senha {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#confirma-senha {
+    width: 449px;
+    height: 41px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.50);
+    border-style: none;
+}
+
+.alvo {
+    width: 318.029px;
+    height: 309px;
+    flex-shrink: 0;
+}
+
+#termos {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+    fill: rgba(217, 217, 217, 0.49);
+}
+
+.ok-1 {
+    width: 355px;
+    color: #FFF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.span {
+    text-decoration: underline;
+}
+
+#notif-email {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    fill: rgba(217, 217, 217, 0.49);
+}
+
+.ok-2 {
+    width: 363px;
+    color: #FFF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#submit {
+    width: 249px;
+    height: 58px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #00153F;
+
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.obrigatorio {
+    color: #FFF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+/*
+fontes:
+
+font-family: 'Lexend Exa', sans-serif;
+font-family: 'Urbanist', sans-serif;
+*/

@@ -1,12 +1,24 @@
 package com.lumiere.boot.domain;
 
-import java.sql.Date;
+
+import java.util.Date;
 import jakarta.persistence.*;
 
-@SuppressWarnings("serial")
-@Entity()
+@Entity
 @Table(name = "CONSUMO")
-public class Consumo extends AbstractEntity<Long> {
+public class Consumo {
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "cd_consumo")
+	private Integer cdConsumo;
+
+	public Integer getId() {
+		return cdConsumo;
+	}
+
+	public void setId(Integer id) {
+		this.cdConsumo = id;
+	}
 	
 	@Column(name = "preco_consumo", nullable = false)
 	private double precoConsumo;
@@ -28,17 +40,6 @@ public class Consumo extends AbstractEntity<Long> {
 	
 	public void setDataConsumo(Date dataConsumo) {
 		this.dataConsumo = dataConsumo;
-	}
-	
-	@Column(name = "tempo_de_consumo_diario", nullable = false)
-	private int tempoDeConsumo;
-	
-	public int getTempoDeConsumo() {
-		return tempoDeConsumo;
-	}
-	
-	public void setTempoDeConsumo(int tempoDeConsumo) {
-		this.tempoDeConsumo = tempoDeConsumo;
 	}
 	
 	@ManyToOne
