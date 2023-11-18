@@ -247,7 +247,7 @@ body {
     position: absolute;
     top: 550px;
     left: 280px;
-    width: 58%;
+    width: 59%;
     height: 700px;
     flex-shrink: 0;
 
@@ -257,15 +257,6 @@ body {
     backdrop-filter: blur(19.162500381469727px);
     border-style: none;
 }
-
-
-
-
-
-
-
-
-
 
 footer {
     position: absolute;
