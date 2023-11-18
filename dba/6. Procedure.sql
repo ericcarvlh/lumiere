@@ -65,7 +65,7 @@ WHERE
 	AND 
 	YEAR(c.data_consumo) = YEAR(GETDATE())
 
-EXEC sp_consultaFaturaAtual @vFkResidenciaCdResidencia = 2;
+EXEC sp_consultaFaturaAtual @vFkResidenciaCdResidencia = 1;
 
 /* Procedure para consultar o gasto médio nos últimos 60 dias */
 
@@ -84,4 +84,4 @@ WHERE
 	AND 
 	c.data_consumo >= DATEADD(day, -60, GETDATE())
 
-EXEC sp_consultaConsumoMedio60Dias @vFkResidenciaCdResidencia = 2;
+EXEC sp_consultaConsumoMedio60Dias @vFkResidenciaCdResidencia = 1;
