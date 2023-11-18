@@ -109,6 +109,20 @@ public class ResidenciaController {
 			residenciasUsuario.remove(3);
 		}
 		
+		model.addAttribute("residencia1", residenciasUsuario.size() > 0 ? residenciasUsuario.get(0) : null);
+		model.addAttribute("residencia2", residenciasUsuario.size() > 1 ? residenciasUsuario.get(1) : null);
+		model.addAttribute("residencia3", residenciasUsuario.size() > 2 ? residenciasUsuario.get(2) : null);
+		
+		boolean zeroResidencia = residenciasUsuario.isEmpty();
+		boolean umaResidencia = residenciasUsuario.size() == 1;
+		boolean duasResidencias = residenciasUsuario.size() == 2;
+		boolean tresResidencias = residenciasUsuario.size() >= 3;
+		model.addAttribute("zeroResidencia", zeroResidencia);
+		model.addAttribute("umaResidencia", umaResidencia);
+		model.addAttribute("duasResidencias", duasResidencias);
+		model.addAttribute("tresResidencias", tresResidencias);
+		
+		
 		model.addAttribute("residenciasUsuario", residenciasUsuario);
 		model.addAttribute("botaoAdicionarResidencia", botaoAdicionarResidencia);
 		
