@@ -58,11 +58,17 @@ INSERT INTO Icone_Residencia VALUES
 INSERT INTO Residencia VALUES 
 ('38d83dks', 'residenciaRau', '70074900', 1, 27, 1);
 
+INSERT INTO Residencia VALUES 
+('38skadks', 'residenciaDiogo', '70074900', 2, 27, 2);
+
 INSERT INTO Tipo_Dispositivo VALUES 
 ('Eletrônico'), ('Eletrodoméstico');
 
 INSERT INTO Dispositivo VALUES
 (50, 'Notebook Gaymer', 5, 1, 1);
+
+INSERT INTO Dispositivo VALUES
+(10, 'Nokia tijolinho', 8, 2, 1)
 
 INSERT INTO Consumo VALUES 
 (0.17475, 0.25, '2023-11-13', 1), (0.17475, 0.25, '2023-11-14', 1),

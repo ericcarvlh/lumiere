@@ -64,24 +64,48 @@ public class DispositivoController {
 	}
 	
 	@GetMapping("/Detalhes/{cdDispositivo}")
-	public String detalhes(Model model, @PathVariable("cdDispositivo") int cdDispositivo, Dispositivo dispositivo) {
-		Dispositivo dispo = dispositivoServiceImpl.consultarDispositivoPorCdDispositivo(cdDispositivo);
+	public String detalhes(Model model, @PathVariable("cdDispositivo") int cdDispositivo) {
+		Dispositivo dispositivo = dispositivoServiceImpl.consultarDispositivoPorCdDispositivo(cdDispositivo);
+		List<TipoDispositivo> tiposDispositivos = tipoDispositivoServiceImpl.buscarTodos();
 		List<Consumo> list = consumoServiceImpl.buscarConsumosPorCdDispositivo(cdDispositivo);
 		
 		double consumoTotal = 0;
 		for (Consumo c: list) {
 			consumoTotal += c.getPrecoConsumo();
 		}
-		
-		model.addAttribute("infoDispositivo", dispo);
+
+		model.addAttribute("tipoDispositivos", tiposDispositivos);
+		model.addAttribute("infoDispositivo", dispositivo);
 		model.addAttribute("consumoTotal", consumoTotal);
 		model.addAttribute("consumosDispositivo", list);
 		
 		return "/Dispositivo/Detalhes";
 	}
 	
-	@GetMapping("/Atualizar")
-	public String atualizar(Dispositivo dispositivo) {
-		return "Dispositivo/Listar";
+	@PostMapping(value="/Atualizar", params = "save")
+	public String atualizar(@RequestParam(name = "categoriaSelect") int cdCategoria, int cdDispositivo, String nomeDispositivo, double watts, int tempoDeConsumo, int cdResidencia) {
+		Dispositivo dispositivo = new Dispositivo();
+		dispositivo.setId(cdDispositivo);
+		dispositivo.setWattsDispositivo(watts);
+		dispositivo.setTempoUsoDiario(tempoDeConsumo);
+		dispositivo.setNomeDispositivo(nomeDispositivo);
+		TipoDispositivo tipoDispositivo = new TipoDispositivo();
+		tipoDispositivo.setId(cdCategoria);
+		Residencia residencia = new Residencia();
+		residencia.setId(cdResidencia);
+		
+		dispositivo.setResidencia(residencia);
+		dispositivo.setTipoDispositivo(tipoDispositivo);
+		
+		dispositivoServiceImpl.atualizar(dispositivo);
+				
+		return String.format("redirect:/Dispositivo/Listar/%d", cdDispositivo);		
+	}
+	
+	@PostMapping(value="/Atualizar", params = "delete")
+	public String apagar(int cdResidencia, int cdDispositivo) {
+		dispositivoServiceImpl.deletar(cdDispositivo);
+				
+		return String.format("redirect:/Dispositivo/Listar/%d", cdResidencia);
 	}
 }

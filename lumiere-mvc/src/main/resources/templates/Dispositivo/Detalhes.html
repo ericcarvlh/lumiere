@@ -10,26 +10,46 @@
 		<h2>Detalhes do dispositivo</h2>
 		
 		<main class="container-fluid ">
-			<form th:action="@{/Dispositivo/Atualizar}" th:object="${dispositivo}" method="POST">
+			<form th:action="@{/Dispositivo/Atualizar}" method="POST">
 			  	<div class="row g-3">
+					<input type="hidden" name="cdResidencia" id="cdResidencia" th:value="${infoDispositivo.getResidencia().getId()}">
+					<input type="hidden" name="cdDispositivo" id="cdDispositivo" th:value="${infoDispositivo.getId()}">
+					  
 					<div class="col-sm-6">
-				      	<label for="apelido" class="form-label">Apelido</label>
-				      	<input type="text" class="form-control" id="apelido" placeholder="Apelido do dispositivo" th:value="${infoDispositivo.getNomeDispositivo()}" th:field="*{nomeDispositivo}">
+				      	<label for="nomeDispositivo" class="form-label">Apelido</label>
+				      	<input type="text" class="form-control" id="nomeDispositivo" name="nomeDispositivo" th:value="${infoDispositivo.getNomeDispositivo()}" placeholder="Apelido do dispositivo" >
 				    </div>
 				
 				    <div class="col-sm-6">
 				      	<label for="watts" class="form-label">Watts</label>
-				    	<input type="text" class="form-control" id="watts" placeholder="Potência do dispositivo" th:value="${infoDispositivo.getWattsDispositivo()}">
+				    	<input type="text" class="form-control" id="watts" name="watts" th:value="${infoDispositivo.getWattsDispositivo()}" placeholder="Potência do dispositivo" >
 				    </div>
 				
 					<div class="col-sm-6">
 					  	<label for="tempoDeConsumo" class="form-label">Tempo de consumo diário (Horas)</label>
-						<input type="text" class="form-control" id="tempoDeConsumo" placeholder="Tempo em horas de consumo diário" th:value="${infoDispositivo.getTempoUsoDiario()}">
+						<input type="text" class="form-control" id="tempoDeConsumo" name="tempoDeConsumo" th:value="${infoDispositivo.getTempoUsoDiario()}" placeholder="Tempo em horas de consumo diário">
 					</div>
-				</div>		
+					
+					<div class="col-sm-6">
+						<label for="categoriaSelect" class="form-label">Categoria do dispositivo</label>
+						<select name="categoriaSelect" id="categoriaSelect" class="form-control">
+			             	<option value="0">Categoria Dispositivo</option>
+			             	<option th:each="tD : ${tipoDispositivos}" th:value="${tD.getId()}" th:text="${tD.getTipoDispositivo()}" th:selected="${tD.getId() eq infoDispositivo.getTipoDispositivo().getId()}"></option>
+			       		</select>
+					</div>
+				</div>
+				
+				<br>
+				
+				<div class="container text-center">
+					<p class="d-inline">
+				  		<button type="submit" name="delete" class="btn btn-danger">Apagar</button>
+				  		<button type="submit" name="save" class="btn btn-success">Salvar</button>
+					</p>
+				</div>
 			</form>
 						
-			<div class="table-responsive small">
+			<div class="table-responsive">
 				<table class="table table-bordered table-sm text-center table-striped table-hover">
 				  <thead>
 					<tr>
@@ -50,18 +70,8 @@
 	      	
 			<div class="card">
 			  <div class="card-body">
-	      		<p>Valir total do consumo até o momento: R$<mark th:text="${consumoTotal}"><mark> </p>
+	      		<p>Valor total do consumo até o momento: R$<mark th:text="${consumoTotal}"><mark> </p>
 			  </div>
-			</div>
-			
-			<br>
-			
-			<div class="container text-center">
-				<p class="d-inline">
-			  		<button type="button" class="btn btn-primary">Voltar</button>
-			  		<button type="button" class="btn btn-danger">Apagar</button>
-			  		<button type="submit" class="btn btn-success">Salvar</button>
-				</p>
 			</div>
 		</main>
 	</body>

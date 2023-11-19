@@ -38,3 +38,14 @@ SELECT
 	*
 FROM
 	Icone_Residencia;
+
+-- Select para consultar os dispositivos junto com residencias
+
+SELECT 
+    *
+FROM
+    Dispositivo as d
+INNER JOIN
+	Residencia as r
+ON 
+	d.fk_Residencia_cd_residencia = r.cd_residencia;

@@ -20,6 +20,14 @@ public class DispositivoServiceImpl implements DispositivoService {
 	public void salvar(Dispositivo dispositivo) {
 		dispositivoDao.save(dispositivo);	
 	}
+	
+	public void deletar(int cdDispositivo) {
+		dispositivoDao.delete(cdDispositivo);
+	}
+	
+	public void atualizar(Dispositivo dispositivo) {
+		dispositivoDao.update(dispositivo);
+	}
 
 	public Dispositivo consultarDispositivoPorCdDispositivo(int cdDispositivo) {
 		return dispositivoDao.findById(cdDispositivo);
