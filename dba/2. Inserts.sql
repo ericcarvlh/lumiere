@@ -15,7 +15,9 @@ INSERT INTO Usuario VALUES
 /* Senha: 12345 */
 ('Raul', 'raumasc@gmail.com', '$2a$12$Ol.Kku5PU1j5xpkgxUqo..0hki2xu/weS.TZMVKtXilfSpKe3cece', GETDATE()), 
 /* Senha: berserk */
-('Dogo', 'diogogod@gmail.com', '$2a$12$n56TwVJJ/QkoTGUoH7YmIucmBKYcpwCt.kgaUo/ic162rcyzvNPYW', GETDATE());
+('Dogo', 'diogogod@gmail.com', '$2a$12$n56TwVJJ/QkoTGUoH7YmIucmBKYcpwCt.kgaUo/ic162rcyzvNPYW', GETDATE()),
+/* Senha: anaboboca */
+('Nana', 'anapinkbarbie@gmail.com', '$2a$12$2wDGxOOQS0M68YaEBgkiKeVWrMmHk8PJAn3ULKJ9RpfRU4QbDE/B6', GETDATE());
 
 /* Valores ficticios */
 INSERT INTO Estado VALUES
