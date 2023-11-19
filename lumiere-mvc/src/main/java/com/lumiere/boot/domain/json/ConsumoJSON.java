@@ -10,7 +10,7 @@ public class ConsumoJSON {
 		ConsumoDomain consumoDomain = new ConsumoDomain();
 		consumoDomain.setCdConsumo(consumo.getId());
 		consumoDomain.setPrecoConsumo(consumo.getPrecoConsumo());
-		consumoDomain.setDataConsumo(consumo.getDataConsumo());
+		consumoDomain.setDataConsumo(new Date(consumo.getDataConsumo()));
 		consumoDomain.setFkDispositivoCdDispositivo(consumo.getDispositivo().getId());
 		//Creating the ObjectMapper object
 		ObjectMapper mapper = new ObjectMapper();

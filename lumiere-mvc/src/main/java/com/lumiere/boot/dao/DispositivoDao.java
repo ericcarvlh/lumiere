@@ -7,13 +7,15 @@ import com.lumiere.boot.domain.Dispositivo;
 
 public interface DispositivoDao {
 
-void save(Dispositivo dispositivo);
+	void save(Dispositivo dispositivo);
 	
 	void update(Dispositivo dispositivo);
 	
-	void delete(Long id);
+	void delete(Integer id);
 	
-	Dispositivo findById(Long id);
+	Dispositivo findById(Integer id);
 	
 	List<Dispositivo> findAll();
+	
+	List<Dispositivo> consultarDispositivosPorCdResidencia(int cdResidencia);
 }

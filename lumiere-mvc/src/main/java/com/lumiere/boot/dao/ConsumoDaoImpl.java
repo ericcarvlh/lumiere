@@ -13,4 +13,8 @@ public class ConsumoDaoImpl extends AbstractDao<Consumo, Integer> implements Con
 		return createQuery("SELECT c FROM Consumo c WHERE c.dispositivo.residencia.cdResidencia = ?1", cdResidencia);
 	}
 	
+	public List<Consumo>  buscarConsumosPorCdDispositivo(int cdDispositivo) {
+		return createQuery("SELECT c FROM Consumo c WHERE c.dispositivo.cdDispositivo = ?1", cdDispositivo);
+	}
+	
 }

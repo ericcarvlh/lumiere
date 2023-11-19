@@ -6,4 +6,6 @@ import com.lumiere.boot.domain.Consumo;
 
 public interface ConsumoService {
 	List<Consumo> buscarConsumosPorCdResidencia(int cdResidencia);
+	
+	List<Consumo> buscarConsumosPorCdDispositivo(int cdDispositivo);
 }

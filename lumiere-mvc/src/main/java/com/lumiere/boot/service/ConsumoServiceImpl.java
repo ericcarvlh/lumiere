@@ -20,4 +20,8 @@ public class ConsumoServiceImpl implements ConsumoService {
 	public List<Consumo> buscarConsumosPorCdResidencia(int cdResidencia) {
 		return consumoDao.buscarConsumosPorCdResidencia(cdResidencia);
 	}
+	
+	public List<Consumo> buscarConsumosPorCdDispositivo(int cdDispositivo) {
+		return consumoDao.buscarConsumosPorCdDispositivo(cdDispositivo);
+	}
 }

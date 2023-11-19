@@ -1,5 +1,7 @@
 package com.lumiere.boot.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,4 +21,11 @@ public class DispositivoServiceImpl implements DispositivoService {
 		dispositivoDao.save(dispositivo);	
 	}
 
+	public Dispositivo consultarDispositivoPorCdDispositivo(int cdDispositivo) {
+		return dispositivoDao.findById(cdDispositivo);
+	}
+	
+	public List<Dispositivo> consultarDispositivosPorCdResidencia(int cdResidencia){
+		return dispositivoDao.consultarDispositivosPorCdResidencia(cdResidencia);
+	}
 }

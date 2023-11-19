@@ -19,4 +19,6 @@ public interface ConsumoDao {
 	List<Consumo> findAll();
 	
 	List<Consumo> buscarConsumosPorCdResidencia(int cdResidencia);
+	
+	List<Consumo> buscarConsumosPorCdDispositivo(int cdDispositivo);
 }

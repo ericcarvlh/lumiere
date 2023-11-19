@@ -1,6 +1,7 @@
 package com.lumiere.boot.domain;
 
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import jakarta.persistence.*;
 
@@ -17,7 +18,7 @@ public class Consumo {
 	
 	@Column(name = "kwh_consumo", nullable = false)
 	private double kwhConsumo;
-	
+
 	@Column(name = "data_consumo", nullable = false)
 	private Date dataConsumo;
 	
@@ -25,8 +26,17 @@ public class Consumo {
 	@JoinColumn(name = "fk_Dispositivo_cd_dispositivo")
 	private Dispositivo dispositivo;
 
-	public Date getDataConsumo() {
-		return dataConsumo;
+	public double getKwhConsumo() {
+		return kwhConsumo;
+	}
+
+	public void setKwhConsumo(double kwhConsumo) {
+		this.kwhConsumo = kwhConsumo;
+	}
+	
+	public String getDataConsumo() {
+		String dataFormatada = new SimpleDateFormat("dd/MM/yyyy").format(dataConsumo);
+		return dataFormatada;
 	}
 	
 	public double getPrecoConsumo() {
