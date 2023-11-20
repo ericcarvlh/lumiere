@@ -74,4 +74,36 @@ public class RelatorioConsumoDao {
         
         return relatorioConsumo;
     }
+	
+	public List<RelatorioConsumo> callConsultaRelatorioSemanal(int cdResidencia) {
+        StoredProcedureQuery storedProcedure = entityManager.createStoredProcedureQuery("sp_consultaRelatorioSemanal", "consultaRelatorioSemanal");
+
+        // Registre os parâmetros de entrada, se houver
+        storedProcedure.registerStoredProcedureParameter("vFkResidenciaCdResidencia", Integer.class, ParameterMode.IN);
+        storedProcedure.setParameter("vFkResidenciaCdResidencia", cdResidencia);
+        
+        // Execute a procedure
+        storedProcedure.execute();
+        
+        List<RelatorioConsumo> listaRelatorioSemanal = storedProcedure.getResultList();
+        
+        return listaRelatorioSemanal;
+	}
+	
+	public List<RelatorioConsumo> callConsultaTotalSemanal(int cdResidencia) {
+        StoredProcedureQuery storedProcedure = entityManager.createStoredProcedureQuery("sp_consultaTotalSemanal", "consultaTotalSemanal");
+
+        // Registre os parâmetros de entrada, se houver
+        storedProcedure.registerStoredProcedureParameter("vFkResidenciaCdResidencia", Integer.class, ParameterMode.IN);
+        storedProcedure.setParameter("vFkResidenciaCdResidencia", cdResidencia);
+        
+        // Execute a procedure
+        storedProcedure.execute();
+        
+        List<RelatorioConsumo> listaTotalSemanal = storedProcedure.getResultList();
+        
+        return listaTotalSemanal;
+	}
+	
+	
 }
