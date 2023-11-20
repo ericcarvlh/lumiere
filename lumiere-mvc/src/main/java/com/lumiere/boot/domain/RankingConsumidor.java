@@ -12,5 +12,8 @@ import jakarta.persistence.*;
 )
 @Entity
 public class RankingConsumidor {
-
+	@Id
+	private int id;
+	
+	
 }
