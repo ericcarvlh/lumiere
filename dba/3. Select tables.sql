@@ -49,3 +49,14 @@ INNER JOIN
 	Residencia as r
 ON 
 	d.fk_Residencia_cd_residencia = r.cd_residencia;
+
+--
+
+SELECT 
+	* 
+FROM 
+	Dispositivo as d
+INNER JOIN 
+	Consumo as c
+ON 
+	d.cd_dispositivo = c.fk_Dispositivo_cd_dispositivo
