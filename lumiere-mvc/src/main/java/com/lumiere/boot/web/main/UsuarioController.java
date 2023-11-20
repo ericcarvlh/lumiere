@@ -43,4 +43,11 @@ public class UsuarioController {
 	public String logarUsuario(Usuario usuario) {
 		return "/Login/login";
 	}
+	
+	@GetMapping("/Ranking")
+	public String consumidores() {
+		
+		
+		return "/Usuario/Ranking";
+	}
 }
