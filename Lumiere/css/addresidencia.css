@@ -16,39 +16,45 @@ body {
 }
 
 .h1 {
-    width: 503px;
-    flex-shrink: 0;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    width: 100%;
     color: #FFF;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
-    font-size: 40px;
+    font-size: 35px;
     font-style: normal;
     font-weight: 400;
-    line-height: 125.5%; /* 50.2px */
+    line-height: normal;
 }
 
-.logo-fundo-esquerda{
-    width: 400px;
-    height: 750px;
-    flex-shrink: 0;
-}
 .logo-fundo-direita {
     position: absolute;
-    top: 0px;
-    left: 74.4%;
-    width: 395px;
-    height: 750px;
+    left: 70.3%;
+    width: 400px;
+    height: 647.4px;
     flex-shrink: 0;
+}
+
+.logo-fundo-esquerda {
+    width: 400px;
+    height: 647.4px;
+    flex-shrink: 0;
+}
+
+.icon-mais{
+    position: absolute;
+    top: 315.5px;
+    left: 49.16%;
+    
 }
 
 .icon-circulo{
-    width: 75px;
-    height: 75px;
-    flex-shrink: 0;
-    border-radius: 145.565px;
-    border: 0.945px solid rgba(255, 255, 255, 0.00);
-    background: radial-gradient(231% 135.8% at 0.9% 2.98%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
-    backdrop-filter: blur(14.178360939025879px);
+    position: absolute;
+    top: 300px;
+    left: 48%;
+    
 }
 
 .adicionar{
@@ -58,7 +64,11 @@ body {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 125.5%; /* 25.1px */
+    line-height: 125.5%; 
+
+    position: absolute;
+    top: 400px;
+    left: 44.2%;
 }
 
 

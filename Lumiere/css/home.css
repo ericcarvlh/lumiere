@@ -10,7 +10,7 @@ html {
 
 body {
     width: 100%;
-    height: 5328px;
+    height: 4000px;
     flex-shrink: 0;
     background: linear-gradient(180deg, #052769 26.12%, #092C73 31.15%, #18409D 41.04%, #2A45BB 51.02%, #5652BA 60.51%, #5652BA 60.52%, #8760B9 70.51%, #8760B9 72.26%, #8760B9 74.28%, #7F47DD 80.36%, #4E00CE 84.52%, #24189A 87.25%, #002C6D 90.53%);
 }
@@ -24,79 +24,67 @@ body {
 
 .botao {
     position: relative;
-    width: 155px;
+    display:block;
+    width: 8%;
     height: 56.36px;
-    top: 51px;
-    left: 1211px;
+    top: 50px;
+    left: 1150px;
     border-radius: 5px;
 }
 
-nav {
-    display: block;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
 .btn-entrar {
-    width: 78px;
-    height: 25px;
-    top: 54px;
-    left: 1272px;
-
     text-decoration: none;
     color: #ffffff;
-    font-family: Lexend Exa;
+    width: 100%;
+    font-family: 'Lexend Exa', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    cursor: pointer;
 }
 
 .lamp {
     position: absolute;
-    width: 255.791px;
-    height: 238.829px;
+    width: 15%;
+    height: 220.829px;
     transform: rotate(-14.01deg);
     flex-shrink: 0;
-    top: 189.92px;
-    left: 136px;
+    top: 30px;
+    left: 200px;
 }
 
 .estrela {
     position: absolute;
-    width: 312.959px;
-    height: 358.265px;
+    width: 20%;
+    height: 350px;
     flex-shrink: 0;
-    top: 189px;
-    left: 1250px;
+    top: 100px;
+    left: 1000px;
 
     filter: blur(6.5px);
 }
 
 .logo-horizontal {
     position: absolute;
-    width: 549px;
+    width: 30%;
     height: 96px;
     flex-shrink: 0;
-    top: 369px;
-    left: 452px;
+    top: 220px;
+    left: 460px;
 }
 
 .intro {
     position: absolute;
-    width: 789px;
+    width: 40%;
     height: 90px;
     flex-shrink: 0;
-    top: 497px;
-    left: 332px;
+    top: 330px;
+    left: 390px;
 
     color: #FFF;
     text-align: center;
     font-family: 'Urbanist', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -104,50 +92,50 @@ nav {
 
 .estrela-1 {
     position: absolute;
-    width: 9%;
+    width: 10%;
     height: 129.359px;
     transform: rotate(-66.706deg);
     flex-shrink: 0;
-    filter: blur(6.5px);
-    top: 570px;
-    left: 174.75px;
+    filter: blur(2px);
+    top: 380px;
+    left: 200px;
 }
 
 .estrela-2 {
     position: absolute;
-    width: 4%;
-    height: 66.396px;
+    width: 6%;
+    height: 80.396px;
     transform: rotate(-41.464deg);
     filter: blur(2px);
     flex-shrink: 0;
-    top: 665.41px;
-    left: 92px;
+    top: 450px;
+    left: 130px;
 }
 
 .estrela-3 {
     position: absolute;
-    width: 3%;
-    height: 47.233px;
+    width: 5%;
+    height: 60.233px;
     transform: rotate(-41.464deg);
     filter: blur(2px);
     flex-shrink: 0;
 
-    top: 709.41px;
-    left: 179px;
+    top: 520px;
+    left: 200px;
 }
 
 .nos {
     position: absolute;
-    width: 188px;
+    width: 50%;
     height: 37px;
-    top: 715px;
-    left: 662px;
+    top: 500px;
+    left: 300px;
     flex-shrink: 0;
 
     color: #FFF;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -159,8 +147,8 @@ nav {
     height: 119px;
     flex-shrink: 0;
 
-    top: 748px;
-    left: 675px;
+    top: 470px;
+    left: 325px;
 }
 
 .fa-chevron-down {
@@ -172,11 +160,16 @@ nav {
 
     flex-shrink: 0;
     color: #FFF;
-}
+}  
 
 h1 {
+    position: absolute;
+    top: 800px;
+    left: 75px;
+
     color: #FFF;
     font-family: 'Lexend Exa', sans-serif;
+    width: 70%;
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
@@ -184,66 +177,94 @@ h1 {
 }
 
 .texto-1 {
-    width: 570px;
+    position: absolute;
+    top: 860px;
+    width: 40%;
     height: 263px;
+    left: 80px;
     flex-shrink: 0;
 
     color: #D2D2D2;
+    text-align:left;
     font-family: 'Urbanist', sans-serif;
-    text-align: center;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .mao-celular {
-    width: 328.724px;
-    height: 328.724px;
+    position: absolute;
+    width: 45%;
+    height: 500.724px;
+
+    top: 640px;
+    left: 640px;
 }
 
 .lampada {
-    width: 257.135px;
-    height: 304.757px;
+    position: absolute;
+    top: 1100px;
+    width: 20%;
+    height: 250px;
     transform: rotate(-38.663deg);
     flex-shrink: 0;
     filter: blur(2.6740336418151855px);
 }
 
 .carteira {
-    width: 288.099px;
-    height: 244.178px;
+    position: absolute;
+    top: 1300px;
+    left: 1000px;
+    width: 20%;
+    height: 190px;
     transform: rotate(-176.527deg);
     flex-shrink: 0;
     filter: blur(4px);
 }
 
 h2 {
+    position: absolute;
+    top: 1550px;
+    left: -140px;
+    width: 70%;
     color: #FFF;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
-    font-size: 50px;
+    font-size: 100px;
     font-style: normal;
     font-weight: 400;
     line-height: 125.5%;
 }
 
 .mao-dinheiro {
-    width: 330.955px;
-    height: 306.133px;
+    position: absolute;
+    top: 1500px;
+    left: 480px;
+    width: 30%;
+    height: 410px;
     flex-shrink: 0;
 }
 
 h3 {
+    position: absolute;
+    top: 1660px;
+    left: 830px;
+    width: 30%;
     color: #FFF;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
-    font-size: 50px;
+    font-size: 100px;
     font-style: normal;
     font-weight: 400;
     line-height: 125.5%; 
 }
+
 .texto-2 {
+    position: absolute;
+    top: 1890px;
+    width: 70%;
+    left: 190px;
     color: #D9D9D9;
     text-align: center;
     font-family: 'Urbanist', sans-serif;
@@ -254,16 +275,24 @@ h3 {
 }
 
 .texto-3 {
+    position: absolute;
+    top: 1960px;
+    width: 70%;
+    left: 190px;
     color: #D9D9D9;
     text-align: center;
     font-family: 'Urbanist', sans-serif;
-    font-size: 25px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
 
 .texto-4 {
+    position: absolute;
+    top: 2040px;
+    width: 70%;
+    left: 190px;
     color: #D9D9D9;
     text-align: center;
     font-family: 'Urbanist', sans-serif;
@@ -274,20 +303,30 @@ h3 {
 }
 
 .porco-direito {
-    width: 151px;
-    height: 371px;
+    position: absolute;
+    top: 2200px;
+    width: 15%;
+    height: 340px;
+    left: 85%;
     flex-shrink: 0;
     filter: blur(4px);
 }
 
 .porco-esquerdo {
-    width: 225px;
-    height: 371px;
+    position: absolute;
+    top: 2200px;
+    width: 15%;
+    height: 340px;
+    
     flex-shrink: 0;
     filter: blur(4px);
 }
 
 h4 {
+    position: absolute;
+    top: 2650px;
+    width: 80%;
+    left: 100px;
     color: #FFF;
     font-family: 'Lexend Exa', sans-serif;
     font-size: 40px;
@@ -297,6 +336,10 @@ h4 {
 }
 
 h5 {
+    position: absolute;
+    top: 2700px;
+    width: 49%;
+    left: 640px;
     color: #FFF;
     font-family: 'Lexend Exa', sans-serif;
     font-size: 40px;
@@ -324,104 +367,137 @@ h5 {
 }
 
 .texto-5 {
+    position: absolute;
+    top: 2850px;
+    width: 30%;
+    left: 100px;
     color: #FFF;
     text-align: center;
     font-family: 'Urbanist', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 125.5%; 
 }
 
 .grafico {
-    width: 444.318px;
-    height: 391px;
+    position: absolute;
+    left: 330px;
+    top: 2850px;
+    width: 50%;
+    height: 500px;
     flex-shrink: 0;
 }
 
 .texto-6 {
+    position: absolute;
+    top: 3200px;
+    width: 30%;
+    left: 850px;
     color: #FFF;
     text-align: center;
     font-family: 'Urbanist', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 125.5%;
 }
 
 .fone {
-    width: 256.859px;
-    height: 240.805px;
+    position: absolute;
+    top: 3200px;
+    left: 100px;
+    width: 15%;
+    height: 150px;
     transform: rotate(-24.875deg);
     flex-shrink: 0;
     filter: blur(4px);
 }
 
 .sino {
-    width: 198px;
-    height: 150.247px;
+    position: absolute;
+    width: 30%;
+    height: 400px;
+    top: 3400px;
+    left: 430px;
     flex-shrink: 0;
 }
 
 .joia {
-    width: 250px;
-    height: 211px;
+    position: absolute;
+    top: 3560px;
+    width: 20%;
+    left: -2%;
+    height: 200px;
     flex-shrink: 0;
 }
 
 h6 {
+    position: absolute;
+    top: 3730px;
+    width: 50%;
+    left: 435px;
     color: #FFF;
     font-family: 'Lexend Exa', sans-serif;
-    font-size: 40px;
+    font-size: 27px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .h7 {
-    width: 828px;
+    position: absolute;
+    width: 40%;
     height: 152px;
+    top: 3790px;
+    left: 370px;
     flex-shrink: 0;
 
     color: #FFF;
     text-align: center;
     font-family: 'Urbanist', sans-serif;
-    font-size: 40px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .cadastro {
-    width: 240px;
-    height: 75px;
+    position: absolute;
+    text-decoration: none;
+    top: 3880px;
+    width: 15%;
+    height: 60px;
+    left: 540px;
     flex-shrink: 0;
-    border-radius: 28px;
+    border-radius: 30px;
     background: #FFF;
     cursor: pointer;
-    text-decoration: none;
+    border-color: #FFF;
 
-    color: #3C09B8;
+    color: #002C6D;
     font-family: 'Lexend Exa', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-.cad {
-    text-decoration: none;
-}
-
 footer {
-    width: 1440px;
-    height: 336px;
+    position: absolute;
+    top: 4000px;
+    width: 100%;
+    height: 50%;
     flex-shrink: 0;
     background: #00153F;
     box-shadow: -14px 14px 10px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
 .texto-7 {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    width: 30%;
     color: #FFF;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
@@ -432,18 +508,27 @@ footer {
 }
 
 .github {
-    width: 86px;
-    height: 87px;
+    position: absolute;
+    left: 170px;
+    top: 95px;
+    width: 7%;
+    height: 80px;
     flex-shrink: 0;
 }
 
 .linkedin {
-    width: 73px;
-    height: 73px;
+    position: absolute;
+    top: 100px;
+    left: 290px;
+    width: 6%;
+    height: 70px;
     flex-shrink: 0;
 }
 
 .texto-8 {
+    position: absolute;
+    top: 195px;
+    left: 150px;
     width: 248px;
     height: 25px;
     flex-shrink: 0;
@@ -451,26 +536,35 @@ footer {
     color: #FFF;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: 125.5%; 
     text-decoration-line: underline;
 }
 
-circle {
-    width: 225px;
-    height: 225px;
+svg {
+    position: absolute;
+    top: 45px;
+    left: 550px;
+    width: 15%;
+    height: 200px;
     flex-shrink: 0;
 }
 
 .logo-footer {
-    width: 175px;
-    height: 174px;
+    position: absolute;
+    top: 70px;
+    left: 560px;
+    width: 170px;
+    height: 170px;
     flex-shrink: 0;
 }
 
 .texto-9 {
+    position: absolute;
+    top: 60px;
+    left: 840px;
     color: #FFF;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
@@ -481,6 +575,9 @@ circle {
 }
 
 .texto-10 {
+    position: absolute;
+    top: 110px;
+    left: 870px;
     color: #FFA318;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
@@ -491,14 +588,18 @@ circle {
 }
 
 .texto-11 {
+    position: absolute;
+    top: 175px;
+    left: 890px;
     color: #FFF;
     text-align: center;
     font-family: 'Urbanist', sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 400;
     line-height: 125.5%; 
 }
+
 
 /*
 fontes:

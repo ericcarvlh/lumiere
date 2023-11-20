@@ -16,20 +16,23 @@ body {
 }
 
 .logo-esquerda {
-    width: 340px;
+    width: 400px;
     height: 647px;
     flex-shrink: 0;
 }
 
 .logo-direita {
     position: absolute;
-    left: 78.5%;
-    width: 290px;
+    left: 70.5%;
+    width: 400px;
     height: 649px;
     flex-shrink: 0;
 }
 
 .h1 {
+    position: absolute;
+    top: 90px;
+    left: 100px;
     width: 654px;
     height: 39px;
     flex-shrink: 0;
@@ -43,6 +46,9 @@ body {
 }
 
 .texto-1 {
+    position: absolute;
+    top: 145px;
+    left: 104px;
     width: 468px;
     height: 21px;
     flex-shrink: 0;
@@ -56,17 +62,24 @@ body {
 }
 
 .container {
-    width: 546px;
-    height: 427px;
+    position: absolute;
+    top: 230px;
+    left: 100px;
+    width:  40%;
+    height: 370px;
     flex-shrink: 0;
 
     border-radius: 30px;
     border: 1.032px solid rgba(255, 255, 255, 0.00);
     background: radial-gradient(243.45% 142.9% at 0.9% 2.98%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
     backdrop-filter: blur(15.487011909484863px);
+    border-style: none;
 }
 
 .nome {
+    position: absolute;
+    top: 50px;
+    left: 150px;
     color: #FFF;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
@@ -77,15 +90,24 @@ body {
 }
 
 #nome {
-    width: 403.339px;
+    padding-left: 20px;
+    position: absolute;
+    top: 90px;
+    left: 80px;
+    width: 70%;
     height: 36.831px;
     flex-shrink: 0;
     border-radius: 11.678px;
     background: rgba(255, 255, 255, 0.50);
     border-style: none;
+    color: rgba(0, 0, 0, 0.60);
+    font-family: 'Lexend Exa', sans-serif;
 }
 
 .numero {
+    position: absolute;
+    top: 150px;
+    left: 150px;
     color: #FFF;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
@@ -96,15 +118,24 @@ body {
 }
 
 #numero {
-    width: 403.339px;
+    padding-left: 20px;
+    position: absolute;
+    top: 190px;
+    left: 80px;
+    width: 70%;
     height: 36.831px;
     flex-shrink: 0;
     border-radius: 11.678px;
     background: rgba(255, 255, 255, 0.50);
     border-style: none;
+    color: rgba(0, 0, 0, 0.60);
+    font-family: 'Lexend Exa', sans-serif;
 }
 
 .cep {
+    position: absolute;
+    top: 250px;
+    left: 250px;
     color: #FFF;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
@@ -115,25 +146,37 @@ body {
 }
 
 #cep {
-    width: 200px;
+    padding-left: 20px;
+    position: absolute;
+    top: 285px;
+    left: 165px;
+    width: 40%;
     height: 36px;
     flex-shrink: 0;
 
     border-radius: 11.678px;
     background: rgba(255, 255, 255, 0.50);
     border-style: none;
+    color: rgba(0, 0, 0, 0.60);
+    font-family: 'Lexend Exa', sans-serif;
 }
 
 .h2 {
+    position: absolute;
+    top: 230px;
+    left: 800px;
     color: #FFF;
     font-family: 'Lexend Exa', sans-serif;
-    font-size: 27.598px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .texto-2 {
+    position: absolute;
+    top: 270px;
+    left: 940px;
     color: #FFF;
     font-family: 'Urbanist', sans-serif;
     font-size: 18.398px;
@@ -143,48 +186,63 @@ body {
 }
 
 .coracao {
+    position: absolute;
+    top: 315px;
+    left: 860px;
     width: 98px;
     height: 94px;
     flex-shrink: 0;
 }
 
 .predio {
+    position: absolute;
+    top: 315px;
+    left: 970px;
     width: 98px;
     height: 94px;
     flex-shrink: 0;
 }
 
 .porquin {
+    position: absolute;
+    top: 315px;
+    left: 1080px;
     width: 98px;
     height: 94px;
     flex-shrink: 0;
 }
 
 .willy {
+    position: absolute;
+    top: 420px;
+    left: 860px;
     width: 98px;
     height: 94px;
     flex-shrink: 0;
 }
 
 .gatinho {
+    position: absolute;
+    top: 420px;
+    left: 975px;
     width: 98px;
     height: 94px;
     flex-shrink: 0;
 }
 
 .doge {
+    position: absolute;
+    top: 420px;
+    left: 1084px;
     width: 98px;
     height: 94px;
     flex-shrink: 0;
 }
 
-.save {
-    width: 22.53px;
-    height: 22.53px;
-    flex-shrink: 0;
-}
-
 #submit {
+    position: absolute;
+    top: 535px;
+    left: 950px;
     width: 146px;
     height: 64.793px;
     flex-shrink: 0;
@@ -193,6 +251,7 @@ body {
     border: 0.817px solid rgba(255, 255, 255, 0.00);
     background: radial-gradient(231% 135.8% at 0.9% 2.98%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
     backdrop-filter: blur(12.248753547668457px);
+    border-style: none;
 
     color: #FFF;
     text-align: center;
