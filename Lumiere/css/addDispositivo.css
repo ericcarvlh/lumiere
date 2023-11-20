@@ -1,0 +1,214 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    flex-shrink: 0;
+    background: url("../img/addDispositivos/fundo\ \(2\).png") no-repeat top fixed; 
+    background-size: 1370px 665px;
+}
+
+.h1 {
+    position: absolute;
+    top: 60px;
+    left: 140px;
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.h2 {
+    position: absolute;
+    top: 90px;
+    left: 140px;
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.nome {
+    position: absolute;
+    top: 150px;
+    left: 140px;
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#nome {
+    position: absolute;
+    top: 180px;
+    left: 140px;
+    width: 397.798px;
+    height: 36.325px;
+    flex-shrink: 0;
+    
+    color: rgba(0, 0, 0, 0.60);
+    font-family: 'Lexend Exa', sans-serif;
+    padding-left: 10px;
+
+    border-radius: 11.518px;
+    background: rgba(255, 255, 255, 0.50);
+    border-style: none;
+}
+
+.watts {
+    position: absolute;
+    top: 250px;
+    left: 140px;
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#watts {
+    position: absolute;
+    top: 280px;
+    left: 140px;
+    width: 397.798px;
+    height: 36.325px;
+    flex-shrink: 0;
+
+    color: rgba(0, 0, 0, 0.60);
+    font-family: 'Lexend Exa', sans-serif;
+    padding-left: 10px;
+
+    border-radius: 11.518px;
+    background: rgba(255, 255, 255, 0.50);
+    border-style: none;
+}
+
+.consumo {
+    position: absolute;
+    top: 350px;
+    left: 140px;
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#consumo {
+    position: absolute;
+    top: 380px;
+    left: 140px;
+    width: 397.798px;
+    height: 36.325px;
+    flex-shrink: 0;
+
+    color: rgba(0, 0, 0, 0.60);
+    font-family: 'Lexend Exa', sans-serif;
+    padding-left: 10px;
+
+    border-radius: 11.518px;
+    background: rgba(255, 255, 255, 0.50);
+    border-style: none;
+}
+
+.categoria {
+    position: absolute;
+    top: 450px;
+    left: 140px;
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#categoria {
+    position: absolute;
+    top: 480px;
+    left: 140px;
+    width: 397.798px;
+    height: 36.325px;
+    flex-shrink: 0;
+
+    color: rgba(0, 0, 0, 0.60);
+    font-family: 'Lexend Exa', sans-serif;
+    padding-left: 10px;
+
+    border-radius: 11.518px;
+    background: rgba(255, 255, 255, 0.50);
+    border-style: none;
+}
+
+#submit {
+    position: absolute;
+    top: 560px;
+    left: 140px;
+    width: 206px;
+    height: 53px;
+    flex-shrink: 0;
+
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    background: #51309B;
+    backdrop-filter: blur(9.215606689453125px);
+    border-style: none;
+    border-radius: 20px;
+}
+
+.button {
+    position: absolute;
+    top: 560px;
+    left: 380px;
+    width: 220px;
+    height: 53px;
+    flex-shrink: 0;
+
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    background: #51309B;
+    backdrop-filter: blur(9.215606689453125px);
+    border-style: none;
+    border-radius: 20px;
+}
+
+/*
+fontes:
+
+font-family: 'Lexend Exa', sans-serif;
+font-family: 'Urbanist', sans-serif;
+*/

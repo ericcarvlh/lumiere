@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/addDispositivo.css">
+        <script src="https://kit.fontawesome.com/90438f02e0.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&family=Urbanist&display=swap" rel="stylesheet">
+        <title>Lumiere</title>
+    </head>
+
+    <body>
+        <h1 class="h1">Adicione seus dispositivos </h1>
+        <h2 class="h2">e a gente cuida da gestão para você!</h2>
+
+        <form>
+            <input type="text" name="nome" id="nome">
+            <label for="nome" class="nome">Apelido do dispositivo</label>
+
+            <input type="watts" name="watts" id="watts">
+            <label for="watts" class="watts">Watts Dispositivo</label>
+
+            <input type="consumo" name="consumo" id="consumo">
+            <label for="consumo" class="consumo">Tempo de consumo diário</label>
+
+            <input type="categoria" name="categoria" id="categoria">
+            <label for="categoria" class="categoria">Categoria dispositivo</label>
+
+            <input type="submit" id="submit" value="Registrar">
+            <label for="submit"></label>
+        </form>
+
+        <a href="../views/listaDispositivos.html">
+            <button type="button" class="button">Ver lista de registro</button>
+        </a>
+    </body>
+</html>
