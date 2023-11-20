@@ -29,6 +29,13 @@ body {
     flex-shrink: 0;
 }
 
+.fa-solid.fa-arrow-left {
+    position: absolute;
+    top: 70px;
+    left: 105px;
+    color: #FFF;
+}
+
 .h1 {
     position: absolute;
     top: 90px;

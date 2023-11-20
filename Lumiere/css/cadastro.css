@@ -15,10 +15,18 @@ body {
     background: linear-gradient(180deg, #052668 0%, #761AA2 100%);
 }
 
+.fa-solid.fa-arrow-left {
+    position: absolute;
+    top: 55px;
+    left: 100px;
+    color: #FFF;
+    cursor: pointer;
+}
+
 .h1 {
     position: relative;
     top: 30px;
-    left: 85px;
+    left: 120px;
     width: 1000px;
     color: #FFF;
     text-align: center;

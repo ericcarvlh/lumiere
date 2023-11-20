@@ -15,6 +15,28 @@ body {
     background: linear-gradient(180deg, #052769 26.12%, #092C73 31.15%, #18409D 41.04%, #2A45BB 51.02%, #5652BA 60.51%, #5652BA 60.52%, #8760B9 70.51%, #8760B9 72.26%, #8760B9 74.28%, #7F47DD 80.36%, #4E00CE 84.52%, #24189A 87.25%, #002C6D 90.53%);
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #052769; 
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:#052769; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5E20E2; 
+  }
+
 #header {
     width: 100%;
     height: 100vh;
@@ -50,7 +72,7 @@ body {
     transform: rotate(-14.01deg);
     flex-shrink: 0;
     top: 30px;
-    left: 200px;
+    left: 150px;
 }
 
 .estrela {
@@ -58,7 +80,7 @@ body {
     width: 20%;
     height: 350px;
     flex-shrink: 0;
-    top: 100px;
+    top: 150px;
     left: 1000px;
 
     filter: blur(6.5px);
@@ -69,7 +91,7 @@ body {
     width: 30%;
     height: 96px;
     flex-shrink: 0;
-    top: 220px;
+    top: 205px;
     left: 460px;
 }
 
@@ -79,7 +101,7 @@ body {
     height: 90px;
     flex-shrink: 0;
     top: 330px;
-    left: 390px;
+    left: 385px;
 
     color: #FFF;
     text-align: center;
@@ -129,7 +151,7 @@ body {
     width: 50%;
     height: 37px;
     top: 500px;
-    left: 300px;
+    left: 320px;
     flex-shrink: 0;
 
     color: #FFF;
@@ -139,6 +161,12 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.fa-solid.fa-chevron-down {
+    position: absolute;
+    top: 540px;
+    left: 650px;
 }
 
 .arrow {
@@ -326,7 +354,7 @@ h4 {
     position: absolute;
     top: 2650px;
     width: 80%;
-    left: 100px;
+    left: 130px;
     color: #FFF;
     font-family: 'Lexend Exa', sans-serif;
     font-size: 40px;
@@ -339,7 +367,7 @@ h5 {
     position: absolute;
     top: 2700px;
     width: 49%;
-    left: 640px;
+    left: 670px;
     color: #FFF;
     font-family: 'Lexend Exa', sans-serif;
     font-size: 40px;
@@ -368,7 +396,7 @@ h5 {
 
 .texto-5 {
     position: absolute;
-    top: 2850px;
+    top: 2840px;
     width: 30%;
     left: 100px;
     color: #FFF;
@@ -383,7 +411,7 @@ h5 {
 .grafico {
     position: absolute;
     left: 330px;
-    top: 2850px;
+    top: 2840px;
     width: 50%;
     height: 500px;
     flex-shrink: 0;
@@ -405,8 +433,8 @@ h5 {
 
 .fone {
     position: absolute;
-    top: 3200px;
-    left: 100px;
+    top: 3250px;
+    left: 50px;
     width: 15%;
     height: 150px;
     transform: rotate(-24.875deg);
@@ -419,7 +447,7 @@ h5 {
     width: 30%;
     height: 400px;
     top: 3400px;
-    left: 430px;
+    left: 500px;
     flex-shrink: 0;
 }
 
@@ -436,7 +464,7 @@ h6 {
     position: absolute;
     top: 3730px;
     width: 50%;
-    left: 435px;
+    left: 500px;
     color: #FFF;
     font-family: 'Lexend Exa', sans-serif;
     font-size: 27px;
@@ -450,7 +478,7 @@ h6 {
     width: 40%;
     height: 152px;
     top: 3790px;
-    left: 370px;
+    left: 420px;
     flex-shrink: 0;
 
     color: #FFF;
@@ -468,7 +496,7 @@ h6 {
     top: 3880px;
     width: 15%;
     height: 60px;
-    left: 540px;
+    left: 595px;
     flex-shrink: 0;
     border-radius: 30px;
     background: #FFF;
@@ -487,7 +515,7 @@ footer {
     position: absolute;
     top: 4000px;
     width: 100%;
-    height: 50%;
+    height: 45%;
     flex-shrink: 0;
     background: #00153F;
     box-shadow: -14px 14px 10px 0px rgba(0, 0, 0, 0.25) inset;
@@ -555,7 +583,7 @@ svg {
 .logo-footer {
     position: absolute;
     top: 70px;
-    left: 560px;
+    left: 565px;
     width: 170px;
     height: 170px;
     flex-shrink: 0;
@@ -564,7 +592,7 @@ svg {
 .texto-9 {
     position: absolute;
     top: 60px;
-    left: 840px;
+    left: 850px;
     color: #FFF;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
@@ -576,8 +604,8 @@ svg {
 
 .texto-10 {
     position: absolute;
-    top: 110px;
-    left: 870px;
+    top: 120px;
+    left: 875px;
     color: #FFA318;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
