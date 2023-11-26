@@ -1,13 +1,8 @@
 package com.lumiere.boot.web.main;
 
 import java.text.NumberFormat;
-import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,30 +12,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import com.lumiere.boot.api.viaCEP.ViaCEP;
 import com.lumiere.boot.api.viaCEP.domain.Endereco;
 import com.lumiere.boot.dao.RelatorioConsumoDao;
 import com.lumiere.boot.dao.UsuarioDaoImpl;
-import com.lumiere.boot.domain.Consumo;
 import com.lumiere.boot.domain.Estado;
 import com.lumiere.boot.domain.IconeResidencia;
-import com.lumiere.boot.domain.RelatorioConsumo;
 import com.lumiere.boot.domain.Residencia;
 import com.lumiere.boot.domain.Usuario;
-import com.lumiere.boot.service.ConsumoService;
 import com.lumiere.boot.service.EstadoService;
 import com.lumiere.boot.service.IconeResidenciaService;
 import com.lumiere.boot.service.ResidenciaService;
-
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import com.lumiere.boot.service.UsuarioService;
 
 @Controller
 @RequestMapping("/Residencia")
 public class ResidenciaController {	
 	@Autowired
-	UsuarioDaoImpl usuarioDaoImpl;
+	UsuarioService usuarioService;
 	
 	@Autowired
 	RelatorioConsumoDao relatorioConsumoDao;
@@ -57,7 +46,7 @@ public class ResidenciaController {
 	@GetMapping("/Residencias") 
 	public String residencias(@AuthenticationPrincipal UserDetails currentUser) {
 		// coleta os dados do usuario logado
-		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
+		Usuario usuario = (Usuario) usuarioService.buscarUsuarioPorEmail(currentUser.getUsername());
 		
 		return "/Residencia/Residencias";
 	}
@@ -74,7 +63,7 @@ public class ResidenciaController {
 		// pego o cep e consulto no banco primeiro para ver se ele já foi cadastrado
 		// para evitar o consumo de API's
 		// pego os outros atributos e seto eles nas tabelas
-		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
+		Usuario usuario = (Usuario) usuarioService.buscarUsuarioPorEmail(currentUser.getUsername());
 		try {
 			// uso a API ViaCEP (apos validar o CEP) para pesquisar os dados do endereco
 			Endereco endereco = ViaCEP.buscaEnderecoPeloCEP(residencia.getCepResidencia());
@@ -100,7 +89,7 @@ public class ResidenciaController {
 	
 	@GetMapping("/Listar")
 	public String listar(Model model, @AuthenticationPrincipal UserDetails currentUser) {
-		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
+		Usuario usuario = (Usuario) usuarioService.buscarUsuarioPorEmail(currentUser.getUsername());
 		
 		List<Residencia> residenciasUsuario = residenciaService.buscarResidenciasPorUsuario(usuario.getId());
 		boolean botaoAdicionarResidencia = true;
@@ -131,7 +120,7 @@ public class ResidenciaController {
 	
 	@GetMapping("/Todas")
 	public String listarTodasResidencias(Model model, @AuthenticationPrincipal UserDetails currentUser) {
-		Usuario usuario = (Usuario) usuarioDaoImpl.buscarUsuarioPorEmail(currentUser.getUsername());
+		Usuario usuario = (Usuario) usuarioService.buscarUsuarioPorEmail(currentUser.getUsername());
 				
 		model.addAttribute("residenciasUsuario", residenciaService.buscarTodasResidenciasPorUsuario(usuario.getId()));
 		

@@ -20,7 +20,7 @@
         <div class="container">
             <div>
                 <h1 class="h1">Entre na sua conta para começar <span class="economizar">economizar!</span> </h1>
-				<form th:action="@{/usuario/login}" th:object="${usuario}" method="post">
+				<form th:action="@{/Usuario/Login}" th:object="${usuario}" method="post">
                     <input type="text" name="email" id="email" placeholder="E-mail" th:field="*{emailUsuario}">
                     <label for="email"></label>
 
@@ -35,7 +35,7 @@
                 </form>
 
                 <h2 class="h2">Ainda não faz parte do Lumiere?</h2>
-                <h3 class="h3"><a href="/usuario/cadastrar">Cadastre-se</a></h3>
+                <h3 class="h3"><a href="/Usuario/Cadastrar">Cadastre-se</a></h3>
             </div>
         </div>
 

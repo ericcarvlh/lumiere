@@ -26,15 +26,15 @@ public class SecurityConfig {
                         authorize
                         .requestMatchers("/css/**", "/img/**").permitAll()
                         .requestMatchers("/", "/home").permitAll()
-                        .requestMatchers("/usuario/cadastrar", "/usuario/salvar").permitAll()
+                        .requestMatchers("/Usuario/Cadastrar", "/Usuario/Salvar").permitAll()
                         .requestMatchers("/gastos/**", "/Residencia/**", "/Dispositivo/**").authenticated()
                         .anyRequest().authenticated()
                 ).formLogin(
                 form -> form
-                        .loginPage("/usuario/login")
+                        .loginPage("/Usuario/Login")
                         .usernameParameter("emailUsuario")
                         .passwordParameter("senhaUsuario")
-                        .loginProcessingUrl("/usuario/login")
+                        .loginProcessingUrl("/Usuario/Login")
                         .defaultSuccessUrl("/Residencia/Listar")
                         .permitAll()
         ).logout(

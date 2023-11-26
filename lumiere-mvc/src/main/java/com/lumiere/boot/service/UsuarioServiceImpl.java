@@ -18,4 +18,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public void salvar(Usuario usuario) {
 		usuarioDao.save(usuario);
 	}
+	
+	public Usuario buscarUsuarioPorEmail(String email) {
+		return usuarioDao.buscarUsuarioPorEmail(email);
+	}
+	
+	public Usuario buscarUsuarioPorCd(int cdUsuario) {
+		return usuarioDao.findById(cdUsuario);
+	}
 }

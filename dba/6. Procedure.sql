@@ -10,7 +10,7 @@ CREATE PROCEDURE sp_consultaMediaConsumoAnual @vFkResidenciaCdResidencia INT
 AS
 SELECT 
 	YEAR(c.data_consumo) AS ano,
-	SUM(c.preco_consumo) / COUNT(distinct MONTH(c.data_consumo)) as consumoTotal 
+	SUM(c.preco_consumo) / COUNT(distinct MONTH(c.data_consumo)) as consumoTotal
 FROM 
 	Consumo as c
 INNER JOIN 
@@ -92,7 +92,6 @@ CREATE PROCEDURE sp_consultaTotalSemanal @vFkResidenciaCdResidencia INT
 AS
 SELECT
 	SUM(c.preco_consumo) as totalConsumo
-	
 FROM
 	Consumo as c
 INNER JOIN	
@@ -129,13 +128,40 @@ GROUP BY
 	c.data_consumo,
 	c.preco_consumo
 
-	
-
 EXEC sp_consultaRelatorioSemanal @vFkResidenciaCdResidencia = 1;
 
+/* Select para consultar o ranking de usuario */
 
+CREATE PROCEDURE sp_consultaRankingConsumidor
+AS
+SELECT
+	u.cd_usuario as cdUsuario,
+	u.nome_usuario as nomeUsuario,
+	SUM(c.kwh_consumo) as totalKWhMes,
+	MONTH(c.data_consumo) as mesFechamento
+FROM 
+	Usuario as u
+INNER JOIN 
+	Residencia as r
+ON 
+	u.cd_usuario = r.fk_Usuario_cd_usuario
+INNER JOIN 
+	Dispositivo as d
+ON
+	r.cd_residencia = d.fk_Residencia_cd_residencia
+INNER JOIN 
+	Consumo as c
+ON 
+	d.cd_dispositivo = c.fk_Dispositivo_cd_dispositivo
+WHERE	
+	YEAR(c.data_consumo) = YEAR(GETDATE()) and 
+	c.data_consumo < DATEADD(MONTH, -1, GETDATE())
+GROUP BY 
+	u.cd_usuario,
+	u.nome_usuario,
+	MONTH(c.data_consumo) 
+ORDER BY 
+	u.cd_usuario asc
 
-
-
-
-
+SELECT * FROM Consumo WHERE fk_Dispositivo_cd_dispositivo = 1
+EXEC sp_consultaRankingConsumidor;

@@ -16,14 +16,14 @@ public class RankingConsumidorDao {
     private EntityManager entityManager;
 	
 	public List<RankingConsumidor> callConsultaRankingConsumidor() {
-        StoredProcedureQuery storedProcedure = entityManager.createStoredProcedureQuery("sp_consultaMediaConsumoAnual", "MediaConsumoAnual");
+        StoredProcedureQuery storedProcedure = entityManager.createStoredProcedureQuery("sp_consultaRankingConsumidor", "rankingConsumidor");
         
         // Execute a procedure
         storedProcedure.execute();
         
-        List<RankingConsumidor> listaMediaConsumoAnual = storedProcedure.getResultList();
+        List<RankingConsumidor> listaRankingConsumidor = storedProcedure.getResultList();
         
-        return listaMediaConsumoAnual;
+        return listaRankingConsumidor;
     }
 	
 	
