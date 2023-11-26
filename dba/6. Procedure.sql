@@ -130,7 +130,7 @@ GROUP BY
 
 EXEC sp_consultaRelatorioSemanal @vFkResidenciaCdResidencia = 1;
 
-/* Select para consultar o ranking de usuario */
+/* Procedure para consultar o ranking de consumidores */
 
 CREATE PROCEDURE sp_consultaRankingConsumidor
 AS
@@ -163,5 +163,30 @@ GROUP BY
 ORDER BY 
 	u.cd_usuario asc
 
-SELECT * FROM Consumo WHERE fk_Dispositivo_cd_dispositivo = 1
 EXEC sp_consultaRankingConsumidor;
+
+CREATE PROCEDURE sp_consultaRelatorioPorPeriodo @vCdUsuario INT, @vDataInicial DATE, @vDataFinal DATE
+AS
+SELECT 
+	@vDataInicial as dataInicial,
+	SUM(c.kwh_consumo) / COUNT(c.data_consumo) as consumoMedioKWh,
+	SUM(c.kwh_consumo) as consumoTotalKWh,
+	SUM(c.preco_consumo) as valorTotal,
+	@vDataFinal as dataFinal
+FROM 
+	Consumo as c
+INNER JOIN 
+	Dispositivo as d
+ON
+	c.fk_Dispositivo_cd_dispositivo = d.cd_dispositivo
+INNER JOIN 
+	Residencia as r
+ON 
+	r.cd_residencia = d.fk_Residencia_cd_residencia
+WHERE	
+	r.fk_Usuario_cd_usuario = @vCdUsuario
+	AND 
+	c.data_consumo between @vDataInicial AND @vDataFinal
+
+EXEC sp_consultaRelatorioPorPeriodo 1, '2023-09-26', '2023-10-26';
+EXEC sp_consultaRelatorioPorPeriodo 1, '2023-10-26', '2023-11-26';

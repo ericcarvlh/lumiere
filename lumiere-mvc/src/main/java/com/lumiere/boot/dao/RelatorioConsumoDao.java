@@ -1,5 +1,8 @@
 package com.lumiere.boot.dao;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -103,6 +106,34 @@ public class RelatorioConsumoDao {
         List<RelatorioConsumo> listaTotalSemanal = storedProcedure.getResultList();
         
         return listaTotalSemanal;
+	}
+	
+	public RelatorioConsumo callConsultaRelatorioPorPeriodo(int cdUsuario, String dataInicial, String dataFinal) {
+        StoredProcedureQuery storedProcedure = entityManager.createStoredProcedureQuery("sp_consultaRelatorioPorPeriodo", "relatorioPorPeriodo");
+
+        // Registre os parâmetros de entrada, se houver
+        storedProcedure.registerStoredProcedureParameter("vCdUsuario", Integer.class, ParameterMode.IN);
+        storedProcedure.setParameter("vCdUsuario", cdUsuario);
+		
+        Date date;
+		try {
+	        storedProcedure.registerStoredProcedureParameter("vDataInicial", Date.class, ParameterMode.IN);
+			date = new SimpleDateFormat("yyyy-MM-dd").parse(dataInicial);
+	        storedProcedure.setParameter("vDataInicial", date);
+
+	        storedProcedure.registerStoredProcedureParameter("vDataFinal", Date.class, ParameterMode.IN);
+			date = new SimpleDateFormat("yyyy-MM-dd").parse(dataFinal);
+	        storedProcedure.setParameter("vDataFinal", date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+        // Execute a procedure
+        storedProcedure.execute();
+        
+        RelatorioConsumo relatorioConsumo = (RelatorioConsumo) storedProcedure.getSingleResult();
+        
+		return relatorioConsumo;
 	}
 	
 	

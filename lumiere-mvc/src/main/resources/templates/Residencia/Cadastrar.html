@@ -29,22 +29,22 @@
 		</div>
 		
 		<div class="container">
-		<form th:action="@{/Residencia/Cadastrar}" th:object="${residencia}" method="POST"> 
-			<input type="hidden" name="cdIconeResidencia" id="iconeSelecionado" th:value="${cdIconeResidencia}">
-			
-            <input type="text" name="registro" id="numero" class="numero" th:field="*{registroResidencia}">
-            <label for="nome" class="nome">Apelido da residência*</label>
-
-            <input type="text" name="nome" id="nome" class="nome" th:field="*{nomeResidencia}">
-            <label for="numero" class="numero">Número do registro*</label>
-
-            <input type="text" name="cep" id="cep" class="cep" th:field="*{cepResidencia}">
-            <label for="cep" class="cep">CEP*</label>
-		 </div>
-            <input type="submit" id="submit" value="Salvar">
-            <label for="submit"></label>
-		</form>
-		
+			<form th:action="@{/Residencia/Cadastrar}" th:object="${residencia}" method="POST"> 
+				<input type="hidden" name="cdIconeResidencia" id="iconeSelecionado" th:value="${cdIconeResidencia}">
+				
+	            <input type="text" name="registro" id="numero" class="numero" th:field="*{registroResidencia}">
+	            <label for="nome" class="nome">Apelido da residência*</label>
+	
+	            <input type="text" name="nome" id="nome" class="nome" th:field="*{nomeResidencia}">
+	            <label for="numero" class="numero">Número do registro*</label>
+	
+	            <input type="text" name="cep" id="cep" class="cep" th:field="*{cepResidencia}">
+	            <label for="cep" class="cep">CEP*</label>
+	            
+	            <input type="submit" id="submit" value="Salvar">
+	            <label for="submit"></label>
+			</form>
+		</div>
     </body>
     
     <script src="../js/CadastrarResidencia.js"></script>
