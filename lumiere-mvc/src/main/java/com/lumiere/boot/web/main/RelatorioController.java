@@ -26,7 +26,7 @@ public class RelatorioController {
 	@Autowired
 	RelatorioConsumoDao relatorioConsumoDao;
 	
-	@GetMapping("/lista")
+	@GetMapping("/Lista")
 	public String listaRelatorio() {
 		return "/Relatorio/Lista";
 	}

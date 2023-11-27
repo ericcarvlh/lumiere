@@ -24,14 +24,13 @@
 	                <ul class="navbar-nav mr-auto">
 	                    <li class="nav-item active">
 	                        <i class="oi oi-caret-right"></i>
-	                        <span>Cadastrar Cargos</span>
 	                    </li>
 	                </ul>
 	            </div>
 	        </nav>
 	
 	        <div class="container" id="cadastro">	           
-	            <form th:action="@{/usuario/salvar}" th:object="${usuario}" method="POST">
+	            <form th:action="@{/Usuario/Salvar}" th:object="${usuario}" method="POST">
 	                <div class="form-row">
 	                    <div class="form-group col-md-6">
 	                        <label for="usuario" class="usuario">Nome do Usuario</label>

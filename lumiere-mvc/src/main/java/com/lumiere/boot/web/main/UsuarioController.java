@@ -23,7 +23,7 @@ public class UsuarioController {
 	private UsuarioService usuarioService;
 	
 	@Autowired
-	APIController rankingConsumidorAPI;
+	private APIController rankingConsumidorAPI;
 	
 	@GetMapping("/Cadastrar")
 	public String cadastraUsuario(Usuario usuario) {
@@ -39,8 +39,8 @@ public class UsuarioController {
 		usuario.setDataDeCadastro(Calendar.getInstance().getTime());
 		
 		usuarioService.salvar(usuario);
-				
-		return "redirect:/Usuario/Login";
+		
+		return "redirect:/Usuario/login";
 	}
 	//Coloquei o retorno como login/login pq no meu tava dando erro, antes tava Login/login
 	@GetMapping("/Login")

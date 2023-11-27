@@ -12,7 +12,7 @@ import jakarta.transaction.Transactional;
 
 @Service
 @Transactional
-public class TipoDispositivoServiceImpl {
+public class TipoDispositivoServiceImpl implements TipoDispositivoService {
 	@Autowired
 	private TipoDispositivoDao tipoDispositivoDao;
 	

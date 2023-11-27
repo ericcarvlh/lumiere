@@ -29,10 +29,10 @@ import com.lumiere.boot.service.UsuarioService;
 @RequestMapping("/Residencia")
 public class ResidenciaController {	
 	@Autowired
-	UsuarioService usuarioService;
+	private UsuarioService usuarioService;
 	
 	@Autowired
-	RelatorioConsumoDao relatorioConsumoDao;
+	private RelatorioConsumoDao relatorioConsumoDao;
 	
 	@Autowired
 	private IconeResidenciaService iconeResidenciaService;

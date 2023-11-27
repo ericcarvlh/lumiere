@@ -15,26 +15,27 @@ import com.lumiere.boot.domain.Consumo;
 import com.lumiere.boot.domain.Dispositivo;
 import com.lumiere.boot.domain.Residencia;
 import com.lumiere.boot.domain.TipoDispositivo;
-import com.lumiere.boot.service.ConsumoServiceImpl;
+import com.lumiere.boot.service.ConsumoService;
+import com.lumiere.boot.service.DispositivoService;
 import com.lumiere.boot.service.DispositivoServiceImpl;
-import com.lumiere.boot.service.TipoDispositivoServiceImpl;
+import com.lumiere.boot.service.TipoDispositivoService;
 
 @Controller
 @RequestMapping("/Dispositivo")
 public class DispositivoController {
 	@Autowired
-	TipoDispositivoServiceImpl tipoDispositivoServiceImpl;	
+	private TipoDispositivoService tipoDispositivoService;	
 	
 	@Autowired
-	ConsumoServiceImpl consumoServiceImpl;
+	private ConsumoService consumoService;
 	
 	@Autowired
-	DispositivoServiceImpl dispositivoServiceImpl;
+	private DispositivoService dispositivoService;
 	
 	@GetMapping("/Cadastrar/{cdResidencia}")
 	public String cadastrar(@PathVariable("cdResidencia") int cdResidencia, Dispositivo dispositivo, Model model) {
 		// coletar as categorias	
-		model.addAttribute("tipoDispositivos", tipoDispositivoServiceImpl.buscarTodos());
+		model.addAttribute("tipoDispositivos", tipoDispositivoService.buscarTodos());
 		
 		return "/Dispositivo/Cadastrar";
 	}
@@ -50,7 +51,7 @@ public class DispositivoController {
 		residencia.setId(cdResidencia);
 		dispositivo.setResidencia(residencia);
 		
-		dispositivoServiceImpl.salvar(dispositivo);
+		dispositivoService.salvar(dispositivo);
 				
 		return "/Dispositivo/Cadastrar";
 	}
@@ -58,16 +59,16 @@ public class DispositivoController {
 	@GetMapping("/Listar/{cdResidencia}")
 	public String listar(Model model, @PathVariable("cdResidencia") int cdResidencia) {
 		
-		model.addAttribute("dispositivosUsuario", dispositivoServiceImpl.consultarDispositivosPorCdResidencia(cdResidencia));
+		model.addAttribute("dispositivosUsuario", dispositivoService.consultarDispositivosPorCdResidencia(cdResidencia));
 		
 		return "/Dispositivo/Listar";
 	}
 	
 	@GetMapping("/Detalhes/{cdDispositivo}")
 	public String detalhes(Model model, @PathVariable("cdDispositivo") int cdDispositivo) {
-		Dispositivo dispositivo = dispositivoServiceImpl.consultarDispositivoPorCdDispositivo(cdDispositivo);
-		List<TipoDispositivo> tiposDispositivos = tipoDispositivoServiceImpl.buscarTodos();
-		List<Consumo> list = consumoServiceImpl.buscarConsumosPorCdDispositivo(cdDispositivo);
+		Dispositivo dispositivo = dispositivoService.consultarDispositivoPorCdDispositivo(cdDispositivo);
+		List<TipoDispositivo> tiposDispositivos = tipoDispositivoService.buscarTodos();
+		List<Consumo> list = consumoService.buscarConsumosPorCdDispositivo(cdDispositivo);
 		
 		double consumoTotal = 0;
 		for (Consumo c: list) {
@@ -97,14 +98,14 @@ public class DispositivoController {
 		dispositivo.setResidencia(residencia);
 		dispositivo.setTipoDispositivo(tipoDispositivo);
 		
-		dispositivoServiceImpl.atualizar(dispositivo);
+		dispositivoService.atualizar(dispositivo);
 				
 		return String.format("redirect:/Dispositivo/Listar/%d", cdDispositivo);		
 	}
 	
 	@PostMapping(value="/Atualizar", params = "delete")
 	public String apagar(int cdResidencia, int cdDispositivo) {
-		dispositivoServiceImpl.deletar(cdDispositivo);
+		dispositivoService.deletar(cdDispositivo);
 				
 		return String.format("redirect:/Dispositivo/Listar/%d", cdResidencia);
 	}
