@@ -116,4 +116,15 @@ public class APIController {
 		
 		return rankingUsuario;
 	}
+	
+	public Double obtemEconomiaMediaTopConsumidores() {
+		Map<Usuario, Double> topConsumidores = obtemRankingConsumidor();
+		
+		double economiaMedia = 0;
+		for (Map.Entry<Usuario, Double> entry : topConsumidores.entrySet()) {
+			economiaMedia += entry.getValue();
+		}
+		
+		return economiaMedia /= topConsumidores.size();
+	}
 }

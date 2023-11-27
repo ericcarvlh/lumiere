@@ -134,7 +134,7 @@ EXEC sp_consultaRelatorioSemanal @vFkResidenciaCdResidencia = 1;
 
 CREATE PROCEDURE sp_consultaRankingConsumidor
 AS
-SELECT
+SELECT TOP 10
 	u.cd_usuario as cdUsuario,
 	u.nome_usuario as nomeUsuario,
 	SUM(c.kwh_consumo) as totalKWhMes,
@@ -164,6 +164,8 @@ ORDER BY
 	u.cd_usuario asc
 
 EXEC sp_consultaRankingConsumidor;
+
+/* Procedure para consultar relatórios por período */
 
 CREATE PROCEDURE sp_consultaRelatorioPorPeriodo @vCdUsuario INT, @vDataInicial DATE, @vDataFinal DATE
 AS
