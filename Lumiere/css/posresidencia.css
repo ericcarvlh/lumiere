@@ -258,6 +258,40 @@ body {
     border-style: none;
 }
 
+.texto-13 {
+    position: absolute;
+    top: 480px;
+    left: 110px;
+    color: #E1D3FF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.5%; 
+}
+
+.button-1 {
+    position: absolute;
+    top: 530px;
+    left: 250px;
+    width: 286px;
+    height: 83px;
+    flex-shrink: 0;
+
+    background-color: #51309B;
+    backdrop-filter: blur(9.215606689453125px);
+    border-radius: 30px;
+    border-style: none;
+    cursor: pointer;
+
+    color: #E1D3FF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.5%; 
+}
+
 .container-5 {
     position: absolute;
     top: 1330px;
