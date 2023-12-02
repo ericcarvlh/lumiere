@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+        <title>Lumiere</title>
+    </head>
+    
+    <body>
+		<main class="container-fluid ">
+			<h3>Comparar relatórios</h3>
+			<form th:action="@{/Relatorio/Comparar}" method="POST">
+				<h4>Primeiro período</h4>
+				<div class="row g-3">
+					<div class="col-sm-4">
+						<label for="primeiroDataInicial" class="form-label">Data inicial</label>
+						<input type="date" class="form-control" id="primeiroDataInicial" name="primeiroDataInicial">
+					</div>
+					<div class="col-sm-4">
+						<label for="primeiroDataFinal" class="form-label">Data final</label>
+						<input type="date" class="form-control" id="primeiroDataFinal" name="primeiroDataFinal">
+					</div>
+				</div>
+				
+				<br>
+				
+				<h4>Segundo período</h4>
+				<div class="row g-3">
+					<div class="col-sm-4">
+						<label for="segundoDataInicial" class="form-label">Data inicial</label>
+						<input type="date" class="form-control" id="segundoDataInicial" name="segundoDataInicial">
+					</div>
+					<div class="col-sm-4">
+						<label for="segundoDataFinal" class="form-label">Data final</label>
+						<input type="date" class="form-control" id="segundoDataFinal" name="segundoDataFinal">
+					</div>
+				</div>
+				
+				<br>
+				
+				<div class="container text-center">
+					<p class="d-inline">
+				  		<button type="submit" name="save" class="btn btn-success">Comparar</button>
+					</p>
+				</div>
+			</form>
+			
+			<br>
+			
+			<div th:if="${segundoRelatorio != null && primeiroRelatorio != null}" class="table-responsive">
+				<table class="table table-bordered table-sm text-center table-striped table-hover">
+				  <thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">1° Relatório</th>
+						<th scope="col">2° Relatório</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td>Data Inicial</td>
+					  <td th:text="${primeiroRelatorio.getDataInicial()}"></td>
+					  <td th:text="${segundoRelatorio.getDataInicial()}"></td>
+					</tr>
+					<tr>
+					  <td>Consumo Médio (KW\h)</td>
+					  <td th:text="${primeiroRelatorio.getConsumoMedioKWh()}"></td>
+					  <td th:text="${segundoRelatorio.getConsumoMedioKWh()}"></td>
+					</tr>
+					<tr>
+					  <td>Consumo total (KW\h)</td>
+					  <td th:text="${primeiroRelatorio.getConsumoTotalKWh()}"></td>
+					  <td th:text="${segundoRelatorio.getConsumoTotalKWh()}"></td>
+					</tr>
+					<tr>
+					  <td>Valor total (R$)</td>
+					  <td th:text="${primeiroRelatorio.getValorTotal()}"></td>
+					  <td th:text="${segundoRelatorio.getValorTotal()}"></td>
+					</tr>
+					<tr>
+					  <td>Data Final</td>
+					  <td th:text="${primeiroRelatorio.getDataFinal()}"></td>
+					  <td th:text="${segundoRelatorio.getDataFinal()}"></td>
+					</tr>
+				  </tbody>
+				</table>
+			</div>
+		</main>
+	</body>
+</html>

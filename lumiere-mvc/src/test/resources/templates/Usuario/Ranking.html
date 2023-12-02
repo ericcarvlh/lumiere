@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+        <title>Lumiere</title>
+    </head>
+    <body>
+		<h2>Top Consumidores</h2>
+		
+		<main class="container-fluid text-center">
+			<div class="table-responsive">
+		        <table class="table table-bordered table-sm text-center table-striped table-hover">
+		          <thead>
+		            <tr>
+		              <th scope="col">Posição</th>
+		              <th scope="col">Nome</th>
+		              <th scope="col">Diferença total de Kw\h total entre os últimos 2 meses</th>
+		            </tr>
+		          </thead>
+		          <tbody>
+		            <tr th:each="r, i: ${rankingConsumidor}">
+						<td	th:if="${r.key.getId() == infoUsuarioLogado.getId()}" th:text="${i.count}" style="background-color: rgba(128, 128, 255, 0.3);"></td>
+						<td th:if="${r.key.getId() == infoUsuarioLogado.getId()}" th:text="${r.key.getNomeUsuario}" style="background-color: rgba(128, 128, 255, 0.3);"></td>
+						<td th:if="${r.key.getId() == infoUsuarioLogado.getId() && r.value > 0}" th:text="${r.value + ' ⇈'}" style="background-color: rgba(128, 128, 255, 0.3); color: red;"></td>
+						<td th:if="${r.key.getId() == infoUsuarioLogado.getId() && r.value < 0}" th:text="${r.value + ' ⇊'}" style="background-color: rgba(128, 128, 255, 0.3); color:green;"></td>
+						
+						<td	th:if="${r.key.getId() != infoUsuarioLogado.getId()}" th:text="${i.count}"></td>
+						<td th:if="${r.key.getId() != infoUsuarioLogado.getId()}" th:text="${r.key.getNomeUsuario}"></td>
+						<td th:if="${r.key.getId() != infoUsuarioLogado.getId() && r.value > 0}" th:text="${r.value + ' ⇈'}" style="color: red;"></td>
+						<td th:if="${r.key.getId() != infoUsuarioLogado.getId() && r.value < 0}" th:text="${r.value + ' ⇊'}" style="color: green;"></td>
+		            </tr>
+		          </tbody>
+		        </table>
+	      	</div>
+		</main>
+	</body>
+</html>

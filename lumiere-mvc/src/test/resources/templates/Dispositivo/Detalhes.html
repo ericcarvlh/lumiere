@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+        <title>Lumiere</title>
+    </head>
+    
+    <body>
+		<h2>Detalhes do dispositivo</h2>
+		
+		<main class="container-fluid ">
+			<form th:action="@{/Dispositivo/Atualizar}" method="POST">
+			  	<div class="row g-3">
+					<input type="hidden" name="cdResidencia" id="cdResidencia" th:value="${infoDispositivo.getResidencia().getId()}">
+					<input type="hidden" name="cdDispositivo" id="cdDispositivo" th:value="${infoDispositivo.getId()}">
+					  
+					<div class="col-sm-6">
+				      	<label for="nomeDispositivo" class="form-label">Apelido</label>
+				      	<input type="text" class="form-control" id="nomeDispositivo" name="nomeDispositivo" th:value="${infoDispositivo.getNomeDispositivo()}" placeholder="Apelido do dispositivo" >
+				    </div>
+				
+				    <div class="col-sm-6">
+				      	<label for="watts" class="form-label">Watts</label>
+				    	<input type="text" class="form-control" id="watts" name="watts" th:value="${infoDispositivo.getWattsDispositivo()}" placeholder="Potência do dispositivo" >
+				    </div>
+				
+					<div class="col-sm-6">
+					  	<label for="tempoDeConsumo" class="form-label">Tempo de consumo diário (Horas)</label>
+						<input type="text" class="form-control" id="tempoDeConsumo" name="tempoDeConsumo" th:value="${infoDispositivo.getTempoUsoDiario()}" placeholder="Tempo em horas de consumo diário">
+					</div>
+					
+					<div class="col-sm-6">
+						<label for="categoriaSelect" class="form-label">Categoria do dispositivo</label>
+						<select name="categoriaSelect" id="categoriaSelect" class="form-control">
+			             	<option value="0">Categoria Dispositivo</option>
+			             	<option th:each="tD : ${tipoDispositivos}" th:value="${tD.getId()}" th:text="${tD.getTipoDispositivo()}" th:selected="${tD.getId() eq infoDispositivo.getTipoDispositivo().getId()}"></option>
+			       		</select>
+					</div>
+				</div>
+				
+				<br>
+				
+				<div class="container text-center">
+					<p class="d-inline">
+				  		<button type="submit" name="delete" class="btn btn-danger">Apagar</button>
+				  		<button type="submit" name="save" class="btn btn-success">Salvar</button>
+					</p>
+				</div>
+			</form>
+						
+			<div class="table-responsive">
+				<table class="table table-bordered table-sm text-center table-striped table-hover">
+				  <thead>
+					<tr>
+					  <th scope="col">Valor</th>
+					  <th scope="col">Kw/h Consumo</th>
+					  <th scope="col">Data Consumo</th>
+					</tr>
+				  </thead>
+				  <tbody th:each="c: ${consumosDispositivo}">
+					<tr>
+					  <td th:text="${c.getPrecoConsumo()}"></td>
+					  <td th:text="${c.getKwhConsumo()}"></td>
+					  <td th:text="${c.getDataConsumo()}"></td>
+					</tr>
+				  </tbody>
+				</table>
+			</div>
+	      	
+			<div class="card">
+			  <div class="card-body">
+	      		<p>Valor total do consumo até o momento: R$<mark th:text="${consumoTotal}"><mark> </p>
+			  </div>
+			</div>
+		</main>
+	</body>
+	
+	<script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</html>

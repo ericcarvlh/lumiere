@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="../css/residencias.css">
+        <link rel="stylesheet" href="../css/responsive_residencias.css">
+        <script src="https://kit.fontawesome.com/90438f02e0.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&family=Urbanist&display=swap" rel="stylesheet">
+        <title>Lumiere</title>
+    </head>
+	
+    <body>
+        <img src="../img/PNG logo e logotipo/logo l esquerda.png" class="logo-esquerda">
+        <img src="../img/PNG logo e logotipo/logo l direita.png" class="logo-direita">
+			
+		<div class="container residencia1" th:if="${residencia1 != null}">
+			<img th:src="${residencia1.getIconeResidencia().getUrlIcone()}" th:id="${residencia1.getIconeResidencia().getId()}"
+				name="iconePerfil" class="icone">
+			<h2 th:text="${residencia1.getNomeResidencia()}" class="h1"></h2>
+			<hr class="hr-1">
+			<p th:text="${residencia1.getRegistroResidencia()}" class="texto-1"></p>
+			<hr class="hr-2">
+			<p th:text="${residencia1.getEstado().getNomeEstado()}" class="texto-2"></p>
+			<a th:href="@{./Detalhes/{cdResidencia} (cdResidencia=${residencia1.getId()})}">
+				<span class="link"></span>
+			</a>
+		</div>
+		
+		<div class="container2 residencia2" th:if="${residencia2 != null}">
+			<img th:src="${residencia2.getIconeResidencia().getUrlIcone()}" th:id="${residencia2.getIconeResidencia().getId()}"
+				name="iconePerfil" class="icone">
+			<h2 th:text="${residencia2.getNomeResidencia()}" class="h1"></h2>
+			<hr class="hr-1">
+			<p th:text="${residencia2.getRegistroResidencia()}" class="texto-1"></p>
+			<hr class="hr-2">
+			<p th:text="${residencia2.getEstado().getNomeEstado()}" class="texto-2"></p>
+			<a th:href="@{./Detalhes/{cdResidencia} (cdResidencia=${residencia2.getId()})}">
+				<span class="link"></span>
+			</a>
+		</div>
+		
+		<div class="container3 residencia3" th:if="${residencia3 != null}">
+			<img th:src="${residencia3.getIconeResidencia().getUrlIcone()}" th:id="${residencia3.getIconeResidencia().getId()}"
+				name="iconePerfil" class="icone">
+			<h2 th:text="${residencia3.getNomeResidencia()}" class="h1"></h2>
+			<hr class="hr-1">
+			<p th:text="${residencia3.getRegistroResidencia()}" class="texto-1"></p>
+			<hr class="hr-2">
+			<p th:text="${residencia3.getEstado().getNomeEstado()}" class="texto-2"></p>
+			<a th:href="@{./Detalhes/{cdResidencia} (cdResidencia=${residencia3.getId()})}">
+				<span class="link"></span>
+			</a>
+		</div>
+		
+		<div th:if="${zeroResidencia}" class="botao-zero-residencias">
+			<a href="/Residencia/Cadastrar">
+				<img src="../img/AddResidencia/iconcirculo.png" class="icon-circulo0">
+				<img src="../img/AddResidencia/iconmais.png" class="icon-mais0">
+			</a>
+			<p class="texto-3">Adicionar residência</p>
+		</div>
+		
+		<div th:if="${umaResidencia}" class="botao-uma-residencias">
+			<a href="/Residencia/Cadastrar">
+				<img src="../img/AddResidencia/iconcirculo.png" class="icon-circulo">
+				<img src="../img/AddResidencia/iconmais.png" class="icon-mais">
+			</a>
+			<p class="texto-3">Adicionar residência</p>
+		</div>
+		
+		<div th:if="${duasResidencias}" class="botao-duas-residencias">
+			<a href="/Residencia/Cadastrar">
+				<img src="../img/AddResidencia/iconcirculo.png" class="icon-circulo2">
+				<img src="../img/AddResidencia/iconmais.png" class="icon-mais2">
+			</a>
+			<p class="texto-3">Adicionar residência</p>
+		</div>
+		
+		<div th:if="${tresResidencias}" class="botao-tres-residencias">
+			<a href="/Residencia/Cadastrar">
+				<span class="linktres">Adicionar</span>
+			</a>
+		</div>
+		
+
+		<div th:if="${botaoAdicionarResidencia == false}" class="botao-listar">
+			<a href="/Residencia/Todas">
+				<span class="linktres">Listar</span>
+			</a>
+		</div>
+		
+    </body>
+</html>

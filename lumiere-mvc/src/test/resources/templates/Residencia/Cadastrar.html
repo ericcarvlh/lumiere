@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/responsive_cadastrar_residencia.css">
+        <link rel="stylesheet" href="/css/cadastrar_residencia.css">
+        <script src="https://kit.fontawesome.com/90438f02e0.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&family=Urbanist&display=swap" rel="stylesheet">
+        <title>Lumiere</title>
+    </head>
+	
+    <body>
+        <h1 class="h1">Preencha os dados abaixo</h1>
+        <p class="texto-1">para ter gerenciamentos precisos !</p>
+        
+        <img src="../img/PNG logo e logotipo/logo l esquerda.png" class="logo-esquerda">
+        <img src="../img/PNG logo e logotipo/logo l direita.png" class="logo-direita">
+        
+        <h2 class="h2">Vamos Personalizar seu lar?</h2>
+            <p class="texto-2">escolha um icone!</p>
+        
+        <div class="icones">
+		<tr th:each="i : ${iconesResidencia}">
+			<img th:src="${i.urlIcone}" th:id="${i.id}" name="iconePerfil" height="70px" width="70px">
+		</tr>
+		</div>
+		
+		<div class="container">
+			<form th:action="@{/Residencia/Cadastrar}" th:object="${residencia}" method="POST"> 
+				<input type="hidden" name="cdIconeResidencia" id="iconeSelecionado" th:value="${cdIconeResidencia}">
+				
+	            <input type="text" name="registro" id="numero" class="numero" th:field="*{registroResidencia}">
+	            <label for="nome" class="nome">Apelido da residência*</label>
+	
+	            <input type="text" name="nome" id="nome" class="nome" th:field="*{nomeResidencia}">
+	            <label for="numero" class="numero">Número do registro*</label>
+	
+	            <input type="text" name="cep" id="cep" class="cep" th:field="*{cepResidencia}">
+	            <label for="cep" class="cep">CEP*</label>
+	            
+	            <input type="submit" id="submit" value="Salvar">
+	            <label for="submit"></label>
+			</form>
+		</div>
+    </body>
+    
+    <script src="../js/CadastrarResidencia.js"></script>
+</html>

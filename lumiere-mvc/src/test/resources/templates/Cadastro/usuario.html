@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/cadastro.css">
+        <link rel="stylesheet" href="../css/responsive_cadastro.css">
+        <script src="https://kit.fontawesome.com/90438f02e0.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&family=Urbanist&display=swap" rel="stylesheet">
+        <title>Lumiere</title>
+</head>
+<body>
+	<h1 class="h1">Vamos iniciar sua experiência com o Lumiere</h1>
+	
+	<div>
+            <img src="../img/Cadastrar/logo cadastro.png" class="logo-fundo">
+        </div>
+        
+	    <section class="layout-content" layout:fragment="corpo">
+	
+	        <nav class="navbar navbar-expand-md bg-light">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                        <i class="oi oi-caret-right"></i>
+	                    </li>
+	                </ul>
+	            </div>
+	        </nav>
+	
+	        <div class="container" id="cadastro">	           
+	            <form th:action="@{/Usuario/Salvar}" th:object="${usuario}" method="POST">
+	                <div class="form-row">
+	                    <div class="form-group col-md-6">
+	                        <label for="usuario" class="usuario">Nome do Usuario</label>
+	                        <input type="text" class="form-control" id="usuario" placeholder="Nome Usuario" 
+	                        autofocus="autofocus" th:field="*{nomeUsuario}"/>
+	                    </div>
+	                </div>
+	                
+	                <div class="form-row">
+	                    <div class="form-group col-md-6">
+	                        <label for="email" class="email">Email*</label>
+	                        <input type="text" class="form-control" id="email" placeholder="exemplo@gmail.com" 
+	                        autofocus="autofocus" th:field="*{emailUsuario}"/>
+	                    </div>
+	                </div>
+	                
+	                <div class="form-row">
+	                    <div class="form-group col-md-6">
+	                        <label for="senha" class="senha">Senha</label>
+	                        <input type="text" class="form-control" id="senha" placeholder="Insira sua senha" 
+	                        autofocus="autofocus" th:field="*{senhaUsuario}"/>
+	                    </div>
+	                </div>
+	                
+	                <input type="checkbox" id="notif-email">
+                    <label for="notif-email" class="ok-2">Gostaria receber atualizações  por e-mail! (opcional)</label>
+	                <img src="../img/Cadastrar/maocinha.png" class="alvo">
+	                <p class="obrigatorio">(*) itens obrigatórios.</p>
+	                
+	                <input type="checkbox" id="termos">
+                    <label for="termos" class="ok-1">Li e estou de acordo com as <span class="span">termos e condições.</span>*</label>
+	                  
+	                <button type="submit" class="btn btn-primary btn-sm" id="submit">Cadastrar</button>
+	            	<input type="hidden" id="id" th:field="*{id}"/>
+	            </form>
+	        </div>
+	    </section>
+</body>
+</html>		
