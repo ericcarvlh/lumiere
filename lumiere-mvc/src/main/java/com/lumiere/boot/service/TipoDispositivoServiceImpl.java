@@ -19,5 +19,4 @@ public class TipoDispositivoServiceImpl implements TipoDispositivoService {
 	public List<TipoDispositivo> buscarTodos() {
 		return tipoDispositivoDao.findAll();
 	}
-
 }

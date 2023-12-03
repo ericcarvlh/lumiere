@@ -5,24 +5,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.lumiere.boot.dao.RelatorioConsumoDao;
-import com.lumiere.boot.domain.RelatorioConsumo;
-import com.lumiere.boot.domain.Residencia;
 import com.lumiere.boot.domain.Usuario;
 import com.lumiere.boot.service.ResidenciaService;
 import com.lumiere.boot.service.UsuarioService;
 
 import static org.mockito.Mockito.*;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.authentication;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
-import java.util.List;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -52,7 +45,7 @@ public class ResidenciaControllerTest {
     @Test
     @WithMockUser
     public void testRegistrarPost() throws Exception {
-        when(usuarioService.buscarUsuarioPorEmail(anyString())).thenReturn(new Usuario()); // Substitua pela lógica real
+        when(usuarioService.buscarUsuarioPorEmail(anyString())).thenReturn(new Usuario());
 
         mockMvc.perform(post("/Residencia/Cadastrar")
         .param("cdIconeResidencia", "1")

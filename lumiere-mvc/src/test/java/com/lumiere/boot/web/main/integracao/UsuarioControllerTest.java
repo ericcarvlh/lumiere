@@ -5,11 +5,6 @@ import com.lumiere.boot.service.UsuarioService;
 import com.lumiere.boot.web.api.APIController;
 import com.lumiere.boot.web.main.UsuarioController;
 
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import java.util.HashMap;
 import java.util.Map;
 
