@@ -9,8 +9,8 @@ use lumieredb;
 CREATE PROCEDURE sp_consultaMediaConsumoAnual @vFkResidenciaCdResidencia INT
 AS
 SELECT 
-	YEAR(c.data_consumo) AS ano,
-	SUM(c.preco_consumo) / COUNT(distinct MONTH(c.data_consumo)) as consumoTotal
+	COALESCE(YEAR(c.data_consumo), YEAR(GETDATE())) AS ano,
+	COALESCE(SUM(c.preco_consumo) / COUNT(distinct MONTH(c.data_consumo)), 0.0) as consumoTotal
 FROM 
 	Consumo as c
 INNER JOIN 
@@ -22,7 +22,7 @@ WHERE
 GROUP BY 
 	YEAR(c.data_consumo)
 
-EXEC sp_consultaMediaConsumoAnual @vFkResidenciaCdResidencia = 1;
+EXEC sp_consultaMediaConsumoAnual @vFkResidenciaCdResidencia = 0;
 
 /* Procedure para consultar o consumo total por dispositivo */
 
@@ -51,7 +51,7 @@ EXEC sp_consultaConsumoTotalPorDispositivo @vFkResidenciaCdResidencia = 1;
 CREATE PROCEDURE sp_consultaFaturaAtual @vFkResidenciaCdResidencia INT
 AS
 SELECT 
-	SUM(c.preco_consumo) as consumoTotal
+	COALESCE(SUM(c.preco_consumo), 0.0) as consumoTotal
 FROM
 	Consumo as c
 INNER JOIN	
@@ -72,7 +72,7 @@ EXEC sp_consultaFaturaAtual @vFkResidenciaCdResidencia = 1;
 CREATE PROCEDURE sp_consultaConsumoMedio60Dias @vFkResidenciaCdResidencia INT
 AS
 SELECT 
-	SUM(preco_consumo) / COUNT(*) as consumoTotal
+	COALESCE(SUM(preco_consumo) / COUNT(*), 0.0) as consumoTotal
 FROM 
 	Consumo as c 
 INNER JOIN	
@@ -91,7 +91,7 @@ EXEC sp_consultaConsumoMedio60Dias @vFkResidenciaCdResidencia = 1;
 CREATE PROCEDURE sp_consultaTotalSemanal @vFkResidenciaCdResidencia INT
 AS
 SELECT
-	SUM(c.preco_consumo) as totalConsumo
+	COALESCE(SUM(c.preco_consumo), 0.0) as totalConsumo
 FROM
 	Consumo as c
 INNER JOIN	

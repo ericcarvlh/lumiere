@@ -40,7 +40,7 @@ public class UsuarioController {
 		
 		usuarioService.salvar(usuario);
 		
-		return "redirect:/Usuario/login";
+		return "redirect:/Usuario/Login";
 	}
 	//Coloquei o retorno como login/login pq no meu tava dando erro, antes tava Login/login
 	@GetMapping("/Login")

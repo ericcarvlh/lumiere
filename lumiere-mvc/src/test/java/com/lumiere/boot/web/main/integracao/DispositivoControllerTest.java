@@ -1,4 +1,4 @@
-package com.lumiere.boot.web.integracao;
+package com.lumiere.boot.web.main.integracao;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
