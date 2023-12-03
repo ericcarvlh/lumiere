@@ -18,14 +18,6 @@ public class Usuario {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cdUsuario;
 
-	public Integer getId() {
-		return cdUsuario;
-	}
-
-	public void setId(Integer id) {
-		this.cdUsuario = id;
-	}
-	
 	@Column(name = "senha_usuario", nullable = false)
     private String senhaUsuario;
 
@@ -40,6 +32,14 @@ public class Usuario {
 	
 	@OneToMany(mappedBy = "usuario")
 	private List<Residencia> residencias;
+	
+	public Integer getId() {
+		return cdUsuario;
+	}
+
+	public void setId(Integer id) {
+		this.cdUsuario = id;
+	}
 	
     public Usuario(int cdUsuario, String nomeUsuario, String emailUsuario, String senhaUsuario) {
         setId(cdUsuario);

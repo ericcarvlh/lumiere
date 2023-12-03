@@ -11,14 +11,6 @@ public class Estado {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cd_estado")
 	private Integer cdEstado;
-
-	public Integer getId() {
-		return cdEstado;
-	}
-
-	public void setId(Integer id) {
-		this.cdEstado = id;
-	}
 	
 	@Column(name = "UF_estado", nullable = false, unique = true, length = 2)
 	private String UFEstado;
@@ -37,6 +29,14 @@ public class Estado {
 	public Estado (int cdEstado, String UFEstado) {
 		setId(cdEstado);
 		this.UFEstado = UFEstado;
+	}
+	
+	public Integer getId() {
+		return cdEstado;
+	}
+
+	public void setId(Integer id) {
+		this.cdEstado = id;
 	}
 	
 	public String getNomeEstado() {

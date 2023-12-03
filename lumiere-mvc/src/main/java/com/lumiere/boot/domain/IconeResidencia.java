@@ -17,17 +17,12 @@ public class IconeResidencia {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cd_icone")
 	private Integer cdIcone;
-
-	public Integer getId() {
-		return cdIcone;
-	}
-
-	public void setId(Integer id) {
-		this.cdIcone = id;
-	}
 		
 	@Column(name = "url_icone", nullable = false)
 	private String urlIcone;
+	
+	@OneToMany(mappedBy = "iconeResidencia")
+	private List<Residencia> residencias;
 	
 	public String getUrlIcone() {
 		return urlIcone;
@@ -37,6 +32,11 @@ public class IconeResidencia {
 		this.urlIcone = urlIcone;
 	}
 	
-	@OneToMany(mappedBy = "iconeResidencia")
-	private List<Residencia> residencias;
+	public Integer getId() {
+		return cdIcone;
+	}
+
+	public void setId(Integer id) {
+		this.cdIcone = id;
+	}
 }

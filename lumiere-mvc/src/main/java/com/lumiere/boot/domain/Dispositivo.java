@@ -17,14 +17,6 @@ public class Dispositivo {
 	@Column(name = "cd_dispositivo")
 	private Integer cdDispositivo;
 
-	public Integer getId() {
-		return cdDispositivo;
-	}
-
-	public void setId(Integer id) {
-		this.cdDispositivo = id;
-	}
-
 	@Column(name = "watts_dispositivo", nullable = false)
 	private double wattsDispositivo; 
 	
@@ -44,6 +36,14 @@ public class Dispositivo {
 	
 	@OneToMany(mappedBy = "dispositivo")
 	private List<Consumo> consumo;
+	
+	public Integer getId() {
+		return cdDispositivo;
+	}
+
+	public void setId(Integer id) {
+		this.cdDispositivo = id;
+	}
 	
 	public int getTempoUsoDiario() {
 		return tempoUsoDiario;
