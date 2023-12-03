@@ -51,6 +51,18 @@ import jakarta.persistence.*;
                     @ColumnResult(name = "dataFinal", type = Date.class)
         })
 )
+@SqlResultSetMapping(
+	    name = "consultaRelatorioSemanal",
+	    classes = @ConstructorResult(
+	        targetClass = RelatorioConsumo.class,
+	        columns = {
+	            @ColumnResult(name = "nomeDispositivo", type = String.class),
+	            @ColumnResult(name = "dataConsumo", type = Date.class),
+	            @ColumnResult(name = "valorConsumo", type = Double.class),
+	            @ColumnResult(name = "totalConsumo", type = Double.class)
+	        }
+	    )
+	)
 @Entity
 public class RelatorioConsumo {
 	@Id
@@ -79,6 +91,17 @@ public class RelatorioConsumo {
 	
 	@Column(name = "valorTotal")
 	private double valorTotal;
+	
+	@Column(name = "valorConsumo")
+	private double valorConsumo;
+	
+	@Column(name = "totalConsumo")
+	private double totalConsumo;
+	
+	@Column(name = "dataConsumo")
+	private Date dataConsumo;
+	
+	
 
 	public int getId() {
 		return id;
@@ -152,5 +175,29 @@ public class RelatorioConsumo {
 
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
+	}
+	
+	public double getTotalConsumo() {
+		return totalConsumo;
+	}
+
+	public void setTotalConsumo(double totalConsumo) {
+		this.totalConsumo = totalConsumo;
+	}
+
+	public Date getDataConsumo() {
+		return dataConsumo;
+	}
+
+	public void setDataConsumo(Date dataConsumo) {
+		this.dataConsumo = dataConsumo;
+	}
+
+	public double getValorConsumo() {
+		return valorConsumo;
+	}
+
+	public void setValorConsumo(double valorConsumo) {
+		this.valorConsumo = valorConsumo;
 	}
 }

@@ -2,6 +2,7 @@ package com.lumiere.boot.web.main;
 
 
 import java.util.List;
+import java.text.NumberFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -16,10 +17,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.lumiere.boot.dao.RelatorioConsumoDao;
 import com.lumiere.boot.domain.RelatorioConsumo;
 import com.lumiere.boot.domain.Residencia;
+import com.lumiere.boot.domain.Dispositivo;
+import com.lumiere.boot.service.DispositivoService;
 import com.lumiere.boot.service.ResidenciaService;
 import com.lumiere.boot.domain.Usuario;
 import com.lumiere.boot.service.UsuarioService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @Controller
@@ -33,6 +38,11 @@ public class RelatorioController {
 	
 	@Autowired 
 	private ResidenciaService residenciaService;
+	
+	@Autowired
+	private DispositivoService dispositivoService;
+	
+	private static final Logger logger = LoggerFactory.getLogger(RelatorioController.class);
 	
 	@GetMapping("/Lista")
 	public String listaRelatorio() {
@@ -68,12 +78,25 @@ public class RelatorioController {
 	
 	
 	@GetMapping("/Semanal/{cdResidencia}")
-	public String relatorioSemanal(Model model, @PathVariable("cdResidencia") int cdResidencia) {
+	public String relatorioSemanal(@PathVariable("cdResidencia") int cdResidencia, Model model) {
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		String relatorioSemanal = formatter.format(relatorioConsumoDao.callConsultaRelatorioSemanal(cdResidencia).getConsumoTotal());
 		Residencia residencia = residenciaService.buscarResidenciaPorCdResidencia(cdResidencia);
+		Dispositivo dispositivo = (Dispositivo) dispositivoService.consultarDispositivosPorCdResidencia(cdResidencia);
+	    
+		// Logs
+	    logger.info("Data returned from DAO: " + relatorioSemanal);
+	    
+	    String valorPorKWh = formatter.format(dispositivo.getNomeDispositivo());
+		String faturaAtual = formatter.format(relatorioConsumoDao.callConsultaFaturaAtual(cdResidencia).getConsumoTotal());
+		String consumoMedio = formatter.format(relatorioConsumoDao.callConsultaConsumoMedio60Dias(cdResidencia).getConsumoTotal());
 		
-		List<RelatorioConsumo> relatorioSemanal = relatorioConsumoDao.callConsultaRelatorioSemanal(residencia.getId());
-		
-		return "/Relatorio/Semanal";
+		model.addAttribute("UFEstado", residencia.getEstado().getUFEstado());
+		model.addAttribute("precoKWh", valorPorKWh);
+		model.addAttribute("faturaAtual", faturaAtual);
+		model.addAttribute("consumoMedio", consumoMedio);
+	    
+	    return "/Relatorio/Semanal";
 	}
 	
 	
