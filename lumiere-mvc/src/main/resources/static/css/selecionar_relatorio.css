@@ -1,0 +1,86 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #5E20E2 0%, #190056 100%);
+}
+
+.h1 {
+	color: #FFF;
+	text-align: center;
+	font-family: Lexend Exa;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.hr-1{
+	color: #FFF;
+	text-align: center;
+	font-family: Lexend Exa;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+}
+
+.container{
+	border-radius: 33.107px;
+	border: 0.955px solid rgba(216, 216, 216, 0.00);
+	background: radial-gradient(231% 135.8% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+	backdrop-filter: blur(12.415059089660645px);
+}
+
+.hr-2{
+	color: #FFF;
+	font-family: 'Lexend Exa', sans-serif;
+	font-size: 17.163px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 125.5%; /* 26.559px */
+
+}
+
+.texto-1{
+	color: #FFF;
+	font-family: 'Urbanist', sans-serif;
+	font-size: 14.872px;
+	margin: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 125.5%; /* 19.919px */
+	
+}
+
+.retangulo{
+	width: 1366px;
+	height: 398px;
+	flex-shrink: 0;
+	background: rgba(94, 32, 226, 0.18);
+}
+
+.btn-ver{
+	width: 123.802px;
+	height: 42.326px;
+	flex-shrink: 0;
+	border-radius: 10.581px;
+	background: #E1D3FF;
+	
+}
+/*
+fontes:
+
+font-family: 'Lexend Exa', sans-serif;
+font-family: 'Urbanist', sans-serif;
+*/
