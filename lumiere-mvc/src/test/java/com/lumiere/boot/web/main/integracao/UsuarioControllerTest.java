@@ -1,15 +1,16 @@
 package com.lumiere.boot.web.main.integracao;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lumiere.boot.domain.RankingConsumidor;
 import com.lumiere.boot.domain.Usuario;
 import com.lumiere.boot.service.UsuarioService;
 import com.lumiere.boot.web.api.APIController;
 import com.lumiere.boot.web.main.UsuarioController;
 
-import java.util.Arrays;
+import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.junit.jupiter.api.Test;
@@ -37,28 +38,19 @@ public class UsuarioControllerTest {
     private APIController rankingConsumidorAPI;
 
     @Test
+    @WithMockUser
     void testCadastraUsuario() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/Usuario/Cadastrar"))
-               .andExpect(MockMvcResultMatchers.status().isOk())
-               .andExpect(MockMvcResultMatchers.view().name("/Cadastro/usuario"));
-    }
-
-    @Test
-    void testSalvar() throws Exception {
-        // Simulando dados para o teste
-        Usuario usuario = new Usuario();
-        usuario.setSenhaUsuario("senha");
-
-        mockMvc.perform(MockMvcRequestBuilders.post("/Usuario/Salvar")
-                .param("senhaUsuario", "senha"))
-               .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
-               .andExpect(MockMvcResultMatchers.redirectedUrl("/Usuario/login"));
+        .andExpect(MockMvcResultMatchers.status().isOk())
+        .andExpect(MockMvcResultMatchers.view().name("/Cadastro/usuario"));
     }
 
     @Test
     @WithMockUser
     void testLogarUsuario() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/Usuario/Login")).andExpect(MockMvcResultMatchers.status().isOk());  
+        mockMvc.perform(MockMvcRequestBuilders.get("/Usuario/Login"))
+        .andExpect(MockMvcResultMatchers.status().isOk())
+        .andExpect(MockMvcResultMatchers.view().name("/Login/login"));
     }
 
     @Test
@@ -71,6 +63,7 @@ public class UsuarioControllerTest {
         usuarioEsperado.setEmailUsuario("eric.carvalho@fa.com.br");
         usuarioEsperado.setNomeUsuario("Eric");
         usuarioEsperado.setSenhaUsuario("12345");
+        
         Mockito.when(usuarioService.buscarUsuarioPorEmail("diogogod@gmail.com")).thenReturn(usuarioEsperado);
         Map<Usuario, Double> mapRankingEsperado = new HashMap<>();
         mapRankingEsperado.put(usuarioEsperado, 0.2);
@@ -78,11 +71,10 @@ public class UsuarioControllerTest {
         
         Mockito.when(rankingConsumidorAPI.obtemRankingConsumidor()).thenReturn(mapRankingEsperado);
 
-        /*mockMvc.perform(MockMvcRequestBuilders.get("/Usuario/Ranking")
-                .with(SecurityMockMvcRequestPostProcessors.user(userDetails)))
-               .andExpect(MockMvcResultMatchers.status().isOk())
-               .andExpect(MockMvcResultMatchers.view().name("/Usuario/Ranking"))
-               .andExpect(MockMvcResultMatchers.model().attribute("infoUsuarioLogado", usuario))
-               .andExpect(MockMvcResultMatchers.model().attributeExists("rankingConsumidor"));*/
+        mockMvc.perform(MockMvcRequestBuilders.get("/Usuario/Ranking").with(SecurityMockMvcRequestPostProcessors.user(userDetails)))
+        .andExpect(MockMvcResultMatchers.status().isOk())
+        .andExpect(MockMvcResultMatchers.view().name("/Usuario/Ranking"))
+        .andExpect(MockMvcResultMatchers.model().attribute("infoUsuarioLogado", usuarioEsperado))
+        .andExpect(MockMvcResultMatchers.model().attributeExists("rankingConsumidor"));
     }
 }

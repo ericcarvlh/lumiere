@@ -21,8 +21,7 @@ WHERE
 	d.fk_Residencia_cd_residencia = @vFkResidenciaCdResidencia
 GROUP BY 
 	YEAR(c.data_consumo)
-
-EXEC sp_consultaMediaConsumoAnual @vFkResidenciaCdResidencia = 0;
+GO
 
 /* Procedure para consultar o consumo total por dispositivo */
 
@@ -43,8 +42,7 @@ GROUP BY
 	d.nome_dispositivo
 ORDER BY 
 	SUM(c.preco_consumo) desc
-
-EXEC sp_consultaConsumoTotalPorDispositivo @vFkResidenciaCdResidencia = 1;
+GO
 
 /* Procedure para consultar a fatura atual */
 
@@ -64,8 +62,7 @@ WHERE
 	MONTH(c.data_consumo) = MONTH(GETDATE())
 	AND 
 	YEAR(c.data_consumo) = YEAR(GETDATE())
-
-EXEC sp_consultaFaturaAtual @vFkResidenciaCdResidencia = 1;
+GO
 
 /* Procedure para consultar o gasto médio nos últimos 60 dias */
 
@@ -83,8 +80,7 @@ WHERE
 	d.fk_Residencia_cd_residencia = @vFkResidenciaCdResidencia
 	AND 
 	c.data_consumo >= DATEADD(day, -60, GETDATE())
-
-EXEC sp_consultaConsumoMedio60Dias @vFkResidenciaCdResidencia = 1;
+GO
 
 /* Procedure para consultar total consumo semanal */
 
@@ -102,8 +98,7 @@ WHERE
 	d.fk_Residencia_cd_residencia = 1
 	AND 
 	c.data_consumo >= DATEADD(day, -7, GETDATE())
-
-EXEC sp_consultaTotalSemanal @vFkResidenciaCdResidencia = 1;
+GO
 
 /* Procedure para consultar relatório de gasto semanal */
 
@@ -127,8 +122,7 @@ GROUP BY
 	d.nome_dispositivo,
 	c.data_consumo,
 	c.preco_consumo
-
-EXEC sp_consultaRelatorioSemanal @vFkResidenciaCdResidencia = 1;
+GO
 
 /* Procedure para consultar o ranking de consumidores */
 
@@ -162,8 +156,7 @@ GROUP BY
 	MONTH(c.data_consumo) 
 ORDER BY 
 	u.cd_usuario asc
-
-EXEC sp_consultaRankingConsumidor;
+GO
 
 /* Procedure para consultar relatórios por período */
 
@@ -189,6 +182,14 @@ WHERE
 	r.fk_Usuario_cd_usuario = @vCdUsuario
 	AND 
 	c.data_consumo between @vDataInicial AND @vDataFinal
+GO
 
+EXEC sp_consultaMediaConsumoAnual @vFkResidenciaCdResidencia = 1;
+EXEC sp_consultaConsumoTotalPorDispositivo @vFkResidenciaCdResidencia = 1;
+EXEC sp_consultaFaturaAtual @vFkResidenciaCdResidencia = 1;
+EXEC sp_consultaConsumoMedio60Dias @vFkResidenciaCdResidencia = 1;
+EXEC sp_consultaTotalSemanal @vFkResidenciaCdResidencia = 1;
+EXEC sp_consultaRelatorioSemanal @vFkResidenciaCdResidencia = 1;
+EXEC sp_consultaRankingConsumidor;
 EXEC sp_consultaRelatorioPorPeriodo 1, '2023-09-26', '2023-10-26';
 EXEC sp_consultaRelatorioPorPeriodo 1, '2023-10-26', '2023-11-26';

@@ -43,14 +43,6 @@ public class ResidenciaController {
 	@Autowired 
 	private ResidenciaService residenciaService;
 	
-	@GetMapping("/Residencias") 
-	public String residencias(@AuthenticationPrincipal UserDetails currentUser) {
-		// coleta os dados do usuario logado
-		Usuario usuario = (Usuario) usuarioService.buscarUsuarioPorEmail(currentUser.getUsername());
-		
-		return "/Residencia/Residencias";
-	}
-	
 	@GetMapping("/Cadastrar")
 	public String registrar(IconeResidencia iconeResidencia, Residencia residencia, Model model) {
 		model.addAttribute("iconesResidencia", iconeResidenciaService.buscarTodos());
@@ -130,7 +122,7 @@ public class ResidenciaController {
 	@GetMapping("/Detalhes/{cdResidencia}") 
 	public String detalhes(Model model, @PathVariable("cdResidencia") int cdResidencia) {
 		Residencia residencia = residenciaService.buscarResidenciaPorCdResidencia(cdResidencia);
-				
+		
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		String valorPorKWh = formatter.format(residencia.getEstado().getPrecoKwh());
 		String faturaAtual = formatter.format(relatorioConsumoDao.callConsultaFaturaAtual(cdResidencia).getConsumoTotal());
