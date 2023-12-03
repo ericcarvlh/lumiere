@@ -135,6 +135,4 @@ public class RelatorioConsumoDao {
         
 		return relatorioConsumo;
 	}
-	
-	
 }
