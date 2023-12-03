@@ -1,17 +1,22 @@
 package com.lumiere.boot.web.main;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.lumiere.boot.dao.RelatorioConsumoDao;
 import com.lumiere.boot.domain.RelatorioConsumo;
+import com.lumiere.boot.domain.Residencia;
+import com.lumiere.boot.service.ResidenciaService;
 import com.lumiere.boot.domain.Usuario;
 import com.lumiere.boot.service.UsuarioService;
 
@@ -25,6 +30,9 @@ public class RelatorioController {
 	
 	@Autowired
 	RelatorioConsumoDao relatorioConsumoDao;
+	
+	@Autowired 
+	private ResidenciaService residenciaService;
 	
 	@GetMapping("/Lista")
 	public String listaRelatorio() {
@@ -52,5 +60,22 @@ public class RelatorioController {
 		
 		return "/Relatorio/Comparar";
 	}
+	
+	/*@GetMapping("/Selecionar")
+	public String escolherRelatorio() {
+		return "/Relatorio/Selecionar";
+	}  */
+	
+	
+	@GetMapping("/Semanal/{cdResidencia}")
+	public String relatorioSemanal(Model model, @PathVariable("cdResidencia") int cdResidencia) {
+		Residencia residencia = residenciaService.buscarResidenciaPorCdResidencia(cdResidencia);
+		
+		List<RelatorioConsumo> relatorioSemanal = relatorioConsumoDao.callConsultaRelatorioSemanal(residencia.getId());
+		
+		return "/Relatorio/Semanal";
+	}
+	
+	
 	
 }

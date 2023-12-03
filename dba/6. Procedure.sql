@@ -64,7 +64,7 @@ WHERE
 	YEAR(c.data_consumo) = YEAR(GETDATE())
 GO
 
-/* Procedure para consultar o gasto médio nos últimos 60 dias */
+/* Procedure para consultar o gasto mï¿½dio nos ï¿½ltimos 60 dias */
 
 CREATE PROCEDURE sp_consultaConsumoMedio60Dias @vFkResidenciaCdResidencia INT
 AS
@@ -84,10 +84,10 @@ GO
 
 /* Procedure para consultar total consumo semanal */
 
-CREATE PROCEDURE sp_consultaTotalSemanal @vFkResidenciaCdResidencia INT
+CREATE PROCEDURE sp_consultaTotalSemanal @vFkResidenciaCdResidencia INT, @totalConsumo DECIMAL(8, 2) OUTPUT
 AS
 SELECT
-	COALESCE(SUM(c.preco_consumo), 0.0) as totalConsumo
+	@totalConsumo = SUM(c.preco_consumo)
 FROM
 	Consumo as c
 INNER JOIN	
@@ -100,14 +100,20 @@ WHERE
 	c.data_consumo >= DATEADD(day, -7, GETDATE())
 GO
 
-/* Procedure para consultar relatório de gasto semanal */
+/* Procedure para consultar relatï¿½rio de gasto semanal */
 
 CREATE PROCEDURE sp_consultaRelatorioSemanal @vFkResidenciaCdResidencia INT
 AS
+DECLARE @totalConsumo DECIMAL(8, 2)
+
+EXEC sp_consultaTotalSemanal @vFkResidenciaCdResidencia = 1, @totalConsumo = @totalConsumo OUTPUT;
+
 SELECT
 	d.nome_dispositivo as nomeDispositivo,
 	c.data_consumo as dataConsumo,
-	c.preco_consumo as valorConsumo
+	c.preco_consumo as valorConsumo,
+	@totalConsumo as totalConsumo
+	
 FROM
 	Consumo as c
 INNER JOIN	
@@ -116,7 +122,7 @@ ON
 	c.fk_Dispositivo_cd_dispositivo = d.cd_dispositivo
 WHERE	
 	d.fk_Residencia_cd_residencia = 1
-	AND 
+	AND
 	c.data_consumo >= DATEADD(day, -7, GETDATE())
 GROUP BY 
 	d.nome_dispositivo,
@@ -158,7 +164,7 @@ ORDER BY
 	u.cd_usuario asc
 GO
 
-/* Procedure para consultar relatórios por período */
+/* Procedure para consultar relatï¿½rios por perï¿½odo */
 
 CREATE PROCEDURE sp_consultaRelatorioPorPeriodo @vCdUsuario INT, @vDataInicial DATE, @vDataFinal DATE
 AS
