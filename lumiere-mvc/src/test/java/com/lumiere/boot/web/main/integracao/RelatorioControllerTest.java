@@ -34,18 +34,18 @@ public class RelatorioControllerTest {
     @WithMockUser
     void testListaRelatorio() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/Relatorio/Lista"))
-               .andExpect(MockMvcResultMatchers.status().isOk())
-               .andExpect(MockMvcResultMatchers.view().name("/Relatorio/Lista"));
+        .andExpect(MockMvcResultMatchers.status().isOk())
+        .andExpect(MockMvcResultMatchers.view().name("/Relatorio/Lista"));
     }
 
     @Test
     @WithMockUser
     void testComparativoDeRelatorioGet() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/Relatorio/Comparar"))
-               .andExpect(MockMvcResultMatchers.status().isOk())
-               .andExpect(MockMvcResultMatchers.view().name("/Relatorio/Comparar"))
-               .andExpect(MockMvcResultMatchers.model().attribute("primeiroRelatorio", null))
-               .andExpect(MockMvcResultMatchers.model().attribute("segundoRelatorio", null));
+        .andExpect(MockMvcResultMatchers.status().isOk())
+        .andExpect(MockMvcResultMatchers.view().name("/Relatorio/Comparar"))
+        .andExpect(MockMvcResultMatchers.model().attribute("primeiroRelatorio", null))
+        .andExpect(MockMvcResultMatchers.model().attribute("segundoRelatorio", null));
     }
 
     @Test
@@ -64,14 +64,14 @@ public class RelatorioControllerTest {
         Mockito.when(relatorioConsumoDao.callConsultaRelatorioPorPeriodo(1, "2023-10-02", "2023-11-02")).thenReturn(segundoRelatorio);
 
         mockMvc.perform(MockMvcRequestBuilders.post("/Relatorio/Comparar")
-                .param("primeiroDataInicial", "dataInicial1")
-                .param("primeiroDataFinal", "dataFinal1")
-                .param("segundoDataInicial", "dataInicial2")
-                .param("segundoDataFinal", "dataFinal2")
-                .with(SecurityMockMvcRequestPostProcessors.user(userDetails)))
-               .andExpect(MockMvcResultMatchers.status().isOk())
-               .andExpect(MockMvcResultMatchers.view().name("/Relatorio/Comparar"))
-               .andExpect(MockMvcResultMatchers.model().attribute("primeiroRelatorio", primeiroRelatorio))
-               .andExpect(MockMvcResultMatchers.model().attribute("segundoRelatorio", segundoRelatorio));
+        .param("primeiroDataInicial", "dataInicial1")
+        .param("primeiroDataFinal", "dataFinal1")
+        .param("segundoDataInicial", "dataInicial2")
+        .param("segundoDataFinal", "dataFinal2")
+        .with(SecurityMockMvcRequestPostProcessors.user(userDetails)))
+        .andExpect(MockMvcResultMatchers.status().isOk())
+        .andExpect(MockMvcResultMatchers.view().name("/Relatorio/Comparar"))
+        .andExpect(MockMvcResultMatchers.model().attribute("primeiroRelatorio", primeiroRelatorio))
+        .andExpect(MockMvcResultMatchers.model().attribute("segundoRelatorio", segundoRelatorio));
     }
 }
