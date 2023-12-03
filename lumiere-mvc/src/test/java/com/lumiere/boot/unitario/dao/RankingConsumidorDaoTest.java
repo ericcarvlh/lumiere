@@ -39,19 +39,19 @@ class RankingConsumidorDaoTest {
 
     @Test
     void callConsultaRankingConsumidor() {
-        List<RankingConsumidor> rankingConsumidorList = Arrays.asList(
+        List<RankingConsumidor> listRankingConsumidor = Arrays.asList(
                 new RankingConsumidor(),
                 new RankingConsumidor()
         );
 
         when(entityManager.createStoredProcedureQuery(any(), eq("rankingConsumidor")))
                 .thenReturn(storedProcedureQuery);
-        when(storedProcedureQuery.getResultList()).thenReturn(rankingConsumidorList);
+        when(storedProcedureQuery.getResultList()).thenReturn(listRankingConsumidor);
 
-        List<RankingConsumidor> result = rankingConsumidorDao.callConsultaRankingConsumidor();
+        List<RankingConsumidor> listRankingConsumidorResult = rankingConsumidorDao.callConsultaRankingConsumidor();
 
         verify(storedProcedureQuery, times(1)).execute();
 
-        assertEquals(rankingConsumidorList, result);
+        assertEquals(listRankingConsumidor, listRankingConsumidorResult);
     }
  }
