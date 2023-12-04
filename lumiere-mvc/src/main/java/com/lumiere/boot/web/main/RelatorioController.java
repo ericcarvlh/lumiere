@@ -71,16 +71,16 @@ public class RelatorioController {
 		return "/Relatorio/Comparar";
 	}
 	
-	/*@GetMapping("/Selecionar")
+	@GetMapping("/Selecionar")
 	public String escolherRelatorio() {
 		return "/Relatorio/Selecionar";
-	}  */
+	}  
 	
 	
 	@GetMapping("/Semanal/{cdResidencia}")
 	public String relatorioSemanal(@PathVariable("cdResidencia") int cdResidencia, Model model) {
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
-		String relatorioSemanal = formatter.format(relatorioConsumoDao.callConsultaRelatorioSemanal(cdResidencia).getConsumoTotal());
+		String relatorioSemanal = formatter.format(relatorioConsumoDao.callConsultaRelatorioSemanal(cdResidencia));
 		Residencia residencia = residenciaService.buscarResidenciaPorCdResidencia(cdResidencia);
 		Dispositivo dispositivo = (Dispositivo) dispositivoService.consultarDispositivosPorCdResidencia(cdResidencia);
 	    
