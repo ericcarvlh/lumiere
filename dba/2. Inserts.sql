@@ -67,7 +67,7 @@ INSERT INTO Tipo_Dispositivo VALUES
 ('Eletrônico'), ('Eletrodoméstico');
 
 INSERT INTO Dispositivo VALUES
-(50, 'Notebook Gaymer', 5, 1, 1);
+(50, 'Notebook Gamer', 5, 1, 1);
 
 INSERT INTO Dispositivo VALUES
 (10, 'Nokia tijolinho', 8, 2, 1)

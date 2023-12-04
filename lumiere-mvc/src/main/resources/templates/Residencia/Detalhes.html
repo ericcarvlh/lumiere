@@ -14,45 +14,94 @@
     </head>
 	
     <body>
-        <h1>Detalhes residencia</h1>
         
-        <div class="header"></div>
+        <div class="container">
+            <div class="elipse">
+                <img src="/img/PNG logo e logotipo/logo L branca.png" class="logo">
+            </div>     
+        </div>
+        
+        <div>
+            <h1 class="h1">Olá, XXXXX!</h1>
+            <h2 class="h2">O que há de novo?</h2>
+            <div class="img-perfil"></div>
+        </div>
 		
-	    <div class="container-kw">
-	        <h3 th:text="'KWh atual em ' + ${UFEstado} + ':'" class="text-kwh"></h3>
-	        <p th:text="${precoKWh}" class="text-kwhpreco"></p>
+	    <div class="container-1">
+	        <h3 th:text="'KWh atual em ' + ${UFEstado} + ':'" class="texto-1"></h3>
+	        <p th:text="${precoKWh}" class="texto-2"></p>
 	    </div>
 	    
-	    <div class="container-fat">
-	        <h3 class="text-fat">Consumo aproximado da sua fatura atual:</h3>
-	        <p th:text="${faturaAtual}" class="text-fatpreco"></p>
+	    <div class="container-2">
+	        <h3 class="texto-3">Consumo aproximado da sua fatura atual:</h3>
+	        <img src="/img/detalhesresidencia/conta.png" class="conta">
+	        <p th:text="${faturaAtual}" class="h3"></p>
 	    </div>
 	    
-	    <div class="container-med">
-	        <h3 class="text-media">Você gasta em média</h3>
-	        <p th:text="${consumoMedio}" class="text-mediapreco"></p>
-	        <p class="text-media">por dia</p>
+	    <div class="container-3">
+	        <h3 class="texto-4">Você gasta em média</h3>
+	        <img src="/img/detalhesresidencia/dinero.png" class="dinheiro">
+	        <p th:text="${consumoMedio}" class="texto-5"></p>
+	        <p class="texto-6">por dia</p>
 	    </div>
 	    
-	    <div class="container-graf">			
+	    <div class="container-4">			
 			<canvas id="gasto-total-por-dispositivo" style="max-width: 600px; max-height: 400px;"></canvas>
 			
-			<p class="text-info">Para mais detalhes e informações, acesse o </p>
-			<a href="#">
-				<button type="button" class="btn-controle">Controle de Gastos</button>
+			<p class="texto-13">Para mais detalhes e informações, acesse o </p>
+			<a href="">
+				<button type="button" class="button-1">Controle de Gastos</button>
 			</a>
 		</div>
 		
+		
 		<br>
-		<div class="container-linha">
+		<div class="container-5">
 			<div id="relatorioAnual">
 			</div>
 		</div>
 		<br>
 		
-		<a th:href="@{/Dispositivo/Cadastrar/{cdResidencia} (cdResidencia = ${cdResidencia})}">
-			<button type="button">Adicionar dispositivos</button>
-		</a>
+		<div>
+            <img src="/img/detalhesresidencia/disp.png" class="dispositivos">
+            <h4 class="h4">Adicione <span class="amarelo-1">Dispositivos</span></h4>
+            <h5 class="h5">Aumente o <span class="amarelo-2">Controle!</span></h5>
+            <p class="texto-12">Adicione novos aparelhos à sua rede inteligente</p>
+            <a th:href="@{/Dispositivo/Cadastrar/{cdResidencia} (cdResidencia = ${cdResidencia})}">
+				<button type="button" class="button">Adicionar dispositivos</button>
+			</a>
+        </div>
+		
+		<footer>
+            <p class="texto-7">Nos conheça nas redes!</p>
+            <img src="/img/Footer/GitHub 3d.png" class="github">
+            <img src="/img/Footer/Linkedin 3d.png" class="linkedin">
+            <p class="texto-8">termos e condições</p>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="10%" height="225" viewBox="0 0 225 225" fill="none">
+                    <g filter="url(#filter0_i_227_18)">
+                    <circle cx="112.5" cy="112.5" r="112.5" fill="#00153F"/>
+                    </g>
+                    <circle cx="112.5" cy="112.5" r="112" stroke="black" stroke-opacity="0.07"/>
+                    <defs>
+                    <filter id="filter0_i_227_18" x="0" y="0" width="229" height="229" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset dx="20" dy="7"/>
+                    <feGaussianBlur stdDeviation="2"/>
+                    <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                    <feBlend mode="normal" in2="shape" result="effect1_innerShadow_227_18"/>
+                    </filter>
+                    </defs>
+                </svg>
+                <img src="/img/PNG logo e logotipo/logo L branca.png" class="logo-footer">
+            </div>
+            <p class="texto-9">Encontrou algum problema?</p>
+            <p class="texto-10">Nos contate pelo Email!</p>
+            <p class="texto-11">Lumiere1234@gmail.com</p>
+        </footer>
 		
 		
 		
