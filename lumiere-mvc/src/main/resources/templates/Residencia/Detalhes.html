@@ -14,14 +14,13 @@
     </head>
 	
     <body>
-		
 		<div class="dropdown">
   			<button class="dropbtn"></button>
   			<div class="dropdown-content">
-    		<a href="#">Dispositivos</a>
-    		<a href="#">Top 5</a>
-    		<a href="#">Comparar</a>
-    		<a href="#">Sair</a>
+    		<a th:href="'/Dispositivo/Listar/'+${cdResdencia}">Dispositivos</a>
+    		<a href="/Usuario/Ranking">Top 5</a>
+    		<a href="/Relatorio/Comparar">Comparar</a>
+    		<a href="/logout">Sair</a>
   			</div>
 		</div>
         
@@ -58,7 +57,7 @@
 			<canvas id="gasto-total-por-dispositivo" style="max-width: 600px; max-height: 400px;"></canvas>
 			
 			<p class="texto-13">Para mais detalhes e informações, acesse o </p>
-			<a href="">
+			<a th:href="'/Relatorio/Lista/'+${cdResidencia}">
 				<button type="button" class="button-1">Controle de Gastos</button>
 			</a>
 		</div>
@@ -113,10 +112,6 @@
             <p class="texto-10">Nos contate pelo Email!</p>
             <p class="texto-11">Lumiere1234@gmail.com</p>
         </footer>
-		
-		
-		
-		
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

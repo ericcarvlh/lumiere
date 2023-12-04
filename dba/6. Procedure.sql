@@ -254,7 +254,8 @@ WHERE
 GROUP BY
 	d.cd_dispositivo
 
-EXEC sp_consultaUltimoConsumoDispositivoPorResidencia @vFkResidenciaCdResidencia = 1
+EXEC sp_consultaRelatorioSemanal @vFkResidenciaCdResidencia = 2;
+EXEC sp_consultaUltimoConsumoDispositivoPorResidencia @vFkResidenciaCdResidencia = 2
 EXEC sp_consultaMediaConsumoAnual @vFkResidenciaCdResidencia = 1;
 EXEC sp_consultaConsumoTotalPorDispositivo @vFkResidenciaCdResidencia = 1;
 EXEC sp_consultaFaturaAtual @vFkResidenciaCdResidencia = 1;

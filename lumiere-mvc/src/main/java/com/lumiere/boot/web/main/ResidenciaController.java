@@ -180,6 +180,7 @@ public class ResidenciaController {
 		String faturaAtual = formatter.format(relatorioConsumoDao.callConsultaFaturaAtual(cdResidencia).getConsumoTotal());
 		String consumoMedio = formatter.format(relatorioConsumoDao.callConsultaConsumoMedio60Dias(cdResidencia).getConsumoTotal());
 		
+		model.addAttribute("cdResdencia", cdResidencia);
 		model.addAttribute("UFEstado", residencia.getEstado().getUFEstado());
 		model.addAttribute("precoKWh", valorPorKWh);
 		model.addAttribute("faturaAtual", faturaAtual);

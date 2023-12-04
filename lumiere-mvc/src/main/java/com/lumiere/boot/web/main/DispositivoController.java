@@ -36,6 +36,7 @@ public class DispositivoController {
 	public String cadastrar(@PathVariable("cdResidencia") int cdResidencia, Dispositivo dispositivo, Model model) {
 		// coletar as categorias	
 		model.addAttribute("tipoDispositivos", tipoDispositivoService.buscarTodos());
+		model.addAttribute("cdResidencia", cdResidencia);
 		
 		return "/Dispositivo/Cadastrar";
 	}

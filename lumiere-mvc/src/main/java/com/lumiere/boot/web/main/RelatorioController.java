@@ -16,16 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.lumiere.boot.dao.RelatorioConsumoDao;
 import com.lumiere.boot.domain.RelatorioConsumo;
-import com.lumiere.boot.domain.Residencia;
-import com.lumiere.boot.domain.Dispositivo;
-import com.lumiere.boot.service.DispositivoService;
-import com.lumiere.boot.service.ResidenciaService;
 import com.lumiere.boot.domain.Usuario;
 import com.lumiere.boot.service.UsuarioService;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 @Controller
 @RequestMapping("/Relatorio")
@@ -35,15 +27,16 @@ public class RelatorioController {
 	
 	@Autowired
 	RelatorioConsumoDao relatorioConsumoDao;
+	
+	@GetMapping("/Lista/{cdResidencia}")
+	public String listaRelatorio(Model model, @PathVariable("cdResidencia") int cdResidencia) {
+		model.addAttribute("cdResidencia", cdResidencia);
 		
-	@GetMapping("/Lista")
-	public String listaRelatorio() {
-		return "/Relatorio/Lista";
+		return "/Relatorio/Selecionar";
 	}
 	
 	@GetMapping("/Comparar")
 	public String comparativoDeRelatorio(Model model) {
-		
 		model.addAttribute("primeiroRelatorio", null);
 		model.addAttribute("segundoRelatorio", null);
 		
@@ -65,14 +58,14 @@ public class RelatorioController {
 	
 	@GetMapping("/Semanal/{cdResidencia}")
 	public String relatorioSemanal(@PathVariable("cdResidencia") int cdResidencia, Model model) {
-		model.addAttribute("listaRelatorioAnual", relatorioConsumoDao.callConsultaRelatorioSemanal(cdResidencia));
+		model.addAttribute("listaRelatorioSemanal", relatorioConsumoDao.callConsultaRelatorioSemanal(cdResidencia));
 				
 	    return "/Relatorio/Semanal";
 	}
 	
 	@GetMapping("/Anual/{cdResidencia}")
 	public String relatorioAnual(@PathVariable("cdResidencia") int cdResidencia, Model model) {		
-		model.addAttribute("listaRelatorioAnual", relatorioConsumoDao.callConsultaMediaConsumoAnual(cdResidencia));
+		model.addAttribute("listaRelatorioAnual", relatorioConsumoDao.callConsultaRelatorioAnual(cdResidencia));
 		
 	    return "/Relatorio/Anual";
 	}
