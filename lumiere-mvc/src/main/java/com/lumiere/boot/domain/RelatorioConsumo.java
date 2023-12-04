@@ -58,8 +58,7 @@ import jakarta.persistence.*;
 	        columns = {
 	            @ColumnResult(name = "nomeDispositivo", type = String.class),
 	            @ColumnResult(name = "dataConsumo", type = Date.class),
-	            @ColumnResult(name = "valorConsumo", type = Double.class),
-	            @ColumnResult(name = "totalConsumo", type = Double.class)
+	            @ColumnResult(name = "valorConsumo", type = Double.class)
 	        }
 	    )
 	)
@@ -101,8 +100,6 @@ public class RelatorioConsumo {
 	@Column(name = "dataConsumo")
 	private Date dataConsumo;
 	
-	
-
 	public int getId() {
 		return id;
 	}
@@ -148,6 +145,12 @@ public class RelatorioConsumo {
 		return dataFormatada;
 	}
 
+	public String getDataConsumoFormatada() {
+		String dataFormatada = new SimpleDateFormat("dd/MM/yyyy").format(dataConsumo);
+		return dataFormatada;
+	}
+
+	
 	public void setDataInicial(Date dataInicial) {
 		this.dataInicial = dataInicial;
 	}

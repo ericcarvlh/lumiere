@@ -108,6 +108,36 @@ public class RelatorioConsumoDao {
         return listaTotalSemanal;
 	}
 	
+	public List<RelatorioConsumo> callConsultaRelatorioAnual(int cdResidencia) {
+        StoredProcedureQuery storedProcedure = entityManager.createStoredProcedureQuery("sp_consultaRelatorioAnual", "consultaRelatorioSemanal");
+
+        // Registre os parâmetros de entrada, se houver
+        storedProcedure.registerStoredProcedureParameter("vFkResidenciaCdResidencia", Integer.class, ParameterMode.IN);
+        storedProcedure.setParameter("vFkResidenciaCdResidencia", cdResidencia);
+        
+        // Execute a procedure
+        storedProcedure.execute();
+        
+        List<RelatorioConsumo> listaTotalSemanal = storedProcedure.getResultList();
+        
+        return listaTotalSemanal;
+	}
+	
+	public List<RelatorioConsumo> callConsultaRelatorioMensal(int cdResidencia) {
+        StoredProcedureQuery storedProcedure = entityManager.createStoredProcedureQuery("sp_consultaRelatorioMensal", "consultaRelatorioSemanal");
+
+        // Registre os parâmetros de entrada, se houver
+        storedProcedure.registerStoredProcedureParameter("vFkResidenciaCdResidencia", Integer.class, ParameterMode.IN);
+        storedProcedure.setParameter("vFkResidenciaCdResidencia", cdResidencia);
+        
+        // Execute a procedure
+        storedProcedure.execute();
+        
+        List<RelatorioConsumo> listaTotalSemanal = storedProcedure.getResultList();
+        
+        return listaTotalSemanal;
+	}
+	
 	public RelatorioConsumo callConsultaRelatorioPorPeriodo(int cdUsuario, String dataInicial, String dataFinal) {
         StoredProcedureQuery storedProcedure = entityManager.createStoredProcedureQuery("sp_consultaRelatorioPorPeriodo", "relatorioPorPeriodo");
 

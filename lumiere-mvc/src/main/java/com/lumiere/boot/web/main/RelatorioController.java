@@ -35,15 +35,7 @@ public class RelatorioController {
 	
 	@Autowired
 	RelatorioConsumoDao relatorioConsumoDao;
-	
-	@Autowired 
-	private ResidenciaService residenciaService;
-	
-	@Autowired
-	private DispositivoService dispositivoService;
-	
-	private static final Logger logger = LoggerFactory.getLogger(RelatorioController.class);
-	
+		
 	@GetMapping("/Lista")
 	public String listaRelatorio() {
 		return "/Relatorio/Lista";
@@ -71,34 +63,25 @@ public class RelatorioController {
 		return "/Relatorio/Comparar";
 	}
 	
-	/*@GetMapping("/Selecionar")
-	public String escolherRelatorio() {
-		return "/Relatorio/Selecionar";
-	}  */
-	
 	
 	@GetMapping("/Semanal/{cdResidencia}")
-	public String relatorioSemanal(@PathVariable("cdResidencia") int cdResidencia, Model model) {
-		NumberFormat formatter = NumberFormat.getCurrencyInstance();
-		String relatorioSemanal = formatter.format(relatorioConsumoDao.callConsultaRelatorioSemanal(cdResidencia).getConsumoTotal());
-		Residencia residencia = residenciaService.buscarResidenciaPorCdResidencia(cdResidencia);
-		Dispositivo dispositivo = (Dispositivo) dispositivoService.consultarDispositivosPorCdResidencia(cdResidencia);
-	    
-		// Logs
-	    logger.info("Data returned from DAO: " + relatorioSemanal);
-	    
-	    String valorPorKWh = formatter.format(dispositivo.getNomeDispositivo());
-		String faturaAtual = formatter.format(relatorioConsumoDao.callConsultaFaturaAtual(cdResidencia).getConsumoTotal());
-		String consumoMedio = formatter.format(relatorioConsumoDao.callConsultaConsumoMedio60Dias(cdResidencia).getConsumoTotal());
+	public String relatorioSemanal(@PathVariable("cdResidencia") int cdResidencia, Model model) {		
+		model.addAttribute("listaRelatorioSemanal", relatorioConsumoDao.callConsultaRelatorioSemanal(cdResidencia));
 		
-		model.addAttribute("UFEstado", residencia.getEstado().getUFEstado());
-		model.addAttribute("precoKWh", valorPorKWh);
-		model.addAttribute("faturaAtual", faturaAtual);
-		model.addAttribute("consumoMedio", consumoMedio);
-	    
 	    return "/Relatorio/Semanal";
 	}
 	
+	@GetMapping("/Anual/{cdResidencia}")
+	public String relatorioAnual(@PathVariable("cdResidencia") int cdResidencia, Model model) {		
+		model.addAttribute("listaRelatorioAnual", relatorioConsumoDao.callConsultaRelatorioAnual(cdResidencia));
+		
+	    return "/Relatorio/Anual";
+	}
 	
-	
+	@GetMapping("/Mensal/{cdResidencia}")
+	public String relatorioMensal(@PathVariable("cdResidencia") int cdResidencia, Model model) {		
+		model.addAttribute("listaRelatorioMensal", relatorioConsumoDao.callConsultaRelatorioMensal(cdResidencia));
+		
+	    return "/Relatorio/Mensal";
+	}
 }

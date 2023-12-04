@@ -100,20 +100,14 @@ WHERE
 	c.data_consumo >= DATEADD(day, -7, GETDATE())
 GO
 
-/* Procedure para consultar relat�rio de gasto semanal */
+/* Procedure para consultar relatorio de gasto semanal */
 
 CREATE PROCEDURE sp_consultaRelatorioSemanal @vFkResidenciaCdResidencia INT
 AS
-DECLARE @totalConsumo DECIMAL(8, 2)
-
-EXEC sp_consultaTotalSemanal @vFkResidenciaCdResidencia = 1, @totalConsumo = @totalConsumo OUTPUT;
-
 SELECT
 	d.nome_dispositivo as nomeDispositivo,
 	c.data_consumo as dataConsumo,
-	c.preco_consumo as valorConsumo,
-	@totalConsumo as totalConsumo
-	
+	c.preco_consumo as valorConsumo
 FROM
 	Consumo as c
 INNER JOIN	
@@ -121,9 +115,57 @@ INNER JOIN
 ON 
 	c.fk_Dispositivo_cd_dispositivo = d.cd_dispositivo
 WHERE	
-	d.fk_Residencia_cd_residencia = 1
+	d.fk_Residencia_cd_residencia = @vFkResidenciaCdResidencia
 	AND
 	c.data_consumo >= DATEADD(day, -7, GETDATE())
+GROUP BY 
+	d.nome_dispositivo,
+	c.data_consumo,
+	c.preco_consumo
+GO
+
+/* Procedure para consultar relatorio de gasto mensal */
+
+CREATE PROCEDURE sp_consultaRelatorioMensal @vFkResidenciaCdResidencia INT
+AS
+SELECT
+	d.nome_dispositivo as nomeDispositivo,
+	c.data_consumo as dataConsumo,
+	c.preco_consumo as valorConsumo
+FROM
+	Consumo as c
+INNER JOIN	
+	Dispositivo as d
+ON 
+	c.fk_Dispositivo_cd_dispositivo = d.cd_dispositivo
+WHERE	
+	d.fk_Residencia_cd_residencia = @vFkResidenciaCdResidencia
+	AND
+	c.data_consumo >= DATEADD(day, -30, GETDATE())
+GROUP BY 
+	d.nome_dispositivo,
+	c.data_consumo,
+	c.preco_consumo
+GO
+
+/* Procedure para consultar relatorio de gasto anual */
+
+CREATE PROCEDURE sp_consultaRelatorioAnual @vFkResidenciaCdResidencia INT
+AS
+SELECT
+	d.nome_dispositivo as nomeDispositivo,
+	c.data_consumo as dataConsumo,
+	c.preco_consumo as valorConsumo
+FROM
+	Consumo as c
+INNER JOIN	
+	Dispositivo as d
+ON 
+	c.fk_Dispositivo_cd_dispositivo = d.cd_dispositivo
+WHERE	
+	d.fk_Residencia_cd_residencia = @vFkResidenciaCdResidencia
+	AND
+	c.data_consumo >= DATEADD(day, -365, GETDATE())
 GROUP BY 
 	d.nome_dispositivo,
 	c.data_consumo,
@@ -164,7 +206,7 @@ ORDER BY
 	u.cd_usuario asc
 GO
 
-/* Procedure para consultar relat�rios por per�odo */
+/* Procedure para consultar relatorios por periodo */
 
 CREATE PROCEDURE sp_consultaRelatorioPorPeriodo @vCdUsuario INT, @vDataInicial DATE, @vDataFinal DATE
 AS

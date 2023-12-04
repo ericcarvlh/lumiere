@@ -21,7 +21,7 @@
                     <th scope="col">Valor</th>
                 </tr>
             </thead>
-            <tbody th:each="item : ${listaRelatorioSemanal}">
+            <tbody th:each="item : ${listaRelatorioMensal}">
                 <tr>
                     <td th:text="${item.getNomeDispositivo()}"></td>
                     <td th:text="${item.getDataConsumoFormatada()}"></td>
