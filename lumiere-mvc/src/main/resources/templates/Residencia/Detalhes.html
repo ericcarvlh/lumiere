@@ -4,47 +4,59 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="/css/detalhes_residencia.css">
+        <link rel="stylesheet" href="/css/responsive_detalhes_residencia.css">
+        <script src="https://kit.fontawesome.com/90438f02e0.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&family=Urbanist&display=swap" rel="stylesheet">
         <title>Lumiere</title>
     </head>
 	
     <body>
         <h1>Detalhes residencia</h1>
+        
+        <div class="header"></div>
 		
-	    <div>
-	        <h3 th:text="'KWh atual em ' + ${UFEstado} + ':'"></h3>
-	        <p th:text="${precoKWh}"></p>
+	    <div class="container-kw">
+	        <h3 th:text="'KWh atual em ' + ${UFEstado} + ':'" class="text-kwh"></h3>
+	        <p th:text="${precoKWh}" class="text-kwhpreco"></p>
 	    </div>
 	    
-	    <div>
-	        <h3>Consumo aproximado da sua fatura atual:</h3>
-	        <p th:text="${faturaAtual}"></p>
+	    <div class="container-fat">
+	        <h3 class="text-fat">Consumo aproximado da sua fatura atual:</h3>
+	        <p th:text="${faturaAtual}" class="text-fatpreco"></p>
 	    </div>
 	    
-	    <div>
-	        <h3>Você gasta em média</h3>
-	        <p th:text="${consumoMedio}"></p>
-	        <p>por dia</p>
+	    <div class="container-med">
+	        <h3 class="text-media">Você gasta em média</h3>
+	        <p th:text="${consumoMedio}" class="text-mediapreco"></p>
+	        <p class="text-media">por dia</p>
 	    </div>
 	    
-	    <div>			
+	    <div class="container-graf">			
 			<canvas id="gasto-total-por-dispositivo" style="max-width: 600px; max-height: 400px;"></canvas>
 			
-			<p>Para mais detalhes e informações, acesse o </p>
+			<p class="text-info">Para mais detalhes e informações, acesse o </p>
 			<a href="#">
-				<button type="button">Controle de Gastos</button>
+				<button type="button" class="btn-controle">Controle de Gastos</button>
 			</a>
 		</div>
 		
 		<br>
-		
-		<div id="relatorioAnual">
+		<div class="container-linha">
+			<div id="relatorioAnual">
+			</div>
 		</div>
-		
 		<br>
 		
 		<a th:href="@{/Dispositivo/Cadastrar/{cdResidencia} (cdResidencia = ${cdResidencia})}">
 			<button type="button">Adicionar dispositivos</button>
 		</a>
+		
+		
+		
+		
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

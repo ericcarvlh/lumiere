@@ -18,26 +18,26 @@
 		<form th:action="@{/Dispositivo/Cadastrar}" th:object="${dispositivo}" method="POST"> 
 			<input type="hidden" name="cdResidencia" id="cdResidencia" th:value="${cdResidencia}">
 						
-	        <label for="nomeDisposivito" class="texto1">Apelido do dispositivo</label>
-	        <input type="text" name="nomeDisposivito" id="nomeDisposivito" th:field="*{nomeDispositivo}">
+	        <label for="nomeDisposivito" class="nome">Apelido do dispositivo</label>
+	        <input type="text" name="nomeDisposivito" id="nome" th:field="*{nomeDispositivo}">
 	        
 	        <br>
 	        
-	        <label for="wattsDispositivo" class="texto2">Watts do dispositivo</label>
-	        <input type="text" name="wattsDispositivo" id="wattsDispositivo" th:field="*{wattsDispositivo}">
+	        <label for="wattsDispositivo" class="watts">Watts do dispositivo</label>
+	        <input type="text" name="wattsDispositivo" id="watts" th:field="*{wattsDispositivo}">
 	        	        
 	       	<br>
 
-	        <label for="categoriaSelect" class="texto3">Tipo Dispositivo</label>
-	        <select name="categoriaSelect" id="categoriaSelect">
+	        <label for="categoriaSelect" class="categoria">Tipo Dispositivo</label>
+	        <select name="categoriaSelect" id="categoria">
 	             <option value="0">Categoria Dispositivo</option>
 	             <option th:each="tD : ${tipoDispositivos}" th:value="${tD.getId()}" th:text="${tD.getTipoDispositivo()}"></option>
 	        </select>
 	        
 	        <br>
 	        
-	        <label for="tempoUsoDiario" class="texto4">Tempo de consumo diário</label>
-	        <input type="text" name="tempoUsoDiario" id="tempoUsoDiario" th:field="*{tempoUsoDiario}">
+	        <label for="tempoUsoDiario" class="consumo">Tempo de consumo diário</label>
+	        <input type="text" name="tempoUsoDiario" id="consumo" th:field="*{tempoUsoDiario}">
 	        
 	        <br>
 	        
@@ -45,10 +45,10 @@
 	        <input type="submit" id="submit" value="Salvar">
 		</form>
 		<a href="">
-			<span class="btn-listar"></span>
+			<button type="button" class="button">Ver lista de registro</button>
 		</a>
 		
-		<img src="/img/AddDispositivo/mao.png" class="icon-mao">
+		
 		
 		
 	</body>

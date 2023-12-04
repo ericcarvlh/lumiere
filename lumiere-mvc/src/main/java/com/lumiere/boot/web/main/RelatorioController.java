@@ -63,17 +63,16 @@ public class RelatorioController {
 		return "/Relatorio/Comparar";
 	}
 	
-	
 	@GetMapping("/Semanal/{cdResidencia}")
-	public String relatorioSemanal(@PathVariable("cdResidencia") int cdResidencia, Model model) {		
-		model.addAttribute("listaRelatorioSemanal", relatorioConsumoDao.callConsultaRelatorioSemanal(cdResidencia));
-		
+	public String relatorioSemanal(@PathVariable("cdResidencia") int cdResidencia, Model model) {
+		model.addAttribute("listaRelatorioAnual", relatorioConsumoDao.callConsultaRelatorioSemanal(cdResidencia));
+				
 	    return "/Relatorio/Semanal";
 	}
 	
 	@GetMapping("/Anual/{cdResidencia}")
 	public String relatorioAnual(@PathVariable("cdResidencia") int cdResidencia, Model model) {		
-		model.addAttribute("listaRelatorioAnual", relatorioConsumoDao.callConsultaRelatorioAnual(cdResidencia));
+		model.addAttribute("listaRelatorioAnual", relatorioConsumoDao.callConsultaMediaConsumoAnual(cdResidencia));
 		
 	    return "/Relatorio/Anual";
 	}
