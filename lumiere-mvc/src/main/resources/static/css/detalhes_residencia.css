@@ -10,132 +10,509 @@ html {
 
 body {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     flex-shrink: 0;
-    background: #533299;
+    background-image: url("../img/detalhesresidencia/Fundo.png");
 }
 
-.header{
-	width: 1349px;
-	height: 83px;
-	flex-shrink: 0;
-	background: #51309B;
-	box-shadow: -4px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+.container {
+    width: 100%;
+    height: 83px;
+    flex-shrink: 0;
+
+    background: #51309B;
+    box-shadow: -4px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
-.container-kw{
-	width: 233.6px;
-	height: 73px;
-	flex-shrink: 0;
-	border-radius: 13.688px;
-	border: 0.913px solid rgba(255, 255, 255, 0.00);
-	background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
-	backdrop-filter: blur(19.162500381469727px);
+.elipse {
+    position: absolute;
+    top: -40px;
+    left: 570px;
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    background: #51309B;
+    box-shadow: 0px -3px 3.83946px 0px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 100px;
+    border-style: none;
 }
 
-.container-fat{
-	width: 233.6px;
-	height: 100px;
-	flex-shrink: 0;
-	border-radius: 13.688px;
-	border: 0.913px solid rgba(255, 255, 255, 0.00);
-	background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
-	backdrop-filter: blur(19.162500381469727px);
+.logo {
+    position: absolute;
+    top: 60px;
+    left: 34px;
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
 }
 
-.container-med{
-	width: 233.6px;
-	height: 100px;
-	flex-shrink: 0;
-	border-radius: 13.688px;
-	border: 0.913px solid rgba(255, 255, 255, 0.00);
-	background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
-	backdrop-filter: blur(19.162500381469727px);
+.container-1 {
+    position: absolute;
+    top: 200px;
+    left: 150px;
+    width: 16%;
+    height: 70px;
+    flex-shrink: 0;
+
+    border-radius: 13.688px;
+    border: 0.913px solid rgba(255, 255, 255, 0.00);
+    background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(19.162500381469727px);
+    border-style: none;
 }
 
-.container-graf{
-	width: 600px;
-	height: 550px;
-	flex-shrink: 0;
-	border-radius: 13.688px;
-	border: 0.913px solid rgba(255, 255, 255, 0.00);
-	background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
-	backdrop-filter: blur(19.162500381469727px);
+.texto-1 {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 125.5%; 
 }
 
-.container-linha{
-	width: 600px;
-	height: 400px;
-	flex-shrink: 0;
-	border-radius: 13.688px;
-	border: 0.913px solid rgba(255, 255, 255, 0.00);
-	background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
-	backdrop-filter: blur(19.162500381469727px);
+.texto-2 {
+    position: absolute;
+    top: 35px;
+    left: 65px;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
 }
 
-.text-kwh{
-	color: #FFF;
-	text-align: center;
-	font-family: 'Lexend Exa', sans-serif;
-	font-size: 18.992px;
-	font-style: normal;
-	font-weight: 200;
-	line-height: 125.5%; /* 23.835px */
+.h1 { 
+    position: absolute;
+    top: 205px;
+    left: 1018px;
+    color: #E1D3FF;
+    text-align: right;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%;
 }
 
-.text-kwhpreco{
-	color: #FFF;
-	text-align: center;
-	font-family: Lexend Exa;
-	font-size: 18.25px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 125.5%; /* 22.904px */
+.h2 {
+    position: absolute;
+    top: 235px;
+    left: 950px;
+    color: #E1D3FF;
+    text-align: right;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
 }
 
-.text-fat{
-	color: #E1D3FF;
-	text-align: center;
-	font-family: Urbanist;
-	font-size: 17px;
-	font-style: normal;
-	font-weight: 600;
-	line-height: 125.5%; /* 21.335px */
+.img-perfil {
+    position: absolute;
+    top: 195px;
+    left: 1190px;
+    width: 74px;
+    height: 74px;
+    flex-shrink: 0;
+
+    border-radius: 100%;
+    background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(19.162500381469727px);
 }
 
-.text-fatpreco{
-	width: 201.049px;
-	height: 46.447px;
-	flex-shrink: 0;
-	color: #E1D3FF;
-	text-align: center;
-	font-family: Urbanist;
-	font-size: 42.466px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 125.5%; /* 53.294px */
+.container-2 {
+    position: absolute;
+    top: 350px;
+    left: 300px;
+    width: 24%;
+    height: 140px;
+    flex-shrink: 0;
+
+    border-radius: 13.688px;
+    border: 0.913px solid rgba(255, 255, 255, 0.00);
+    background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(19.162500381469727px);
+    border-style: none;
 }
 
-.text-media{
-	color: #E1D3FF;
-	text-align: center;
-	font-family: Urbanist;
-	font-size: 20px;
-	font-style: normal;
-	font-weight: 600;
-	line-height: 125.5%;
+.texto-3 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.5%; 
 }
 
-.text-mediapreco{
-	color: #E1D3FF;
-	text-align: center;
-	font-family: Urbanist;
-	font-size: 42.629px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 125.5%; /* 53.5px */
+.conta {
+    position: absolute;
+    top: 60px;
+    left: 50px;
+    width: 35px;
+    height: 42px;
+    flex-shrink: 0;
+    fill: #E1D3FF;
 }
 
-.text-info{
-	
+.h3 {
+    position: absolute;
+    top: 55px;
+    left: 80px;
+    width: 201.049px;
+    height: 46.447px;
+    flex-shrink: 0;
+
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 42.466px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
 }
+
+.container-3 {
+    position: absolute;
+    top: 350px;
+    left: 720px;
+    width: 24%;
+    width: 323.138px;
+    height: 140px;
+    flex-shrink: 0;
+    
+    border-radius: 13.688px;
+    border: 0.913px solid rgba(255, 255, 255, 0.00);
+    background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(19.162500381469727px);
+    border-style: none;
+}
+
+.texto-4 {
+    position: absolute;
+    top: 15px;
+    left: 60px;
+    color: #E1D3FF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.5%; 
+}
+
+.dinheiro {
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    width: 42px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.texto-5 {
+    position: absolute;
+    top: 50px;
+    left: 110px;
+    color: #E1D3FF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
+
+.texto-6 {
+    position: absolute;
+    top: 95px;
+    left: 140px;
+    color: #E1D3FF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 14.779px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
+
+.container-4 {
+    position: absolute;
+    top: 550px;
+    left: 280px;
+    width: 59%;
+    height: 650px;
+    flex-shrink: 0;
+
+    border-radius: 13.688px;
+    border: 0.913px solid rgba(255, 255, 255, 0.00);
+    background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(19.162500381469727px);
+    border-style: none;
+}
+
+.texto-13 {
+    position: absolute;
+    top: 480px;
+    left: 110px;
+    color: #E1D3FF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.5%; 
+}
+
+.button-1 {
+    position: absolute;
+    top: 530px;
+    left: 250px;
+    width: 286px;
+    height: 83px;
+    flex-shrink: 0;
+
+    background-color: #51309B;
+    backdrop-filter: blur(9.215606689453125px);
+    border-radius: 30px;
+    border-style: none;
+    cursor: pointer;
+
+    color: #E1D3FF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.5%; 
+}
+
+.container-5 {
+    position: absolute;
+    top: 1330px;
+    left: 380px;
+    width: 45%;
+    height: 370px;
+    flex-shrink: 0;
+
+    border-radius: 13.688px;
+    border: 0.913px solid rgba(255, 255, 255, 0.00);
+    background: radial-gradient(240.6% 140.43% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(19.162500381469727px);
+    border-style: none;
+}
+
+.dispositivos {
+    position: absolute;
+    top: 2000px;
+    width: 50%;
+    height: 120%;
+    flex-shrink: 0;
+}
+
+.h4 {
+    position: absolute;
+    top: 2250px;
+    left: 655px;
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.5%;
+}
+
+.amarelo-1 {
+    color: #F2BF27;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.5%;
+}
+
+.h5 {
+    position: absolute;
+    top: 2330px;
+    left: 700px;
+    color: #E1D3FF;
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.5%; 
+}
+
+.amarelo-2 {
+    color: #F2BF27;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.5%;
+}
+
+.texto-12 {
+    position: absolute;
+    top: 2400px;
+    left: 670px;
+    color: #E1D3FF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
+
+.button {
+    position: absolute;
+    top: 2490px;
+    left: 780px;
+    width: 300px;
+    height: 75.132px;
+    flex-shrink: 0;
+
+    color: #E1D3FF;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 23.726px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.5%; 
+    cursor: pointer;
+
+    border-radius: 23.726px;
+    border: 0.791px solid rgba(216, 216, 216, 0.00);
+    background: radial-gradient(231% 135.8% at 0.9% 2.98%, rgba(235, 220, 254, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(11.86293888092041px);
+    border-style: none;
+}
+
+footer {
+    position: absolute;
+    top: 2900px;
+    width: 100%;
+    height: 45%;
+    flex-shrink: 0;
+    background: #00153F;
+    box-shadow: -14px 14px 10px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.texto-7 {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    width: 30%;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
+
+.github {
+    position: absolute;
+    left: 170px;
+    top: 95px;
+    width: 7%;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.linkedin {
+    position: absolute;
+    top: 100px;
+    left: 290px;
+    width: 6%;
+    height: 70px;
+    flex-shrink: 0;
+}
+
+.texto-8 {
+    position: absolute;
+    top: 195px;
+    left: 150px;
+    width: 248px;
+    height: 25px;
+    flex-shrink: 0;
+
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+    text-decoration-line: underline;
+}
+
+svg {
+    position: absolute;
+    top: 45px;
+    left: 550px;
+    width: 15%;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+.logo-footer {
+    position: absolute;
+    top: 70px;
+    left: 565px;
+    width: 170px;
+    height: 170px;
+    flex-shrink: 0;
+}
+
+.texto-9 {
+    position: absolute;
+    top: 60px;
+    left: 850px;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
+
+.texto-10 {
+    position: absolute;
+    top: 120px;
+    left: 875px;
+    color: #FFA318;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
+
+.texto-11 {
+    position: absolute;
+    top: 175px;
+    left: 890px;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.5%; 
+}
+
+/*
+fontes:
+
+font-family: 'Lexend Exa', sans-serif;
+font-family: 'Urbanist', sans-serif;
+*/
