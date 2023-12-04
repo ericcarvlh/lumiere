@@ -52,7 +52,8 @@ public class UsuarioController {
 	@GetMapping("/Ranking")
 	public String topConsumidores(Model model, @AuthenticationPrincipal UserDetails currentUser) {
 		Usuario usuario = (Usuario) usuarioService.buscarUsuarioPorEmail(currentUser.getUsername());
-				
+		
+		model.addAttribute("infoEconomia", rankingConsumidorAPI.obtemEconomiaMediaTopConsumidores());
 		model.addAttribute("infoUsuarioLogado", usuario);
 		model.addAttribute("rankingConsumidor", rankingConsumidorAPI.obtemRankingConsumidor());
 		

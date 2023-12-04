@@ -22,7 +22,7 @@ public class RankingConsumidorDao {
         storedProcedure.execute();
         
         List<RankingConsumidor> listaRankingConsumidor = storedProcedure.getResultList();
-        
+                
         return listaRankingConsumidor;
     }
 }
