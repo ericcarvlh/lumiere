@@ -71,6 +71,7 @@ function montaGraficoConsumoAnual(nomeCanvas, consumos, anos) {
 		          family: 'lexand exa',
 		          weight: 'bold',
 		        },
+		        color: '#E1D3FF'
 		      },
 		      legend: {
 			    display: false
@@ -82,6 +83,7 @@ function montaGraficoConsumoAnual(nomeCanvas, consumos, anos) {
 					title: {
 						display: true,
 						text: 'ANO',
+						color: '#E1D3FF'
 					}
 				},
 				y: {
@@ -89,6 +91,7 @@ function montaGraficoConsumoAnual(nomeCanvas, consumos, anos) {
 					title: {
 						display: true,
 						text: 'REAIS',
+						color: '#E1D3FF'
 					}
 				}
       		}

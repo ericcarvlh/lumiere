@@ -35,6 +35,7 @@ function montaGraficoConsumoTotalPorDispositivo(nomeCanvas, nomes, consumos) {
   			datasets: [{
 	    		label: 'Consumo total',
 	    		data: consumos,
+	    		backgroundColor: ['#5E20E2'],
 	    		fill: false,
   			}]
   		},
@@ -46,13 +47,14 @@ function montaGraficoConsumoTotalPorDispositivo(nomeCanvas, nomes, consumos) {
 			  },
 			  title: {
 		        display: true,
-		        text: 'Gestão de gasto atual',
+		        text: '   Gestão de gasto atual',
 		        align: 'start',
 				font: {
-		          size: 20,
+		          size: 28,
 		          family: 'lexand exa',
 		          weight: 'bold',
 		        },
+		        color: '#E1D3FF'
 		      }
 		    }
 		}
