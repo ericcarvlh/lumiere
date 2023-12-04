@@ -232,6 +232,29 @@ WHERE
 	c.data_consumo between @vDataInicial AND @vDataFinal
 GO
 
+/* Procedure para consultar o ultimo consumo do dispositivo por residencia */
+
+CREATE PROCEDURE sp_consultaUltimoConsumoDispositivoPorResidencia @vFkResidenciaCdResidencia INT
+AS
+SELECT 
+	d.cd_dispositivo as cdDispositivo,
+	MAX(c.data_consumo) as ultimoConsumo
+FROM 
+	Dispositivo as d
+INNER JOIN 
+	Consumo as c
+ON 
+	d.cd_dispositivo = c.fk_Dispositivo_cd_dispositivo
+INNER JOIN 
+	Residencia as r
+ON 
+	r.cd_residencia = d.fk_Residencia_cd_residencia
+WHERE 
+	r.cd_residencia = @vFkResidenciaCdResidencia
+GROUP BY
+	d.cd_dispositivo
+
+EXEC sp_consultaUltimoConsumoDispositivoPorResidencia @vFkResidenciaCdResidencia = 1
 EXEC sp_consultaMediaConsumoAnual @vFkResidenciaCdResidencia = 1;
 EXEC sp_consultaConsumoTotalPorDispositivo @vFkResidenciaCdResidencia = 1;
 EXEC sp_consultaFaturaAtual @vFkResidenciaCdResidencia = 1;

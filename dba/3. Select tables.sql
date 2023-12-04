@@ -68,3 +68,21 @@ INNER JOIN
 	Estado as e
 ON 
 	r.fk_Estado_cd_estado = e.cd_estado
+
+/* Consultando a ultima aparicao dos dispositivos */
+
+SELECT 
+	d.cd_dispositivo,
+	c.data_consumo as ultimaAparicao
+FROM 
+	Dispositivo as d
+INNER JOIN 
+	Consumo as c
+ON 
+	d.cd_dispositivo = c.fk_Dispositivo_cd_dispositivo
+INNER JOIN 
+	Residencia as r
+ON 
+	r.cd_residencia = d.fk_Residencia_cd_residencia
+WHERE 
+	r.cd_residencia = 1

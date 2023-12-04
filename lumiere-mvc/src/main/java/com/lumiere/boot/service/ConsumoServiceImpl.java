@@ -16,6 +16,10 @@ public class ConsumoServiceImpl implements ConsumoService {
 	@Autowired
 	ConsumoDao consumoDao;
 
+	public void salvar(Consumo consumo) {
+		consumoDao.save(consumo);
+	}
+	
 	@Override
 	public List<Consumo> buscarConsumosPorCdResidencia(int cdResidencia) {
 		return consumoDao.buscarConsumosPorCdResidencia(cdResidencia);

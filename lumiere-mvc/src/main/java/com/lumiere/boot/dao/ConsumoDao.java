@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.lumiere.boot.domain.Consumo;
 
-
-
 public interface ConsumoDao {
 
 	void save(Consumo consumo);
