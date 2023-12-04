@@ -10,6 +10,28 @@
     <body>
 		<h2>Relatório Semanal</h2>
 		
-	
+		<main class="container-fluid text-center">
+    <div class="table-responsive small">
+        <table class="table table-striped table-sm">
+			
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data consumo</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody th:each="item : ${listaRelatorioSemanal}">
+                <tr>
+                    <td th:text="${item.getNomeDispositivo()}"></td>
+                    <td th:text="${item.getDataConsumo()}"></td>
+                    <td th:text="${item.getValorConsumo()}"></td>
+                    <td th:text="${item.getTotalConsumo()}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
 	</body>
 </html>

@@ -1,0 +1,154 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 5328px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #052769 26.12%, #092C73 31.15%, #18409D 41.04%, #2A45BB 51.02%, #5652BA 60.51%, #5652BA 60.52%, #8760B9 70.51%, #8760B9 72.26%, #8760B9 74.28%, #7F47DD 80.36%, #4E00CE 84.52%, #24189A 87.25%, #002C6D 90.53%);
+}
+
+.h1{
+	color: #E1D3FF;
+	text-align: center;
+	font-family: Lexend Exa;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.h2{
+	color: #E1D3FF;
+	text-align: center;
+	font-family: Lexend Exa;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.texto1{
+	color: #E1D3FF;
+	text-align: center;
+	font-family: Lexend Exa;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.texto2{
+	color: #E1D3FF;
+	text-align: center;
+	font-family: Lexend Exa;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.texto3{
+	color: #E1D3FF;
+	text-align: center;
+	font-family: Lexend Exa;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.texto4{
+	color: #E1D3FF;
+	text-align: center;
+	font-family: Lexend Exa;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.elipse{
+	width: 630px;
+	height: 630px;
+	flex-shrink: 0;
+	border-radius: 630px;
+	background: #5652BA;
+	box-shadow: -7px -3px 3px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.retangulo{
+	width: 471px;
+	height: 437px;
+	transform: rotate(29.739deg);
+	flex-shrink: 0;
+	background: #22095C;
+	box-shadow: 1px 7px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.icon-mao{
+	width: 661px;
+	height: 650px;
+	flex-shrink: 0;
+}
+
+#nomeDisposivito{
+	width: 397.798px;
+	height: 36.325px;
+	flex-shrink: 0;
+	border-radius: 11.518px;
+	background: rgba(255, 255, 255, 0.50);
+}
+
+#wattsDispositivo{
+	width: 397.798px;
+	height: 36.325px;
+	flex-shrink: 0;
+	border-radius: 11.518px;
+	background: rgba(255, 255, 255, 0.50);
+}
+
+#tempoUsoDiario{
+	width: 397.798px;
+	height: 36.325px;
+	flex-shrink: 0;
+	border-radius: 11.518px;
+	background: rgba(255, 255, 255, 0.50);
+}
+
+#categoriaSelect{
+	width: 397.798px;
+	height: 36.325px;
+	flex-shrink: 0;
+	border-radius: 11.518px;
+	background: rgba(255, 255, 255, 0.50);
+}
+
+#submit{
+	fill: #51309B;
+	backdrop-filter: blur(9.215606689453125px);
+	text-align: center;
+	font-family: Lexend Exa;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	width: 206px;
+	height: 53px;
+	flex-shrink: 0;
+	
+}
+
+/*
+fontes:
+
+font-family: 'Lexend Exa', sans-serif;
+font-family: 'Urbanist', sans-serif;
+*/

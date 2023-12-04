@@ -3,26 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/responsive.css">
+       	<link rel="stylesheet" href="/css/cadastrar_dispositivo.css">
+        <link rel="stylesheet" href="/css/responsive_cadastrar_dispositivo.css">
+        <script src="https://kit.fontawesome.com/90438f02e0.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&family=Urbanist&display=swap" rel="stylesheet">
         <title>Lumiere</title>
     </head>
 	<body>
-		<h2>Cadastrar Dispositivo</h2>
+		<h1 class="h1">Adicione seus dispositivos</h1>
+		<h2 class="h2">e a gente cuida da gestão para você!</h2>
 		
 		<form th:action="@{/Dispositivo/Cadastrar}" th:object="${dispositivo}" method="POST"> 
 			<input type="hidden" name="cdResidencia" id="cdResidencia" th:value="${cdResidencia}">
 						
-	        <label for="nomeDisposivito">Apelido do dispositivo</label>
+	        <label for="nomeDisposivito" class="texto1">Apelido do dispositivo</label>
 	        <input type="text" name="nomeDisposivito" id="nomeDisposivito" th:field="*{nomeDispositivo}">
 	        
 	        <br>
 	        
-	        <label for="wattsDispositivo">Watts do dispositivo</label>
+	        <label for="wattsDispositivo" class="texto2">Watts do dispositivo</label>
 	        <input type="text" name="wattsDispositivo" id="wattsDispositivo" th:field="*{wattsDispositivo}">
 	        	        
 	       	<br>
 
-	        <label for="categoriaSelect">Tipo Dispositivo</label>
+	        <label for="categoriaSelect" class="texto3">Tipo Dispositivo</label>
 	        <select name="categoriaSelect" id="categoriaSelect">
 	             <option value="0">Categoria Dispositivo</option>
 	             <option th:each="tD : ${tipoDispositivos}" th:value="${tD.getId()}" th:text="${tD.getTipoDispositivo()}"></option>
@@ -30,7 +36,7 @@
 	        
 	        <br>
 	        
-	        <label for="tempoUsoDiario">Tempo de consumo diário</label>
+	        <label for="tempoUsoDiario" class="texto4">Tempo de consumo diário</label>
 	        <input type="text" name="tempoUsoDiario" id="tempoUsoDiario" th:field="*{tempoUsoDiario}">
 	        
 	        <br>
@@ -38,6 +44,13 @@
 	        <label for="submit"></label>
 	        <input type="submit" id="submit" value="Salvar">
 		</form>
+		<a href="">
+			<span class="btn-listar"></span>
+		</a>
+		
+		<img src="/img/AddDispositivo/mao.png" class="icon-mao">
+		
+		
 	</body>
 	
 </html>
