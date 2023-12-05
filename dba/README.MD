@@ -5,7 +5,7 @@ Repositório responsável por armazenar os principais scripts do banco de dados.
 
 ## Padrões utilizados
 
-<b>A decidir.</b>
+<b>Não definido.</b>
 
 ## Tabelas
 
